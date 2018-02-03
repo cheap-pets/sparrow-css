@@ -1,0 +1,31 @@
+.badge {
+  line-height: 16px;
+  padding: 0 5px;
+  background-color: $bg-light-grey;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.caret:after,
+.expand-toggle:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.caret:after {
+  triangle: pointing-down;
+	width: 8px;
+  height: 4px;
+	background-color: $bg-grey;
+}
+
+.expand-toggle:after {
+  font-family: 'sparrow-icon';
+  font-size: 18px;
+  content: "\e629";
+  color: $grey3;
+}
+.expand-toggle.expanded:after {
+  content: "\e601";
+}

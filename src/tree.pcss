@@ -1,0 +1,40 @@
+.tree,
+.tree-grid {
+  text-align: left;
+  background-color: $white;
+}
+.tree-node {
+  padding-left: 20px;
+  position: relative;
+}
+.tree > .tree-node,
+.tree-grid .tree-node {
+  padding-left: 0;
+}
+.tree-node-item {
+  display: block;
+  max-width: 100%;
+  font-size: 14px;
+  padding: 8px 10px;
+  color: $grey1;
+  line-height: 24px;
+  @mixin text-ellipsis;
+}
+.tree-node-item .expand-toggle,
+.tree-node-item .icon {
+  line-height: 20px;
+}
+.tree-node-item .expand-toggle + *,
+.tree-node-item .icon + * {
+  margin-left: 5px;
+}
+
+a.tree-node-item:hover,
+a.tree-node-item:active {
+  color: $grey1;
+  background-color: $grey6;
+}
+.tree-node > .tree-node-item.active {
+  background-color: $blue2;
+  color: $white;
+}

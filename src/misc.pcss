@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+body {
+  margin: 0;
+}
+
+a {
+  color: $blue2;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: $blue1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.outline {
+  border: 1px solid $grey5;
+}
+.outline-dotted {
+  border-style: dotted;
+}
+
+:disabled,
+*[disabled] {
+  color: $grey5;
+}
+
+.divider {
+  padding: 7px 10px;
+  background-color: $grey5;
+  color: $grey3;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

@@ -1,0 +1,29 @@
+{
+  "name": "sparrow-css",
+  "version": "0.1.0",
+  "description": "set of styles for web application, code by postcss",
+  "main": "src/index.pcss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheap-pets/sparrow-css.git"
+  },
+  "keywords": [
+    "sparrow-ui",
+    "sparrow-css"
+  ],
+  "author": "scrollbar-ww",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheap-pets/sparrow-css/issues"
+  },
+  "homepage": "https://github.com/cheap-pets/sparrow-css#readme",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
