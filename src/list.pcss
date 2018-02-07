@@ -15,20 +15,29 @@
 .list-group-eof.active {
   visibility: visible;
 }
+.list-group-header,
 .list-group-item {
   position: relative;
   display: block;
   line-height: 24px;
-  padding: 8px 10px;
+  padding: 10px;
   font-size: 14px;
   color: $grey1;
   @mixin text-ellipsis;
+}
+.list-group-header {
+  font-weight: 600;
+  font-size: 16px;
 }
 .list-group-item.hidden {
   display: none;
 }
 .list-group-item > * {
   line-height: 20px;
+}
+.list-group.compact > .list-group-item,
+.list-group-item.compact {
+  padding: 8px 10px;
 }
 
 .list-group-item:not(:first-child){
@@ -83,4 +92,47 @@ a.list-group-item:hover {
 }
 .list-group > .list-group-item.active {
   background-color: $blue5;
+}
+
+.menu > .list-group-item {
+  border: 0 !important;
+  padding-left: 44px;
+}
+.menu > .list-group-item > .icon:first-child,
+.menu > .list-group-header > .icon:first-child {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  margin-right: 0;
+}
+.menu > a.list-group-item:hover {
+  background-color: $grey6;
+}
+
+.dropdown .list-group-item:hover,
+.dropdown .list-group-item.active,
+.menu > a.list-group-item.active {
+  color: $white;
+  background-color: $blue2;
+}
+.menu > a.list-group-item.active > .icon {
+  color: $white;
+}
+
+.dropdown .list-group-item {
+  border: 0 !important;
+  padding: 5px 10px;
+}
+.dropdown .divider {
+  padding: 5px 10px;
+  background-color: $grey6;
+}
+.divider.line {
+  padding: 0;
+  height: 1px;
+  margin: 4px 0;
+  background-color: $grey5;
+}
+.dropdown .divider:not(.line) ~ .list-group-item {
+  padding-left: 20px;
 }

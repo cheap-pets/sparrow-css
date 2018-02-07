@@ -78,20 +78,40 @@
   bottom: 0;
   z-index: 1;
 }
-.header + .content {
-  top: 44px;
-}
 .content {
   overflow: auto;
 }
 .header {
   z-index: 5;
 }
-
-.page > .header {
+.header {
   height: 50px;
 }
-
-.page > .header + .content {
+.header.bar-header + .content,
+.header + .content {
   top: 50px;
+}
+.bar + .content {
+  top: 44px;
+}
+
+.left-panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  border-right: 1px solid #dddddd;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+}
+.left-panel + .content {
+  left: 300px;
+}
+
+.spacing {
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
 }

@@ -22,17 +22,27 @@
 .table-cell {
   color: $grey1;
   padding: 10px;
-  line-height: 20px;
+  line-height: 24px;
   vertical-align: top;
 }
 .table > thead th,
 .table > thead td {
   color: $grey3;
-  padding-top: 10px;
-  padding-bottom: 10px;
   font-weight: 500;
   background-color: $grey6;
 }
+.table.compact > td,
+.table.compact > th {
+  padding: 8px 10px;
+}
+
+td.center {
+  text-align: center;
+}
+table.nowrap td {
+  @mixin text-ellipsis;
+}
+
 .alternant > tbody > tr:nth-child(even),
 .alternant > tr:nth-child(even) {
   background-color: $grey6;

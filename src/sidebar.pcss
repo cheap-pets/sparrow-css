@@ -40,3 +40,29 @@
 .sidebar + .content {
   left: 100px;
 }
+
+.sidebar.menu {
+  padding: 10px 0;
+  width: 200px;
+}
+
+.sidebar.menu + .content {
+  left: 200px;
+}
+
+.sidebar.menu > a {
+  line-height: 24px;
+  padding: 10px 15px;
+  height: auto;
+  text-align: left;
+}
+
+.sidebar.menu > a > * {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.sidebar.menu > a .icon + * {
+  margin-top: 0;
+  margin-left: 10px;
+}

@@ -38,3 +38,20 @@ a.tree-node-item:active {
   background-color: $blue2;
   color: $white;
 }
+.tree-node-item.active a,
+.tree-node-item.active .icon,
+.tree-node-item.active .expand-toggle::after {
+  color: white;
+}
+
+.tree-grid .tree-node-item {
+  display: table;
+  width: 100%;
+}
+.tree-grid .cell {
+  display: table-cell;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}

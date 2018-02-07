@@ -18,6 +18,10 @@
 .bar-right {
   float: right;
 }
+.bar-right > .input-group > input {
+  width: 200px;
+}
+
 .bar input:not(:first-child),
 .bar .dropdown-group:not(:first-child),
 .bar .input-group:not(:first-child),
@@ -77,4 +81,12 @@
 .bar.bar-menu > .btn {
   border-radius: 0;
   margin-left: 0;
+}
+
+.bar-header {
+  height: 50px;
+  padding: 8px 10px;
+}
+.header.bar > label:first-child {
+  margin-left: 15px;
 }
