@@ -1,7 +1,7 @@
 .tree,
 .tree-grid {
   text-align: left;
-  background-color: $white;
+  background-color: $tree-color;
 }
 .tree-node {
   padding-left: 20px;
@@ -16,7 +16,7 @@
   max-width: 100%;
   font-size: 14px;
   padding: 8px 10px;
-  color: $grey1;
+  color: $tree-node-text-color;
   line-height: 24px;
   @mixin text-ellipsis;
 }
@@ -31,17 +31,15 @@
 
 a.tree-node-item:hover,
 a.tree-node-item:active {
-  color: $grey1;
-  background-color: $grey6;
+  color: $tree-node-hover-text-color;
+  background-color: $tree-node-hover-color;
 }
 .tree-node > .tree-node-item.active {
-  background-color: $blue2;
-  color: $white;
+  background-color: $tree-node-active-color;
 }
-.tree-node-item.active a,
-.tree-node-item.active .icon,
-.tree-node-item.active .expand-toggle::after {
-  color: white;
+.tree-node-item.active,
+.tree-node-item.active * {
+  color: $tree-node-active-text-color;
 }
 
 .tree-grid .tree-node-item {

@@ -20,22 +20,22 @@ input[type="color"] {
   outline: none;
   padding: 0 10px;
   font-size: 14px;
-  border: 1px solid $grey4;
+  border: 1px solid $input-border-color;
   border-radius: 0;
-  color: $grey1;
+  color: $input-text-color;
   user-select: auto;
   appearance: none;
 }
 select:focus,
 textarea:focus,
 input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="reset"]):not([type="file"]):focus {
-  border-color: $blue2;
-  box-shadow: 0 0 1px 1px $blue3;
+  border-color: $input-focus-border-color;
+  box-shadow: 0 0 1px 1px $input-focus-shadow-color;
 }
 input:-ms-input-placeholder,
 ::-moz-placeholder,
 ::-webkit-input-placeholder {
-  color: $grey4;
+  color: $input-placeholder-color;
 }
 textarea {
   padding: 10px;
@@ -75,7 +75,7 @@ label {
   display: inline-block;
   vertical-align: top;
   font-size: 13px;
-  color: $text-grey;
+  color: $input-label-color;
 }
 label.top {
   display: block;
@@ -84,33 +84,33 @@ label.top {
   padding-left: 10px;
 }
 .form-group.important label {
-  color: $text-black;
+  color: $important-input-label-color;
 }
 .form-group label:after {
   color: transparent;
   content: "*";
 }
 .form-group.important label:after {
-  color: $red2;
+  color: $important-input-tag-color;
 }
 .form-group.invalid label {
-  color: $red2;
+  color: $invalid-input-label-color;
 }
 .form-group.invalid input {
-  border-color: $red2; 
+  border-color: $invalid-input-border-color; 
 }
 .form-group.invalid select:focus,
 .form-group.invalid textarea:focus,
 .form-group.invalid input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="reset"]):not([type="file"]):focus {
-  border-color: $red500; 
-  box-shadow: 0 0 1px 1px $red3;
+  border-color: $invalid-input-border-color;
+  box-shadow: 0 0 1px 1px $invalid-input-shadow-color;
 }
 .input-group {
   font-size: 0;
   position: relative;
   white-space: nowrap;
   display: inline-block;
-  background-color: $white;
+  background-color: $input-group-background-color;
 }
 .input-group > .input-icon {
   line-height: 34px;
@@ -157,6 +157,7 @@ label.top {
 .input-icon.btn {
   position: relative;
   padding: 0;
+  border: 0;
 }
 .input-icon:not(.btn) {
   color: $grey2;
@@ -164,13 +165,13 @@ label.top {
 a.input-icon:not(.btn):active,
 a.input-icon.active:not(.btn),
 html:not(.mobile) a.input-icon:hover:not(.btn) {
-  background-color: $grey5;
+  background-color: $input-icon-background-color;
 }
 a.input-icon:active,
 a.input-icon.active {
   @mixin focus-shadow;
 }
-.input-group .btn {
+.input-group > .btn {
   z-index: 20;
   border-radius: 0;
   position: relative;
@@ -228,6 +229,7 @@ a.input-icon.active {
   }
 }
 
+/*
 .edit-field,
 .edit-field > input {
   border-color: transparent;
@@ -254,3 +256,4 @@ input.edit-field:focus + .input-icon,
   z-index: 30;
   display: block;
 }
+*/

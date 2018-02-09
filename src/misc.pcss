@@ -8,18 +8,18 @@ body {
 }
 
 a {
-  color: $blue2;
+  color: $link-text-color;
   cursor: pointer;
   text-decoration: none;
 }
 a:hover {
-  color: $blue1;
+  color: $link-hover-text-color;
 }
 a.negative {
-  color: $red2;
+  color: $link-negative-text-color;
 }
 a.negative:hover {
-  color: $red1;
+  color: $link-negative-hover-text-color;
 }
 
 .hidden {
@@ -27,7 +27,7 @@ a.negative:hover {
 }
 
 .outline {
-  border: 1px solid $grey5;
+  border: 1px solid $outline-color;
 }
 .outline-dotted {
   border-style: dotted;
@@ -35,16 +35,7 @@ a.negative:hover {
 
 :disabled,
 *[disabled] {
-  color: $grey5;
-}
-
-.divider {
-  padding: 8px 10px;
-  background-color: $grey5;
-  color: $grey3;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
+  color: $disabled-text-color;
 }
 
 .middle {
@@ -52,4 +43,8 @@ a.negative:hover {
   left: 50%;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+
+.transparent {
+  background-color: transparent !important;
 }
