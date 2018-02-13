@@ -51,15 +51,14 @@
   width: 100%;
 }
 .page {
-  position: absolute;
-}
-.page {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  position: absolute;
   position: fixed;
   overflow: hidden;
+  background: $page-color;
   @mixin transition-transform;
 }
 .header,
@@ -83,12 +82,18 @@
 }
 .header {
   z-index: 5;
-}
-.header {
   height: 50px;
+  font-size: 20px;
+  padding: 8px 10px;
 }
-.header.bar-header + .content,
-.header + .content {
+.header > span {
+  line-height: 34px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.header + .content,
+.bar.bar-large + .content {
   top: 50px;
 }
 .bar + .content {
@@ -105,6 +110,13 @@
 }
 .left-panel + .content {
   left: 300px;
+}
+
+.sidebar + .content {
+  left: 100px;
+}
+.sidebar.menu + .content {
+  left: 200px;
 }
 
 .spacing {

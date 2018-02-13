@@ -24,6 +24,9 @@
 .tree-node-item .icon {
   line-height: 20px;
 }
+.tree-node-item .icon {
+  color: $tree-node-icon-color;
+}
 .tree-node-item .expand-toggle + *,
 .tree-node-item .icon + * {
   margin-left: 5px;
@@ -31,14 +34,14 @@
 
 a.tree-node-item:hover,
 a.tree-node-item:active {
-  color: $tree-node-hover-text-color;
   background-color: $tree-node-hover-color;
 }
 .tree-node > .tree-node-item.active {
   background-color: $tree-node-active-color;
 }
 .tree-node-item.active,
-.tree-node-item.active * {
+.tree-node-item.active *,
+.active .expand-toggle:after {
   color: $tree-node-active-text-color;
 }
 

@@ -8,22 +8,18 @@
 
 .caret:after,
 .expand-toggle:after {
-  content: '';
+  font-family: 'sparrow-icon';
   display: inline-block;
-  vertical-align: middle;
 }
 
 .caret:after {
-  triangle: pointing-down;
-	width: 8px;
-  height: 4px;
-	background-color: $caret-color;
+	content: "\e615";
 }
 
 .expand-toggle:after {
-  font-family: 'sparrow-icon';
   font-size: 18px;
   content: "\e629";
+  vertical-align: middle;
   color: $expand-toggle-color;
 }
 .expand-toggle.expanded:after {
