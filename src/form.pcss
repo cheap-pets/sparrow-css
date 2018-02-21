@@ -164,8 +164,11 @@ label.top {
 .double-icon > input {
   padding-right: 68px;
 }
-.double-icon > input + .input-icon {
+.double-icon > .input-icon + .input-icon {
   right: 33px;
+}
+.inset-icon:not(.double-icon) > .input-icon + .input-icon {
+  display: none;
 }
 
 a.input-icon:not(.btn):active,

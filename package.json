@@ -1,6 +1,6 @@
 {
   "name": "sparrow-css",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "set of styles for web application, code by postcss",
   "main": "src/index.pcss",
   "scripts": {
