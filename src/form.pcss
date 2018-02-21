@@ -142,7 +142,6 @@ label.top {
   z-index: 10;
   position: absolute;
 }
-
 .inset-icon > a.input-icon {
   z-index: 30;
   cursor: pointer;
@@ -162,6 +161,13 @@ label.top {
 .input-icon:not(.btn) {
   color: $input-icon-color;
 }
+.double-icon > input {
+  padding-right: 68px;
+}
+.double-icon > input + .input-icon {
+  right: 33px;
+}
+
 a.input-icon:not(.btn):active,
 a.input-icon.active:not(.btn),
 html:not(.mobile) a.input-icon:hover:not(.btn) {
