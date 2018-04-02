@@ -25,3 +25,23 @@
 .expand-toggle.expanded:after {
   content: "\e601";
 }
+
+.drill {
+  position: relative;
+  padding-right: 35px;
+}
+
+.drill:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  content: "\e602";
+  color: $list-item-drill-color;
+  font-size: 14px;
+  font-family: 'sparrow-icon';
+  height: 14px;
+  line-height: 14px;
+}

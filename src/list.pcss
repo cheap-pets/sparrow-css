@@ -26,7 +26,6 @@
   padding: 10px;
   font-size: 14px;
   color: $list-item-text-color;
-
   @mixin text-ellipsis;
 }
 
@@ -62,23 +61,6 @@
 
 .alternant > .list-group-item:nth-of-type(even) {
   background-color: $list-item-alternant-color;
-}
-
-.list-group-item.drill {
-  padding-right: 35px;
-}
-
-.list-group-item.drill:after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  content: "\e602";
-  color: $list-item-drill-color;
-  font-size: 16px;
-  font-family: 'sparrow-icon';
 }
 
 .list-group.gridless > .list-group-item {
