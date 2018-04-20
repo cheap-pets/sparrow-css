@@ -57,7 +57,7 @@ table.nowrap td {
 .table tr.active * {
   color: $table-row-active-text-color;
 }
-.hover > tbody > tr:hover,
-.hover > tr:hover {
+html:not(.mobile) .hover > tbody > tr:hover,
+html:not(.mobile) .hover > tr:hover {
   background-color: $table-row-hover-color;
 }

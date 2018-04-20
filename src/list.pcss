@@ -78,7 +78,7 @@ a.list-group-item {
 }
 
 a.list-group-item:active,
-a.list-group-item:hover {
+html:not(.mobile) a.list-group-item:hover {
   background-color: $list-item-hover-color;
 }
 
@@ -110,7 +110,7 @@ a.list-group-item:hover {
   padding: 5px 10px;
 }
 
-.dropdown .list-group-item:hover {
+html:not(.mobile) .dropdown .list-group-item:hover {
   color: $dropdown-item-hover-text-color;
   background-color: $dropdown-item-hover-color;
 }
