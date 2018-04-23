@@ -12,13 +12,13 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-html:not(.mobile) a:hover {
+a:hover {
   color: $link-hover-text-color;
 }
 a.negative {
   color: $link-negative-text-color;
 }
-html:not(.mobile) a.negative:hover {
+a.negative:hover {
   color: $link-negative-hover-text-color;
 }
 
@@ -32,10 +32,6 @@ html:not(.mobile) a.negative:hover {
 }
 .outline-dotted {
   border-style: dotted;
-}
-.mobile .page > .outline {
-  border-left: 0;
-  border-right: 0;
 }
 
 :disabled,
@@ -52,4 +48,17 @@ html:not(.mobile) a.negative:hover {
 
 .transparent {
   background-color: transparent !important;
+}
+
+.mobile {
+  a:hover {
+    color: unset;
+  }
+  a.negative:hover {
+    color: unset;
+  }
+  .page > .outline {
+    border-left: 0;
+    border-right: 0;
+  }
 }

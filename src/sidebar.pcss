@@ -16,9 +16,13 @@
   text-align: center;
   position: relative;
 }
-html:not(.mobile) .sidebar > a:hover {
+.sidebar > a:hover {
   color: $sidebar-item-hover-text-color;
   background-color: $sidebar-item-hover-color;
+}
+.mobile .sidebar > a:hover {
+  color: unset;
+  background-color: unset;
 }
 .sidebar > a.active {
   color: $sidebar-item-active-text-color;
