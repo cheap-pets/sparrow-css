@@ -173,7 +173,7 @@ label.top {
 
 a.input-icon:not(.btn):active,
 a.input-icon.active:not(.btn),
-a.input-icon:hover:not(.btn) {
+html:not(.mobile) a.input-icon:hover:not(.btn) {
   background-color: $input-icon-background-color;
 }
 a.input-icon:active,
@@ -236,8 +236,5 @@ a.input-icon.active {
   }
   .list-group-item > .form-group {
     padding: 0;
-  }
-  a.input-icon:hover:not(.btn) {
-    background-color: unset;
   }
 }

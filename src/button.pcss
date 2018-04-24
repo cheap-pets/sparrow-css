@@ -41,7 +41,7 @@
   padding: 8px 24px;
 }
 .btn.active,
-.btn:hover,
+html:not(.mobile) .btn:hover:not([disabled]),
 .btn:active {
   color: $btn-default-text-color;
   background-color: $btn-default-hover-color;
@@ -57,7 +57,6 @@
   width: 34px;
 }
 
-.btn:disabled,
 .btn[disabled]
 {
   border-color: transparent;
@@ -76,7 +75,7 @@
   border: 1px solid $btn-primary-active-color;
 }
 .btn-primary.active,
-.btn-primary:hover,
+html:not(.mobile) .btn-primary:hover:not([disabled]),
 .btn-primary:active {
   background-color: $btn-primary-hover-color;
   color: $btn-primary-active-text-color;
@@ -84,7 +83,6 @@
 .btn-primary.active {
   background-color: $btn-primary-active-color;
 }
-.btn-primary:disabled,
 .btn-primary[disabled] {
   background-color: $btn-primary-disable-color;
 }
@@ -112,7 +110,7 @@
   border-color: $btn-submit-active-color;
 }
 .btn-submit.active,
-.btn-submit:hover,
+html:not(.mobile) .btn-submit:hover:not([disabled]),
 .btn-submit:active {
   background-color: $btn-submit-hover-color;
   color: $btn-submit-active-text-color;
@@ -120,7 +118,6 @@
 .btn-submit.active {
   background-color: $btn-submit-active-color;
 }
-.btn-submit:disabled,
 .btn-submit[disabled] {
   background-color: $btn-submit-disable-color;
 }
@@ -148,7 +145,7 @@
   border-color: $btn-negative-active-color;
 }
 .btn-negative.active,
-.btn-negative:hover,
+html:not(.mobile) .btn-negative:hover:not([disabled]),
 .btn-negative:active {
   background-color: $btn-negative-hover-color;
   color: $btn-negative-active-text-color;
@@ -156,7 +153,6 @@
 .btn-negative.active {
   background-color: $btn-negative-active-color;
 }
-.btn-negative:disabled,
 .btn-negative[disabled] {
   background-color: $btn-negative-disable-color;
 }
@@ -185,7 +181,7 @@
   border: 1px solid $btn-light-active-color;
 }
 .btn-light.active,
-.btn-light:hover,
+html:not(.mobile) .btn-light:hover:not([disabled]),
 .btn-light:active {
   background-color: $btn-light-hover-color;
   color: $btn-light-active-text-color;
@@ -193,7 +189,6 @@
 .btn-light.active {
   background-color: $btn-light-active-color;
 }
-.btn-light:disabled,
 .btn-light[disabled] {
   background-color: $btn-light-disable-color;
 }
@@ -222,7 +217,7 @@
   border: 1px solid $btn-dark-active-color;
 }
 .btn-dark.active,
-.btn-dark:hover,
+html:not(.mobile) .btn-dark:hover:not([disabled]),
 .btn-dark:active {
   background-color: $btn-dark-hover-color;
   color: $btn-dark-active-text-color;
@@ -230,7 +225,7 @@
 .btn-dark.active {
   background-color: $btn-dark-active-color;
 }
-.btn-dark:disabled,
+
 .btn-dark[disabled] {
   background-color: $btn-dark-disable-color;
 }
@@ -245,14 +240,13 @@
   color: $btn-light-text-color;
 }
 
-.btn:hover,
+html:not(.mobile) .btn:hover:not([disabled]),
 .btn:active {
   border-color: transparent;
 }
 .btn:active {
   @mixin focus-shadow;
 }
-.btn:disabled,
 .btn[disabled] {
   cursor: default;
   box-shadow: none;
@@ -311,9 +305,4 @@
 .btn.hidden {
   visibility: visible;
   display: none !important;
-}
-
-.mobile .btn:hover {
-  color: unset;
-  background-color: unset;
 }

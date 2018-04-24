@@ -32,12 +32,9 @@
   margin-left: 5px;
 }
 
-a.tree-node-item:hover,
+html:not(.mobile) a.tree-node-item:hover:not([disabled]),
 a.tree-node-item:active {
   background-color: $tree-node-hover-color;
-}
-.mobile a.tree-node-item:hover {
-  background-color: unset;
 }
 .tree-node > .tree-node-item.active {
   background-color: $tree-node-active-color;

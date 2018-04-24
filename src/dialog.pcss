@@ -47,7 +47,7 @@
   font-size: 16px;
   content: "\e64a";
 }
-.dialog-close-btn:hover {
+html:not(.mobile) .dialog-close-btn:hover {
   color: $dialog-close-btn-active-color;
 }
 .float-body,
@@ -127,8 +127,5 @@
     line-height: 14px;
     font-size: 12px;
     margin: 0; 
-  }
-  .dialog-close-btn:hover {
-    color: unset;
   }
 }

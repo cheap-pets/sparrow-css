@@ -30,12 +30,15 @@ a.negative:hover {
 .outline {
   border: 1px solid $outline-color;
 }
+.page > .outline {
+  border-left: 0;
+  border-right: 0;
+}
 .outline-dotted {
   border-style: dotted;
 }
 
-:disabled,
-*[disabled] {
+[disabled] {
   color: $disabled-text-color;
 }
 
@@ -50,15 +53,4 @@ a.negative:hover {
   background-color: transparent !important;
 }
 
-.mobile {
-  a:hover {
-    color: unset;
-  }
-  a.negative:hover {
-    color: unset;
-  }
-  .page > .outline {
-    border-left: 0;
-    border-right: 0;
-  }
-}
+
