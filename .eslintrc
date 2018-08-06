@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "extends": [
+    "standard",
+    "plugin:node/recommended"
+  ],
+  "plugins": [
+    "node"
+  ],
+  "globals": {},
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "max-len": [
+      1,
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
+  }
+}

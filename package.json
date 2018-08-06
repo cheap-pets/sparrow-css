@@ -1,7 +1,10 @@
 {
   "name": "sparrow-css",
-  "version": "0.1.21",
+  "version": "0.2.0",
   "description": "set of styles for web application, code by postcss",
+  "engines": {
+    "node": ">8.9.0"
+  },
   "main": "src/index.pcss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +27,16 @@
   },
   "homepage": "https://github.com/cheap-pets/sparrow-css#readme",
   "dependencies": {
-    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.0.2",
+    "clean-css": "^4.2.0",
+    "postcss": "^7.0.2",
+    "postcss-import": "^11.1.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^3.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "postcss-unprefix": "^2.1.3",
+    "stylelint-config-recommended": "^2.1.0"
   }
 }
