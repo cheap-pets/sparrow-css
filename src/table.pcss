@@ -1,8 +1,8 @@
 .table {
-  width: 100%;
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
   background-color: $table-color;
 }
 .table tr {
@@ -23,16 +23,16 @@
 .table td,
 .table th,
 .table-cell {
-  color: $table-cell-text-color;
   padding: 10px;
   line-height: 24px;
   vertical-align: top;
+  color: $table-cell-text-color;
 }
 .table > thead th,
 .table > thead td {
+  font-weight: 500;
   color: $table-header-text-color;
   background-color: $table-header-color;
-  font-weight: 500;
 }
 .table.compact > td,
 .table.compact > th {

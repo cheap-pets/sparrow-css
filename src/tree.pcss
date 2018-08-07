@@ -4,8 +4,8 @@
   background-color: $tree-color;
 }
 .tree-node {
-  padding-left: 20px;
   position: relative;
+  padding-left: 20px;
 }
 .tree > .tree-node,
 .tree-grid .tree-node {
@@ -14,10 +14,10 @@
 .tree-node-item {
   display: block;
   max-width: 100%;
-  font-size: 14px;
   padding: 8px 10px;
-  color: $tree-node-text-color;
+  font-size: 14px;
   line-height: 24px;
+  color: $tree-node-text-color;
   @mixin text-ellipsis;
 }
 .tree-node-item .expand-toggle,
@@ -51,8 +51,8 @@ a.tree-node-item:active {
 }
 .tree-grid .cell {
   display: table-cell;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

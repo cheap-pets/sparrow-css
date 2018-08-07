@@ -14,23 +14,17 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="color"] {
-  height: 34px;
   width: 175px;
   max-width: 100%;
-  outline: none;
+  height: 34px;
   padding: 0 10px;
-  font-size: 14px;
   border: 1px solid $input-border-color;
   border-radius: 0;
+  outline: none;
+  font-size: 14px;
   color: $input-text-color;
   user-select: auto;
   -webkit-appearance: normal;
-}
-select:focus,
-textarea:focus,
-input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="reset"]):not([type="file"]):focus {
-  border-color: $input-focus-border-color;
-  box-shadow: 0 0 1px 1px $input-focus-shadow-color;
 }
 input:-ms-input-placeholder,
 ::-moz-placeholder,
@@ -38,8 +32,8 @@ input:-ms-input-placeholder,
   color: $input-placeholder-color;
 }
 textarea {
-  padding: 10px;
   height: 80px;
+  padding: 10px;
   resize: none;
 }
 input.block,
@@ -48,11 +42,17 @@ textarea.block {
   width: 100%;
 }
 
+select:focus,
+textarea:focus,
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="reset"]):not([type="file"]):focus {
+  border-color: $input-focus-border-color;
+  box-shadow: 0 0 1px 1px $input-focus-shadow-color;
+}
 
 .form,
 .form-group {
-  padding: 15px;
   display: block;
+  padding: 15px;
 }
 .form {
   padding: 20px;
@@ -68,13 +68,13 @@ textarea.block {
   vertical-align: top;
 }
 label {
-  height: 34px;
-  line-height: 34px;
-  padding-right: 4px;
-  white-space: nowrap;
   display: inline-block;
-  vertical-align: top;
+  height: 34px;
+  padding-right: 4px;
   font-size: 13px;
+  line-height: 34px;
+  vertical-align: top;
+  white-space: nowrap;
   color: $input-label-color;
 }
 label.top {
@@ -106,20 +106,20 @@ label.top {
   box-shadow: 0 0 1px 1px $invalid-input-shadow-color;
 }
 .input-group {
-  font-size: 0;
   position: relative;
-  white-space: nowrap;
   display: inline-block;
+  font-size: 0;
+  white-space: nowrap;
   background-color: $input-group-background-color;
 }
 .input-group > .input-icon {
-  line-height: 34px;
   display: inline-block;
   font-size: 14px;
+  line-height: 34px;
 }
 .input-group > input {
-  z-index: 20;
   position: relative;
+  z-index: 20;
   background: transparent;
 }
 .input-group > input:focus {
@@ -130,17 +130,17 @@ label.top {
 }
 .input-icon {
   width: 34px;
-  text-align: center;
   border-radius: 0;
+  text-align: center;
 }
 .inset-icon > .input-icon {
-  line-height: 32px;
-  width: 32px;
+  position: absolute;
+  z-index: 10;
   top: 1px;
   bottom: 1px;
   right: 1px;
-  z-index: 10;
-  position: absolute;
+  width: 32px;
+  line-height: 32px;
 }
 .inset-icon > a.input-icon {
   z-index: 30;
@@ -150,8 +150,8 @@ label.top {
   left: 1px;
 }
 .inset-icon > .input-icon + input {
-  padding-left: 34px;
   padding-right: 10px;
+  padding-left: 34px;
 }
 .input-icon.btn {
   position: relative;
@@ -181,9 +181,9 @@ a.input-icon.active {
   @mixin focus-shadow;
 }
 .input-group > .btn {
+  position: relative;
   z-index: 20;
   border-radius: 0;
-  position: relative;
   vertical-align: top;
 }
 
@@ -231,8 +231,8 @@ a.input-icon.active {
     width: 100%;
   }
   .form-group {
-    width: 100%;
     display: table;
+    width: 100%;
   }
   .list-group-item > .form-group {
     padding: 0;

@@ -1,18 +1,18 @@
 .info {
-  background-color: $message-info-color;
   color: $message-info-text-color;
+  background-color: $message-info-color;
 }
 .success {
-  background-color: $message-success-color;
   color: $message-success-text-color;
+  background-color: $message-success-color;
 }
 .warn, .warning {
-  background-color: $message-warning-color;
   color: $message-warning-text-color;
+  background-color: $message-warning-color;
 }
 .error, .danger {
-  background-color: $message-danger-color;
   color: $message-danger-text-color;
+  background-color: $message-danger-color;
 }
 .float-message {
   position: absolute;
@@ -23,10 +23,10 @@
   top: 0;
   left: 50%;
   min-width: 300px;
-  opacity: 0;
-  text-align: center;
-  line-height: 20px;
   padding: 12px 15px;
+  line-height: 20px;
+  text-align: center;
+  opacity: 0;
   transform: translate3d(-50%, -100%, 0);
   transition: all .5s ease-in-out;
   @mixin shadow;
@@ -38,11 +38,11 @@
 }
 
 .alert {
-  color: $alert-default-text-color;
   padding: 10px;
-  line-height: 16px;
-  background-color: $alert-default-color;
   border: 1px solid rgba(0, 0, 0, .15);
+  line-height: 16px;
+  color: $alert-default-text-color;
+  background-color: $alert-default-color;
 }
 .alert.info {
   color: $alert-info-text-color;

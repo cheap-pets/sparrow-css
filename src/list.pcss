@@ -1,14 +1,14 @@
 .list-group {
-  margin: 0px;
-  padding: 0px;
   list-style: none;
+  padding: 0px;
+  margin: 0px;
   text-align: left;
   background-color: $list-group-color;
 }
 
 .list-group-eof {
-  visibility: hidden;
   padding: 10px;
+  visibility: hidden;
   text-align: center;
   color: $list-group-eof-text-color;
   background-color: $list-group-eof-color;
@@ -22,9 +22,9 @@
 .list-group-item {
   position: relative;
   display: block;
-  line-height: 24px;
   padding: 10px;
   font-size: 14px;
+  line-height: 24px;
   color: $list-item-text-color;
   @mixin text-ellipsis;
 }
@@ -72,8 +72,8 @@ a.list-group-item {
 }
 
 .list-group-item > .icon:first-child {
-  vertical-align: top;
   margin-right: 10px;
+  vertical-align: top;
   color: $list-item-icon-color;
 }
 
@@ -93,21 +93,21 @@ html:not(.mobile) a.list-group-item:hover:not([disabled]) {
 }
 
 .menu > .list-group-item {
-  border: 0 !important;
   padding-left: 44px;
+  border: 0 !important;
 }
 
 .menu > .list-group-item > .icon:first-child,
 .menu > .list-group-header > .icon:first-child {
   position: absolute;
-  left: 15px;
   top: 12px;
+  left: 15px;
   margin-right: 0;
 }
 
 .dropdown .list-group-item {
-  border: 0 !important;
   padding: 5px 10px;
+  border: 0 !important;
 }
 
 .dropdown .list-group-item:hover {
@@ -117,11 +117,11 @@ html:not(.mobile) a.list-group-item:hover:not([disabled]) {
 
 .divider {
   padding: 8px 10px;
-  background-color: $divider-color;
-  color: $divider-text-color;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500;
+  color: $divider-text-color;
+  background-color: $divider-color;
 }
 
 .dropdown .divider {
@@ -130,8 +130,8 @@ html:not(.mobile) a.list-group-item:hover:not([disabled]) {
 }
 
 .divider.line {
-  padding: 0;
   height: 1px;
+  padding: 0;
   margin: 4px 0;
   background-color: $divider-line-color;
 }

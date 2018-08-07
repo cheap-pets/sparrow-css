@@ -1,15 +1,15 @@
 .badge {
-  line-height: 16px;
   padding: 0 5px;
-  background-color: $badge-color;
   border-radius: 10px;
   font-size: 12px;
+  line-height: 16px;
+  background-color: $badge-color;
 }
 
 .caret:after,
 .expand-toggle:after {
-  font-family: 'sparrow-icon';
   display: inline-block;
+  font-family: 'sparrow-icon';
 }
 
 .caret:after {
@@ -18,9 +18,9 @@
 
 .expand-toggle:after {
   font-size: 18px;
-  content: "\e629";
   vertical-align: middle;
   color: $expand-toggle-color;
+  content: "\e629";
 }
 .expand-toggle.expanded:after {
   content: "\e601";
@@ -33,15 +33,15 @@
 
 .drill:after {
   position: absolute;
-  right: 0;
-  bottom: 0;
   top: 50%;
-  transform: translateY(-50%);
+  bottom: 0;
+  right: 0;
   width: 25px;
-  content: "\e602";
-  color: $list-item-drill-color;
+  height: 14px;
   font-size: 14px;
   font-family: 'sparrow-icon';
-  height: 14px;
   line-height: 14px;
+  color: $list-item-drill-color;
+  transform: translateY(-50%);
+  content: "\e602";
 }

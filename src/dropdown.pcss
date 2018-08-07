@@ -1,27 +1,27 @@
 .popup-group,
 [popup-group],
 .dropdown-group {
-  overflow: visible;
   position: relative;
+  overflow: visible;
 }
 .dropdown {
-  left: 0;
+  position: absolute;
   z-index: 200;
+  left: 0;
   display: block;
   padding: 0;
-  position: absolute;
-  visibility: hidden;
   border: 1px solid $dropdown-border-color;
+  overflow: auto;
+  visibility: hidden;
   background-color: $dropdown-color;
   opacity: 0;
-  overflow: auto;
   @mixin shadow;
   @mixin transition-opacity;
 }
 .dropdown.menu {
-  border: 0;
   padding-top: 4px;
   padding-bottom: 4px;
+  border: 0;
 }
 .dropdown:not(.top) {
   top: 100%;
@@ -40,6 +40,6 @@
   right: 0;
 }
 .dropdown.active {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }

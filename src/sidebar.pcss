@@ -1,20 +1,20 @@
 .sidebar {
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   width: 100px;
-  bottom: 0;
   overflow: hidden;
   background-color: $sidebar-color;
 }
 .sidebar > a {
+  position: relative;
   display: block;
-  color: $sidebar-item-text-color;
-  cursor: pointer;
   height: 100px;
   font-size: 14px;
   text-align: center;
-  position: relative;
+  color: $sidebar-item-text-color;
+  cursor: pointer;
 }
 .sidebar > a:hover {
   color: $sidebar-item-hover-text-color;
@@ -29,8 +29,8 @@
 }
 .sidebar > a > :only-child {
   position: absolute;
-  width: 100%;
   top: 50%;
+  width: 100%;
   transform: translateY(-50%);
 }
 .sidebar > a .icon + * {
@@ -38,14 +38,14 @@
 }
 
 .sidebar.menu {
-  padding: 10px 0;
   width: 200px;
+  padding: 10px 0;
 }
 
 .sidebar.menu > a {
-  line-height: 24px;
-  padding: 10px 15px;
   height: auto;
+  padding: 10px 15px;
+  line-height: 24px;
   text-align: left;
 }
 
