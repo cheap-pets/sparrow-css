@@ -1,4 +1,8 @@
-@import "./mixins/typography.pcss";
+@define-mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 html {
   font-size: 14px;

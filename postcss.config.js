@@ -10,7 +10,7 @@ const postcssSelectorNot = require('postcss-selector-not')
 const postcssVars = require('postcss-simple-vars')
 const postcssUnprefix = require('postcss-unprefix')
 
-const { generate, presetPalettes } = require('@ant-design/colors')
+const variables = require('./variables')
 
 const plugins = [
   postcssImport,
@@ -18,7 +18,7 @@ const plugins = [
   postcssSelectorNot,
   postcssMixins,
   postcssVars({
-    variables: options.postcssVariables
+    variables
   }),
   postcssNested,
   postcssFor,
