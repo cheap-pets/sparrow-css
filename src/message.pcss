@@ -1,62 +1,23 @@
-.info {
-  color: $message-info-text-color;
-  background-color: $message-info-color;
-}
-.success {
-  color: $message-success-text-color;
-  background-color: $message-success-color;
-}
-.warn, .warning {
-  color: $message-warning-text-color;
-  background-color: $message-warning-color;
-}
-.error, .danger {
-  color: $message-danger-text-color;
-  background-color: $message-danger-color;
-}
-.float-message {
-  position: absolute;
-}
+@import "./mixins/shadow.pcss";
+@import "./mixins/typography.pcss";
+
 .float-message {
   position: fixed;
-  z-index: 210;
-  top: 0;
-  left: 50%;
-  min-width: 300px;
-  padding: 12px 15px;
-  line-height: 20px;
+  z-index: 250;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  line-height: 30px;
   text-align: center;
   opacity: 0;
-  transform: translate3d(-50%, -100%, 0);
+  transform: translateY(-200px);
   transition: all .5s ease-in-out;
-  @mixin shadow;
+  @mixin box-shadow;
   @mixin text-ellipsis;
 }
-.float-message.active {
-  opacity: 0.8;
-  transform: translate3d(-50%, 0, 0);
-}
 
-.alert {
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, .15);
-  line-height: 16px;
-  color: $alert-default-text-color;
-  background-color: $alert-default-color;
-}
-.alert.info {
-  color: $alert-info-text-color;
-  background-color: $alert-info-color;
-}
-.alert.success {
-  color: $alert-success-text-color;
-  background-color: $alert-success-color;
-}
-.alert.warning {
-  color: $alert-warning-text-color;
-  background-color: $alert-warning-color;
-}
-.alert.error, .alert.danger {
-  color: $alert-danger-text-color;
-  background-color: $alert-danger-color;
+.float-message.active {
+  opacity: .95;
+  transform: translateY(0);
 }

@@ -1,0 +1,24 @@
+@define-mixin primary {
+  color: #fff;
+  background-image: linear-gradient(to right top, mixc($primary, #000, .25), mixc($primary, #fff, .25));
+}
+
+@define-mixin secondary {
+  color: #fff;
+  background-image: linear-gradient(to right top, mixc($warning, #000, .25), mixc($warning, #fff, .25));
+}
+
+@define-mixin success {
+  color: #fff;
+  background-image: linear-gradient(to right top, mixc($success, #000, .25), mixc($success, #fff, .25));
+}
+
+@define-mixin warning {
+  color: #fff;
+  background-image: linear-gradient(to right top, mixc($warning, #000, .25), mixc($warning, #fff, .25));
+}
+
+@define-mixin danger {
+  color: #fff;
+  background-image: linear-gradient(to right top, mixc($danger, #000, .25), mixc($danger, #fff, .25));
+}

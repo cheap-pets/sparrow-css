@@ -1,0 +1,141 @@
+.list-group {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  background-color: $list-group-color;
+}
+
+.list-group-eof {
+  padding: 10px;
+  visibility: hidden;
+  text-align: center;
+  color: $list-group-eof-text-color;
+  background-color: $list-group-eof-color;
+}
+
+.list-group-eof.active {
+  visibility: visible;
+}
+
+.list-group-header,
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 24px;
+  color: $list-item-text-color;
+  @mixin text-ellipsis;
+}
+
+.list-group-header {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.list-group-item.hidden {
+  display: none;
+}
+
+.list-group-item > * {
+  line-height: 20px;
+}
+
+.list-group.compact > .list-group-item,
+.list-group-item.compact {
+  padding: 8px 10px;
+}
+
+.list-group-item:not(:first-child) {
+  border-top: 1px solid $list-item-border-color;
+}
+
+:not(.outline) > .list-group-item:last-child {
+  border-bottom: 1px solid $list-item-border-color;
+}
+
+.divider + .list-group-item {
+  border-top: 0;
+}
+
+.alternant > .list-group-item:nth-of-type(even) {
+  background-color: $list-item-alternant-color;
+}
+
+.list-group.gridless > .list-group-item {
+  border: 0;
+}
+
+a.list-group-item {
+  color: $list-item-text-color;
+}
+
+.list-group-item > .icon:first-child {
+  margin-right: 10px;
+  vertical-align: top;
+  color: $list-item-icon-color;
+}
+
+a.list-group-item:active,
+html:not(.mobile) a.list-group-item:hover:not([disabled]) {
+  background-color: $list-item-hover-color;
+}
+
+.list-group > .list-group-item.active {
+  background-color: $list-item-active-color;
+}
+
+.list-group-item.active,
+.list-group-item.active > *,
+.list-group-item.active > *:after {
+  color: $list-item-active-text-color;
+}
+
+.menu > .list-group-item {
+  padding-left: 44px;
+  border: 0 !important;
+}
+
+.menu > .list-group-item > .icon:first-child,
+.menu > .list-group-header > .icon:first-child {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  margin-right: 0;
+}
+
+.dropdown .list-group-item {
+  padding: 5px 10px;
+  border: 0 !important;
+}
+
+.dropdown .list-group-item:hover {
+  color: $dropdown-item-hover-text-color;
+  background-color: $dropdown-item-hover-color;
+}
+
+.divider {
+  padding: 8px 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: $divider-text-color;
+  background-color: $divider-color;
+}
+
+.dropdown .divider {
+  padding: 5px 10px;
+  background-color: $dropdown-divider-color;
+}
+
+.divider.line {
+  height: 1px;
+  padding: 0;
+  margin: 4px 0;
+  background-color: $divider-line-color;
+}
+
+.dropdown .divider:not(.line) ~ .list-group-item {
+  padding-left: 20px;
+}

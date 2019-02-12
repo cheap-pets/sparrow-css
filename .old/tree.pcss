@@ -1,0 +1,58 @@
+.tree,
+.tree-grid {
+  text-align: left;
+  background-color: $tree-color;
+}
+.tree-node {
+  position: relative;
+  padding-left: 20px;
+}
+.tree > .tree-node,
+.tree-grid .tree-node {
+  padding-left: 0;
+}
+.tree-node-item {
+  display: block;
+  max-width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 24px;
+  color: $tree-node-text-color;
+  @mixin text-ellipsis;
+}
+.tree-node-item .expand-toggle,
+.tree-node-item .icon {
+  line-height: 20px;
+}
+.tree-node-item .icon {
+  color: $tree-node-icon-color;
+}
+.tree-node-item .expand-toggle + *,
+.tree-node-item .icon + * {
+  margin-left: 5px;
+}
+
+html:not(.mobile) a.tree-node-item:hover:not([disabled]),
+a.tree-node-item:active {
+  background-color: $tree-node-hover-color;
+}
+.tree-node > .tree-node-item.active {
+  background-color: $tree-node-active-color;
+}
+.tree-node-item.active,
+.tree-node-item.active *,
+.tree-node-item.active .expand-toggle:after {
+  color: $tree-node-active-text-color;
+}
+
+.tree-grid .tree-node-item {
+  display: table;
+  width: 100%;
+}
+.tree-grid .cell {
+  display: table-cell;
+  overflow: hidden;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

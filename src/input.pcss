@@ -1,0 +1,140 @@
+input::-ms-clear { display: none; }
+
+select,
+textarea,
+input[type="text"],
+input[type="search"], 
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="color"] {
+  height: 34px;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, .025);
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 2px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, .9);
+  }
+  &:focus {
+    border-color: transparent;
+    box-shadow: inset 0 0 1px 1px $primary;
+  }
+}
+
+textarea {
+  padding: 10px;
+  resize: none;
+}
+
+.input-group.wide > input,
+input.wide {
+  width: 292px;
+}
+
+.input-group.full > input,
+input.full,
+.hbox > .input-group > input {
+  width: 100%;
+}
+
+.input-group {
+  position: relative;
+  
+  & > input {
+    padding-right: 34px;
+  }
+
+  & > .icon,
+  & > .caret {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    width: 32px;
+    color: rgba(0, 0, 0, .5);
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:first-child {
+      left: 1px;
+      right: auto;
+
+      & + input {
+        padding-left: 34px;
+        padding-right: 10px;
+      }
+    }
+  }
+  & > a.icon {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
+
+  &[readonly] {
+    & > input {
+      padding: 0 10px;
+    }
+    & > .icon,
+    & > .caret {
+      display: none;
+    }
+  }
+}
+
+.form-group {
+  padding: 10px;
+
+  & label {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    font-size: 0.92rem;
+    line-height: 34px;
+    white-space: nowrap;
+    padding-right: 10px;
+    color: rgba(0, 0, 0, .7);
+  }
+
+  &.important label:after {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 8px;
+    color: $danger;
+    content: "*";
+  }
+
+  & .input-group {
+    display: inline-block;
+  }
+
+  &.invalid {
+    & label {
+      color: $danger;
+    }
+    & input, & textarea {
+      box-shadow: inset 0 0 1px 1px $danger;
+    }
+  }
+}

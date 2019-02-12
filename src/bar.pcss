@@ -1,100 +1,122 @@
+@import "./mixins/typography.pcss";
+
 .bar {
-  position: relative;
-  display: block;
-  height: 44px;
-  padding: 5px;
-  overflow-y: visible;
-  white-space: nowrap;
-  background-color: $bar-color;
-}
-.bar.header,
-.bar.footer {
-  position: absolute;
-}
-.bar-center {
-  text-align: center;
-}
-.bar-right {
-  float: right;
-}
-.bar-right > .input-group > input {
-  width: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 40px;
+  background-color: rgba(0, 0, 0, .075);
+  overflow: visible;
+  padding: 0 10px;
+
+  & > * {
+    flex: 0 0 auto;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  & > .stretch {
+    flex: 1 1 auto;
+  }
+
+  & .btn,
+  & .btn.icon {
+    padding: 0 10px;
+    line-height: 30px;
+
+    &.btn-outline {
+      padding: 0 10px;
+      line-height: 28px;
+    }
+
+    &.active,
+    &:hover,
+    &[disabled] {
+      line-height: 30px;
+      padding: 0 10px;
+    }
+  }
+
+  & input,
+  & > input,
+  & .input-group > input {
+    height: 30px;
+  }
+
+  &.tab {
+    padding: 0;
+    & > *,
+    & > .input-group > input {
+      margin-right: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    & > label {
+      line-height: 40px;
+    }
+    & > .btn,
+    & > .btn.icon {
+      line-height: 40px;
+
+      &.outline {
+        line-height: 38px;
+      }
+
+      &.icon {
+        width: 40px;
+      }
+    }
+    & .input-group > input {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.tab-btn-group {
+    align-items: flex-end;
+
+    &.align-top {
+      align-items: flex-start;
+    }
+  }
+
+  & > .tab-btn-group {
+    align-self: flex-end;
+
+    &.align-top {
+      align-self: flex-start;
+    }
+  }
+
+  & > .align-center {
+    align-self: center;
+  }
 }
 
-.bar > label:first-child {
-  margin-left: 10px;
-}
-.bar input:not(:first-child),
-.bar .dropdown-group:not(:first-child),
-.bar .input-group:not(:first-child),
-.bar .btn:not(:first-child),
-.bar .btn-group:not(:first-child) {
-  margin-left: 5px;
-}
-.bar .btn-group.small {
-  margin-top: 5px;
-}
-.bar .btn-group > .btn,
-.bar .input-group > input {
-  margin-top: 0;
-  margin-left: 0
-}
-.bar > .fit {
-  width: 100%;
-}
-.bar.fit {
-  display: table;
-  width: 100%;
-}
-.bar.fit > * {
-  display: table-cell
-}
-.bar.fit input {
-  width: 100%;
+.tab {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  &.inline {
+    display: inline-flex;
+  }
+  & > * {
+    flex: 1 1 auto;
+  }
+  & > .fixed {
+    flex: 0 0 auto;
+  }
 }
 
-.bar-menu {
-  height: 34px;
-  padding: 0 5px;
-}
-.bar-tab {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  padding: 0;
-}
-.bar-tab > * {
-  display: table-cell;
-  width: 1%;
-  height: 100%;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-}
-.bar-tab > div {
-  padding: 0 5px;
-}
-.bar-tab > div > * {
-  width: 100%;
-}
-.bar-tab > .btn > p {
-  margin: 0;
-  font-size: 12px;
-  line-height: 14px; 
-}
-
-.bar.bar-tab > *,
-.bar.bar-menu > *,
-.bar.bar-tab > .btn,
-.bar.bar-menu > .btn {
-  margin-left: 0;
-  border-radius: 0;
-}
-
-.bar-large {
-  height: 50px;
-  padding: 8px 10px;
-}
-.bar-large > label:first-child {
-  margin-left: 15px;
+.tab-btn-group {
+  overflow: hidden;
+  & > .btn {
+    min-width: 80px;
+    border-radius: 4px 4px 0 0;
+    margin-right: 5px;
+    box-shadow: none;
+  }
 }

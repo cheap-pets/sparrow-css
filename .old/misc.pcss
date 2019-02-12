@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $link-text-color;
+  cursor: pointer;
+}
+html:not(.mobile) a:hover:not([disabled]) {
+  color: $link-hover-text-color;
+}
+a.negative {
+  color: $link-negative-text-color;
+}
+html:not(.mobile) a.negative:hover:not([disabled]) {
+  color: $link-negative-hover-text-color;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+.outline {
+  border: 1px solid $outline-color;
+}
+.page > .outline {
+  border-left: 0;
+  border-right: 0;
+}
+.outline-dotted {
+  border-style: dotted;
+}
+
+[disabled] {
+  color: $disabled-text-color;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+

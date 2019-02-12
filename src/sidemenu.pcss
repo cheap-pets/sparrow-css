@@ -1,0 +1,142 @@
+@import "./mixins/shadow.pcss";
+@import "./mixins/typography.pcss";
+@import "./mixins/transition.pcss";
+
+.side-menu {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 160px;
+  padding-top: 10px;
+  overflow: auto;
+  color: rgba(255, 255, 255, .9);
+  background-color: rgba(0, 0, 0, .75);
+
+  & + .content {
+    left: 160px; 
+  }
+
+  & .menu-item {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  & .submenu-item {
+    padding: 10px 5px 10px 35px;
+    font-size: 0.86rem;
+  }
+
+  & .menu-item,
+  & .submenu-item
+   {
+    position: relative;
+    display: block;
+    color: rgba(255, 255, 255, .9);
+    cursor: pointer;
+
+    & span {
+      display: inline-block;
+      line-height: 20px;
+    }
+
+    &> .icon {
+      width: 24px;
+      font-size: 1rem;
+    }
+
+    &[disabled] {
+      color: rgba(255, 255, 255, .35);
+    }
+
+    &:hover:not([disabled]):not(.submenu-head):not(.active) {
+      background: rgba(255, 255, 255, .25);
+    }
+
+    &.active {
+      color: #fff;
+      background-color: $primary;
+      @mixin shadow1;
+    }
+    @mixin text-ellipsis;
+  }
+
+  & .menu-item.submenu-head:hover {
+    background: rgba(255, 255, 255, .1);
+  }
+
+  & .submenu {
+    max-height: 0;
+    overflow: hidden;
+    @mixin transition-all;
+  }
+
+  & .submenu.expanded {
+    max-height: 1000px;
+  }
+
+  & .submenu-head {
+    padding-right: 30px;
+
+    &.expanded {
+      background-color: rgba(255, 255, 255, .05)
+    }
+
+    &:after {
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      font-size: 20px;
+      font-family: 'sparrow-icon';
+      line-height: 20px;
+      color: rgba(255, 255, 255, .25);
+      content: "\e6c0";
+      @mixin transition-all;
+    }
+
+    &.expanded:after {
+      color: #fff;
+      transform: rotate(-180deg);
+    }
+  }
+
+  @mixin shadow2;
+}
+
+.side-menu.light {
+  color: rgba(0, 0, 0, .95);
+  background-color: rgba(255, 255, 255, .9);
+
+  & .menu-item,
+  & .submenu-item
+   {
+    color: rgba(0, 0, 0, .95);
+
+    &[disabled] {
+      color: rgba(0, 0, 0, .35);
+    }
+
+    &:hover:not([disabled]):not(.active) {
+      background: rgba(0, 0, 0, .1);
+    }
+
+    &.active {
+      color: #fff;
+    }
+  }
+
+  & .submenu-head {
+    &.expanded {
+      background-color: rgba(0, 0, 0, .05);
+    }
+
+    &:after {
+      color: rgba(0, 0, 0, .25);
+    }
+
+    &.expanded:after {
+      color: rgba(0, 0, 0, .9);
+    }
+  }
+}

@@ -1,23 +1,21 @@
-@import "./mixins/typography.pcss";
 .table {
-  width: 100%;
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: rgba(255, 255, 255, .85);
-  cursor: default;
+  width: 100%;
+  background-color: $table-color;
 }
 .table tr {
-  border-bottom: 1px solid #e0e0e0
+  border-bottom: 1px solid $table-cell-gridline-color;
 }
 .table thead > tr:last-child {
-  border-bottom: 2px solid $primary;
+  border-bottom: 2px solid $table-header-border-color;
 }
 .table[gridline="none"] tr {
   border-bottom: 0;
 }
 .table[gridline="all"] td:not(:last-child) {
-  border-right: 1px solid #e0e0e0
+  border-right: 1px solid $table-cell-gridline-color;
 }
 .table-cell {
   display: table-cell;
@@ -25,16 +23,16 @@
 .table td,
 .table th,
 .table-cell {
-  color: #333;
   padding: 10px;
-  line-height: 20px;
+  line-height: 24px;
   vertical-align: top;
+  color: $table-cell-text-color;
 }
 .table > thead th,
 .table > thead td {
-  color: #666;
-  font-weight: 600;
-  @mixin text-ellipsis;
+  font-weight: 500;
+  color: $table-header-text-color;
+  background-color: $table-header-color;
 }
 .table.compact > td,
 .table.compact > th {
@@ -50,19 +48,17 @@ table.nowrap td {
 
 .alternant > tbody > tr:nth-child(even),
 .alternant > tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, .025);
+  background-color: $table-row-alternant-color;
+}
+.table > tbody > tr.active,
+.table > tr.active {
+  background-color: $table-row-active-color;
+}
+.table tr.active * {
+  color: $table-row-active-text-color;
 }
 
 .hover > tbody > tr:hover,
 .hover > tr:hover {
-  background-color: rgba(0, 0, 0, .075);
+  background-color: $table-row-hover-color;
 }
-
-.table > tbody > tr.active,
-.table > tr.active {
-  background-color: mixc($primary, .85);
-}
-.table tr.active * {
-  color: #fff
-}
-
