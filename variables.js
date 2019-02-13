@@ -1,28 +1,20 @@
-const { generate, presetPalettes } = require('@ant-design/colors')
-
-const red = 'rgb(244, 67, 54)'
-const orange = 'rgb(255, 152, 0)'
-const yellow = 'rgb(255, 205, 86)'
-const green = 'rgb(76, 175, 80)'
-const blue = 'rgb(3, 155, 229)'
-const purple = 'rgb(153, 102, 255)'
-const grey = 'rgb(201, 203, 207)'
-const white = 'rgb(255, 255, 255)'
+const preset = require('@ant-design/colors').presetPalettes
 
 const colors = {
-  red,
-  orange,
-  yellow,
-  green,
-  blue,
-  purple,
-  grey,
-  white,
-
-  primary: green,
-  secondary: purple,
-  success: green,
-  alert: yellow,
-  warning: orange,
-  danger: red
+  PRIMARY: preset.cyan,
+  SECONDARY: preset.gold,
+  DANGER: preset.red,
+  SUCCESS: preset.green,
+  WARNING: preset.orange,
+  GREY: preset.grey
 }
+
+const variables = {}
+
+Object.keys[colors].forEach(key => {
+  const current = colors[key]
+  variables[`CLR_${key}`] = current[6]
+  current.forEach((v, i) => variables[`CLR_${key}_${i}`] = v)
+})
+
+module.exports = variables
