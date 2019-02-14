@@ -12,6 +12,8 @@ const postcssUnprefix = require('postcss-unprefix')
 
 const variables = require('./variables')
 
+const isDevEnv = process.env.NODE_ENV === 'development'
+
 const plugins = [
   postcssImport,
   postcssUnprefix,
@@ -25,29 +27,32 @@ const plugins = [
   postcssConditionals,
   postcssMixColor,
   postcssAutoprefixer,
-  postcssClean({
+  postcssClean(isDevEnv ? {
+    level: {
+      1: {
+        semicolonAfterLastProperty: true
+      }
+    },
     format: {
       breaks: {
-        // controls where to insert breaks
-        afterAtRule: true, // controls if a line break comes after an at-rule; e.g. `@charset`; defaults to `false`
-        afterBlockBegins: true, // controls if a line break comes after a block begins; e.g. `@media`; defaults to `false`
-        afterBlockEnds: true, // controls if a line break comes after a block ends, defaults to `false`
-        afterComment: true, // controls if a line break comes after a comment; defaults to `false`
-        afterProperty: true, // controls if a line break comes after a property; defaults to `false`
-        afterRuleBegins: true, // controls if a line break comes after a rule begins; defaults to `false`
-        afterRuleEnds: true, // controls if a line break comes after a rule ends; defaults to `false`
-        beforeBlockEnds: true, // controls if a line break comes before a block ends; defaults to `false`
-        betweenSelectors: true // controls if a line break comes between selectors; defaults to `false`
+        afterAtRule: true,
+        afterBlockBegins: true,
+        afterBlockEnds: true,
+        afterComment: true,
+        afterProperty: true,
+        afterRuleBegins: true,
+        afterRuleEnds: true,
+        beforeBlockEnds: true,
+        betweenSelectors: true
       },
       spaces: {
-        // controls where to insert spaces
-        aroundSelectorRelation: true, // controls if spaces come around selector relations; e.g. `div > a`; defaults to `false`
-        beforeBlockBegins: true, // controls if a space comes before a block begins; e.g. `.block {`; defaults to `false`
-        beforeValue: true // controls if a space comes before a value; e.g. `width: 1rem`; defaults to `false`
+        aroundSelectorRelation: true,
+        beforeBlockBegins: true,
+        beforeValue: true
       },
       indentBy: 2
     }
-  })
+  } : undefined)
 ]
 
 module.exports = {
