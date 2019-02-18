@@ -6,7 +6,10 @@
     "node": ">8.9.0"
   },
   "main": "src/index.pcss",
-  "scripts": {},
+  "scripts": {
+    "build": "postcss src/index.pcss -o dist/sparrow-ui.css",
+    "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w"
+  },
   "files": [
     "src"
   ],
