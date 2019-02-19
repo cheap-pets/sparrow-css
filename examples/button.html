@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" main="css/index.pcss" href="main.css">
+  <link rel="stylesheet" href="../dist/sparrow-ui.css">
   <title>Buttons</title>
   <style>
     .content {
@@ -19,7 +19,7 @@
     }
 
     #normal .btn {
-      width: 110px;
+      width: 120px;
     }
   </style>
 </head>
@@ -30,62 +30,35 @@
     <h5>默认样式</h5>
     <div>
       <a class="btn">DEFAULT</a>
-      <a class="btn btn-link">LINK</a>
-      <a class="btn btn-outline">OUTLINE</a>
-      <a class="btn active">ACTIVE</a>
-      <a class="btn" disabled>DISABLED</a>
     </div>
-    <h5>主要动作样式</h5>
+    <h5>取消按钮</h5>
+    <div>
+      <a class="btn btn-grey">CANCEL</a>
+      <a class="btn btn-grey btn-text">TEXT</a>
+    </div>
+    <h5>主要颜色按钮</h5>
     <div>
       <a class="btn btn-primary">PRIMARY</a>
-      <a class="btn btn-primary btn-link">LINK</a>
+      <a class="btn btn-primary btn-text">TEXT</a>
       <a class="btn btn-primary btn-outline">OUTLINE</a>
       <a class="btn btn-primary active">ACTIVE</a>
       <a class="btn btn-primary" disabled>DISABLED</a>
     </div>
-    <h5>提交动作样式</h5>
+    <h5>次级颜色按钮</h5>
     <div>
-      <a class="btn btn-submit">SUBMIT</a>
-      <a class="btn btn-submit btn-link">LINK</a>
-      <a class="btn btn-submit btn-outline">OUTLINE</a>
-      <a class="btn btn-submit active">ACTIVE</a>
-      <a class="btn btn-submit" disabled>DISABLED</a>
+      <a class="btn btn-secondary">SECONDARY</a>
+      <a class="btn btn-secondary btn-text">TEXT</a>
+      <a class="btn btn-secondary btn-outline">OUTLINE</a>
+      <a class="btn btn-secondary active">ACTIVE</a>
+      <a class="btn btn-secondary" disabled>DISABLED</a>
     </div>
-    <h5>负面动作样式</h5>
+    <h5>危险颜色样式</h5>
     <div>
-      <a class="btn btn-negative">NEGATIVE</a>
-      <a class="btn btn-negative btn-link">LINK</a>
-      <a class="btn btn-negative btn-outline">OUTLINE</a>
-      <a class="btn btn-negative active">ACTIVE</a>
-      <a class="btn btn-negative" disabled>DISABLED</a>
-    </div>
-    <h5>透明按钮（较浅）</h5>
-    <div style="background: #B14E71;">
-      <a class="btn btn-light">LIGHTER</a>
-      <a class="btn btn-light btn-link">LINK</a>
-      <a class="btn btn-light btn-outline">OUTLINE</a>
-      <a class="btn btn-light active">ACTIVE</a>
-      <a class="btn btn-light" disabled>DISABLED</a>
-    </div>
-    <h5>透明按钮（较深）</h5>
-    <div style="background: #B14E71;">
-      <a class="btn btn-dark">DARKER</a>
-      <a class="btn btn-dark btn-link">LINK</a>
-      <a class="btn btn-dark btn-outline">OUTLINE</a>
-      <a class="btn btn-dark active">ACTIVE</a>
-      <a class="btn btn-dark" disabled>DISABLED</a>
-    </div>
-  </div>
-  <div>
-    <h3>各种尺寸</h3>
-    <div>
-      <a class="btn btn-outline small">小号按钮</a>
-      <a class="btn btn-primary">中号按钮</a>
-      <a class="btn btn-submit large">大号按钮</a>
-    </div>
-    <p></p>
-    <div>
-      <a class="btn btn-negative block">充满整行</a>
+      <a class="btn btn-danger">DANGER</a>
+      <a class="btn btn-danger btn-text">TEXT</a>
+      <a class="btn btn-danger btn-outline">OUTLINE</a>
+      <a class="btn btn-danger active">ACTIVE</a>
+      <a class="btn btn-danger" disabled>DISABLED</a>
     </div>
   </div>
   <div>
@@ -100,14 +73,9 @@
     <h3>按钮组</h3>
     <div>
       <div class="btn-group">
-        <a class="btn btn-outline">按钮一</a>
-        <a class="btn btn-outline">按钮二</a>
-        <a class="btn btn-outline">按钮三</a>
-      </div>
-      <div class="btn-group small">
-        <a class="btn btn-primary">小按钮四</a>
-        <a class="btn btn-primary btn-outline">小按钮五</a>
-        <a class="btn btn-primary btn-outline">小按钮六</a>
+        <a class="btn">按钮一</a>
+        <a class="btn">按钮二</a>
+        <a class="btn" disabled>按钮三</a>
       </div>
     </div>
   </div>
@@ -123,7 +91,7 @@
     </div>
   </div>
   <div>
-    <h3>分裂式按钮下拉菜单</h3>
+    <h3>分裂式按钮</h3>
     <div class="dropdown-group">
       <div class="btn-group">
         <a class="btn btn-primary">分裂按钮</a>

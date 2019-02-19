@@ -18,10 +18,22 @@
   box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 }
 
-@define-mixin box-shadow {
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .15);
+.box-shadow-1 {
+  @mixin shadow1;
 }
 
-@define-mixin input-shadow {
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .1);
+.box-shadow-2 {
+  @mixin shadow2;
+}
+
+.box-shadow-3 {
+  @mixin shadow3;
+}
+
+.box-shadow-4 {
+  @mixin shadow4;
+}
+
+.box-shadow-5 {
+  @mixin shadow5;
 }
