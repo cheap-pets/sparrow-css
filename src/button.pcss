@@ -111,6 +111,11 @@
     background: $CLR_GREY_2;
     box-shadow: none;
   }
+
+  &.icon {
+    width: 34px;
+    padding: 6px 0;
+  }
 }
 
 .btn-group {
@@ -122,17 +127,18 @@
     @mixin shadow1;
   }
 
-  &.tab-group > * {
-    flex: auto;
-  }
-
   &.block {
     display: flex;
   }
   
   & > .btn {
+    flex: 1 1 auto;
     box-shadow: none;
     z-index: 1;
+
+    &.icon {
+      flex: none;
+    }
 
     &:hover:not([disabled]) {
       z-index : 2;
