@@ -7,8 +7,8 @@
   },
   "main": "src/index.pcss",
   "scripts": {
-    "build": "postcss src/index.pcss -o dist/sparrow-ui.css",
-    "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w"
+    "build": "postcss src/index.pcss -o dist/sparrow-ui.css --env production",
+    "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w --env development"
   },
   "files": [
     "src"

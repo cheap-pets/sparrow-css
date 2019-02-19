@@ -28,11 +28,6 @@ const plugins = [
   postcssMixColor,
   postcssAutoprefixer,
   postcssClean(isDevEnv ? {
-    level: {
-      1: {
-        semicolonAfterLastProperty: true
-      }
-    },
     format: {
       breaks: {
         afterAtRule: true,
@@ -50,6 +45,7 @@ const plugins = [
         beforeBlockBegins: true,
         beforeValue: true
       },
+      semicolonAfterLastProperty: true,
       indentBy: 2
     }
   } : undefined)

@@ -5,6 +5,14 @@
   font-size: 1rem;
   line-height: 20px;
   text-align: center;
+  background: #fff;
   border: 1px solid $CLR_PRIMARY;
+  border-radius: $(INPUT_BORDER_RADIUS)px;
   cursor: pointer;
+
+  &[disabled] {
+    color: $CLR_GREY_6;
+    border-color: $CLR_GREY_6;
+    background: $CLR_GREY_2;
+  }
 }
