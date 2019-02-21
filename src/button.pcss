@@ -1,105 +1,159 @@
 .btn {
+  z-index: 1;
   display: inline-block;
-  padding: 6px 14px;
+  height: 34px;
+  padding: 0 14px;
   outline: none;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 32px;
   text-align: center;
   background: #fff;
   color: $CLR_PRIMARY;
   border: 1px solid $CLR_PRIMARY_3;
   border-radius: $(INPUT_BORDER_RADIUS)px;
   cursor: pointer;
-  @if $SHOW_BUTTON_SHADOW == 1 {
+  @if $BUTTON_SHADOW {
     @mixin shadow1;
   }
 
   &.btn-primary {
     color: #fff;
-    background: linear-gradient(to bottom, $CLR_PRIMARY_4, $CLR_PRIMARY_6);
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $BG_PRIMARY_GRADIENT;
+    } @else {
+      background: $BG_PRIMARY;
+    }
   }
+  
 
   &.btn-secondary {
     color: #fff;
-    border-color: $CLR_SECONDARY;
-    background: linear-gradient(to bottom, $CLR_SECONDARY_4, $CLR_SECONDARY_6);
+    border-color: $CLR_SECONDARY_3;
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $BG_SECONDARY_GRADIENT;
+    } @else {
+      background: $BG_SECONDARY;
+    }
 
     &.btn-outline,
     &.btn-text {
       color: $CLR_SECONDARY;
     }
 
-    &.active {
+    &[toggled] {
       color: #fff;
-      background: linear-gradient(to bottom, $CLR_SECONDARY_4, $CLR_SECONDARY_6);
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $BG_SECONDARY_GRADIEN_TOGGLED;
+      } @else {
+        background: $BG_SECONDARY_TOGGLED;
+      }
     }
   
     &:hover {
       color: #fff;
       border-color: $CLR_SECONDARY_3;
-      background: linear-gradient(to bottom, $CLR_SECONDARY_3, $CLR_SECONDARY_5);
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $BG_SECONDARY_GRADIENT_HOVER;
+      } @else {
+        background: $BG_SECONDARY_HOVER;
+      }
     }
   }
 
   &.btn-danger {
     color: #fff;
-    border-color: $CLR_DANGER;
-    background: linear-gradient(to bottom, $CLR_DANGER_4, $CLR_DANGER_6);
+    border-color: $CLR_DANGER_3;
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $BG_DANGER_GRADIENT;
+    } @else {
+      background: $BG_DANGER;
+    }
 
     &.btn-outline,
     &.btn-text {
       color: $CLR_DANGER;
     }
 
-    &.active {
+    &[toggled] {
       color: #fff;
-      background: linear-gradient(to bottom, $CLR_DANGER_4, $CLR_DANGER_6);
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $BG_DANGER_GRADIENT_TOGGLED;
+      } @else {
+        background: $BG_DANGER_TOGGLED;
+      }
     }
   
     &:hover {
       color: #fff;
       border-color: $CLR_DANGER_3;
-      background: linear-gradient(to bottom, $CLR_DANGER_3, $CLR_DANGER_5);
-    }
-  }
-
-  &.btn-outline,
-  &.btn-text {
-    color: $CLR_PRIMARY;
-    background: #fff;
-  }
-
-  &.btn-text {
-    border-color: #fff;
-    box-shadow: none;
-  }
-
-  &.active {
-    color: #fff;
-    background: linear-gradient(to bottom, $CLR_PRIMARY_4, $CLR_PRIMARY_6);
-  }
-
-  &:hover {
-    color: #fff;
-    border-color: $CLR_PRIMARY_3;
-    background: linear-gradient(to bottom, $CLR_PRIMARY_3, $CLR_PRIMARY_5);
-    @if $SHOW_BUTTON_SHADOW == 1 {
-      @mixin shadow2;
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $BG_DANGER_GRADIENT_HOVER;
+      } @else {
+        background: $BG_DANGER_HOVER;
+      }
     }
   }
 
   &.btn-grey {
     color: $CLR_GREY_7;
     border-color: $CLR_GREY_5;
+    background: $CLR_GREY_3;
 
     &.btn-text {
       border-color: #fff;
+    }
+
+    &.btn-outline,
+    &.btn-text {
+      color: $CLR_GREY_7;
+    }
+
+    &[toggled] {
+      color: $CLR_GREY_8;
+      border-color: $CLR_GREY_6;
+      background: $CLR_GREY_4;
     }
   
     &:hover {
       color: $CLR_GREY_8;
       border-color: $CLR_GREY_5;
       background: $CLR_GREY_2;
+    }
+  }
+
+  &.btn-outline {
+    color: $CLR_PRIMARY;
+    background: #fff;
+  }
+
+  &.btn-text {
+    color: $CLR_PRIMARY;
+    border-color: #fff;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &[toggled] {
+    z-index: 2;
+    color: #fff;
+    box-shadow: none;
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $BG_PRIMARY_GRADIENT_TOGGLED;
+    } @else {
+      background: $BG_PRIMARY_TOGGLED;
+    }
+  }
+
+  &:hover {
+    z-index: 3;
+    color: #fff;
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $BG_PRIMARY_GRADIENT_HOVER;
+    } @else {
+      background: $BG_PRIMARY_HOVER;
+    }
+    @if $BUTTON_SHADOW == 1 {
+      @mixin shadow2;
     }
   }
 
@@ -112,18 +166,19 @@
     box-shadow: none;
   }
 
-  &.icon {
+  &.icon,
+  &.expand-trigger {
     width: 34px;
-    padding: 6px 0;
+    padding: 0;
   }
 }
 
 .btn-group {
   display: inline-flex;
   flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: stretch;
   border-radius: $(INPUT_BORDER_RADIUS)px;
-  @if $SHOW_BUTTON_SHADOW == 1 {
+  @if $BUTTON_SHADOW == 1 {
     @mixin shadow1;
   }
 
@@ -134,15 +189,15 @@
   & > .btn {
     flex: 1 1 auto;
     box-shadow: none;
-    z-index: 1;
 
-    &.icon {
+    &.icon,
+    &.expand-trigger {
       flex: none;
     }
 
     &:hover:not([disabled]) {
       z-index : 2;
-      @if $SHOW_BUTTON_SHADOW == 1 {
+      @if $BUTTON_SHADOW == 1 {
         @mixin shadow2;
       }
     }

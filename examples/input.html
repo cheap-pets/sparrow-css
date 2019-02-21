@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../dist/sparrow-ui.css">
+  <title>输入框与表单</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>输入框</h3>
+    <h5>普通状态</h5>
+    <input type="text" placeholder="请输入文字">
+    <h5>只读状态</h5>
+    <input type="text" value="我是只读的" readonly>
+  </div>
+  <div>
+    <h3>输入框组</h3>
+    <h5>带图标的输入框</h5>
+    <div class="input-group">
+      <i class="icon icon-search"></i>
+      <input type="text" value="图标在前边">
+    </div>
+    <div class="input-group">
+      <input type="text" value="图标在后边">
+      <i class="icon icon-search"></i>
+    </div>
+    <h5>带内置按钮的输入框</h5>
+    <div class="input-group">
+      <a class="icon icon-star"></a>
+      <input type="text" value="按钮在前边">
+    </div>
+    <div class="input-group">
+      <input type="text" value="按钮在后边">
+      <a class="expand-trigger"></a>
+    </div>
+    <h5>带普通按钮的输入框</h5>
+    <div class="input-group">
+      <input type="text" placeholder="请输入文字">
+      <a class="btn btn-primary icon icon-star"></a>
+    </div>
+  </div>
+</body>

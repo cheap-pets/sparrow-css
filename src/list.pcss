@@ -1,22 +1,7 @@
-@import "./typography.pcss";
-
 .list-group {
   list-style: none;
   font-size: 1rem;
-  color: #333;
   cursor: default;
-
-  & .item-padding {
-    padding: 5px;
-
-    &.indent {
-      padding-left: 30px;
-    }
-
-    & > .list-group-item {
-      padding: 5px;
-    }
-  }
 
   & .list-group-header,
   & .list-group-item {
@@ -29,26 +14,25 @@
       padding-left: 34px;
     }
 
-    & > .subtitle {
+    & .subtitle {
       font-size: 0.857em;
     }
 
-    & > span {
-      display: inline-block;
-    }
-
     &[disabled] {
-      color: #999;
+      color: $CLR_GREY;
     }
 
     & > .icon:first-child {
+      display: inline-block;
       width: 24px;
       vertical-align: top;
     }
 
     & > input[type="checkbox"] {
       vertical-align: middle;
-      margin: 0 5px 0 0;
+      &:first-child {
+        margin-right: 5px;
+      }
     }
 
     @mixin text-ellipsis;
@@ -57,39 +41,34 @@
   & .list-group-header {
     font-size: 0.857rem;
     font-weight: 600;
-    color: #555;
-    background-color: rgba(0, 0, 0, .05);
+    background: $CLR_GREY_2;
+
+    &.header-line {
+      background: transparent;
+    }
   }
 
   & a.list-group-item,
   & a.list-group-header {
-    & .hover-stuff {
-      margin-left: 10px;
-      visibility: hidden;
-      font-size: 0.875rem;
+    cursor: pointer;
+
+    &:hover,
+    &:hover:nth-of-type(even) {
+      background: $CLR_PRIMARY_0;
     }
-    &:hover {
-      background-color: rgba(0, 0, 0, .075);
-      cursor: pointer;
-      & .hover-stuff {
-        visibility: visible;
-      }
-    }
-    &.active {
-      color: #eee;
-      background-color: mixc($primary, .85);
-      & > .icon {
-        color: #eee;
-      }
+    &.active,
+    &.active:nth-of-type(even) {
+      color: #fff;
+      background: $BG_PRIMARY;
     }
     &[disabled] {
       cursor: default;
-      background-color: transparent;
+      background: transparent;
     }
   }
 
   &.alternate > .list-group-item:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, .025);
+    background: $CLR_GREY_2;
   }
 }
 
@@ -117,11 +96,11 @@
   }
 
   & .list-row:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, .025);
+    background: rgba(0, 0, 0, .025);
   }
 
   & a.list-row:hover:not([disabled]) {
-    background-color: rgba(0, 0, 0, .08);
+    background: rgba(0, 0, 0, .08);
   }
 
   & .col-divider {

@@ -10,8 +10,9 @@ const colors = {
 }
 
 const variables = {
-  INPUT_BORDER_RADIUS: 4,
-  SHOW_BUTTON_SHADOW: 1
+  INPUT_BORDER_RADIUS: 3,
+  BUTTON_SHADOW: 1,
+  BUTTON_GRADIENT_BACKGROUND: 1
 }
 
 Object.keys(colors).forEach(key => {
