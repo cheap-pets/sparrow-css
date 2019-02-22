@@ -128,9 +128,11 @@
 
   &.btn-text {
     color: $CLR_PRIMARY;
-    border-color: #fff;
     background: transparent;
     box-shadow: none;
+    &:not(:hover, [disabled], [toggled]) {
+      border-color: transparent;
+    }
   }
 
   &[toggled] {
@@ -167,9 +169,13 @@
   }
 
   &.icon,
-  &.expand-trigger {
+  &[toggle-type]:empty {
     width: 34px;
     padding: 0;
+  }
+
+  &[toggle-type]:not(:empty)::after {
+    margin-left: 5px;
   }
 }
 
@@ -191,7 +197,7 @@
     box-shadow: none;
 
     &.icon,
-    &.expand-trigger {
+    &[toggle-type] {
       flex: none;
     }
 

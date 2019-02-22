@@ -11,6 +11,7 @@
       width: 120px;
     }
   </style>
+  <script type="text/javascript" src="examples.js"></script>
 </head>
 
 <body>
@@ -55,7 +56,7 @@
   </div>
   <div>
     <h3>按钮图标</h3>
-    <a class="btn">TRIANGLE <span class="icon icon-key-down"></span></a>
+    <a class="btn" toggle-type="expand">下拉按钮</a>
     <a class="btn btn-secondary">ICON <span class="icon icon-safe"></span></a>
     <a class="btn btn-primary icon icon-star-half"></a>
   </div>
@@ -67,12 +68,16 @@
       <a class="btn" disabled>按钮三</a>
     </div>
     <div class="btn-group">
-      <a class="btn btn-primary">分裂按钮</a>
-      <a class="btn btn-primary expand-trigger"></a>
+      <a class="btn btn-primary">下拉按钮</a>
+      <a class="btn btn-primary" toggle-type="expand"></a>
     </div>
     <div class="btn-group">
-      <a class="btn icon icon-star"></a>
-      <a class="btn">分裂按钮</a>
+      <a class="btn" toggle-type="star"></a>
+      <a class="btn">星星按钮</a>
     </div>
+    <div class="btn-group">
+        <a class="btn btn-primary" toggle-type="checkbox"></a>
+        <a class="btn btn-primary">勾选按钮</a>
+      </div>
   </div>
 </body>

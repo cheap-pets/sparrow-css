@@ -42,5 +42,6 @@
     "postcss-selector-not": "^4.0.0",
     "postcss-simple-vars": "^5.0.1",
     "postcss-unprefix": "^2.1.4"
-  }
+  },
+  "dependencies": {}
 }

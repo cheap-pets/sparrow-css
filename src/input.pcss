@@ -59,20 +59,15 @@ textarea {
   }
 
   & > .icon,
-  & > .expand-trigger {
+  & > [toggle-type] {
     position: absolute;
     top: 1px;
     bottom: 1px;
     right: 1px;
     width: 32px;
     height: auto;
-
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    line-height: 32px;
+    text-align: center;
 
     &:first-child {
       left: 1px;
@@ -85,17 +80,17 @@ textarea {
     }
   }
 
-  & > .expand-trigger.expanded:before {
-    transform: translate(-50%, -50%) rotate(-180deg);
-  }
-
-  & > a {
+  & > a:not(.btn) {
     cursor: pointer;
     color: rgba(0, 0, 0, .5);
 
     &:hover {
       background-color: rgba(0, 0, 0, .075);
     }
+  }
+
+  & > .btn {
+    line-height: 30px;
   }
 
   &[readonly] {

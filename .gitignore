@@ -64,11 +64,5 @@ yarn.lock
 # VSCode file
 .vscode
 
-# dist
-dist/
-
-# Examples Dist
-examples/dist/*
-
 # package-lock file
 package-lock.json

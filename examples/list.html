@@ -6,18 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../dist/sparrow-ui.css">
   <title>列表</title>
-  <script type="text/javascript">
-    document.addEventListener('click', event => {
-      const target = event.target
-      if (target.tagName.toLowerCase() === 'a' && target.classList && target.classList.contains('list-group-item')) {
-        const lastActive = target.parentNode.querySelector('.active')
-        if (lastActive) lastActive.classList.remove('active')
-        target.classList.contains('active')
-          ? target.classList.remove('active')
-          : target.classList.add('active')
-      }
-    })
-  </script>
+  <script type="text/javascript" src="examples.js"></script>
 </head>
 
 <body>
@@ -58,15 +47,14 @@
         <i class="icon icon-star"></i>陈学洋
       </a>
     </div>
-    <h3>表示可钻取的右尖括号</h3>
+    <h3>带操作图标的列表项</h3>
     <div class="list-group outline dashed">
-      <a class="list-group-item drill">张晓泉</a>
-      <a class="list-group-item drill">江磊</a>
-      <a class="list-group-item drill">张兵</a>
-      <a class="list-group-item drill">陈学洋</a>
+      <a class="list-group-item" toggle="expand">张晓泉</a>
+      <a class="list-group-item" toggle="navigate">江磊</a>
+      <a class="list-group-item drill" toggle="check">张兵</a>
     </div>
     <h3>分隔、分组项</h3>
-    <div class="list-group outline">
+    <div class="list-group outline dashed">
       <div class="list-group-header header-line">小组一</div>
       <a class="list-group-item">张晓泉</a>
       <a class="list-group-item">江磊</a>
@@ -76,10 +64,14 @@
     </div>
     <h3>列表项缩进</h3>
     <div class="list-group outline dashed">
-      <div class="list-group-header">小组一</div>
+      <div class="list-group-header">
+        <i class="icon icon-group"></i>小组一
+      </div>
       <a class="list-group-item indent">张晓泉</a>
       <a class="list-group-item indent">江磊</a>
-      <div class="list-group-header">小组二</div>
+      <div class="list-group-header">
+        <i class="icon icon-group"></i>小组二
+      </div>
       <a class="list-group-item indent">张兵</a>
       <a class="list-group-item indent">陈学洋</a>
     </div>

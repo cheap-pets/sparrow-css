@@ -1,8 +1,8 @@
 const preset = require('@ant-design/colors').presetPalettes
 
 const colors = {
-  PRIMARY: preset.cyan,
-  SECONDARY: preset.magenta,
+  PRIMARY: preset.blue, // cyan,
+  SECONDARY: preset.cyan, // magenta,
   DANGER: preset.volcano,
   SUCCESS: preset.green,
   WARNING: preset.orange,
