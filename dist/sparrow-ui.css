@@ -682,6 +682,11 @@ textarea {
   line-height: 32px;
   text-align: center;
 }
+.input-group > .icon.btn,
+.input-group > [toggle-type].btn {
+  width: 32px;
+  line-height: 30px;
+}
 .input-group > .icon:first-child,
 .input-group > [toggle-type]:first-child {
   left: 1px;
@@ -754,6 +759,10 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.list-group .list-group-header.header-line,
+.list-group .list-group-item.header-line {
+  padding-bottom: 8px;
 }
 .list-group .list-group-header.indent,
 .list-group .list-group-item.indent {
