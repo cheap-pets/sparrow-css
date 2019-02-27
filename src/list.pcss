@@ -15,7 +15,7 @@
     }
 
     &.indent {
-      padding-left: 34px;
+      padding-left: 30px;
     }
 
     & .subtitle {
@@ -26,16 +26,19 @@
       color: $CLR_GREY;
     }
 
-    & > .icon:first-child {
+    & > .icon:first-child,
+    & > [toggle-type]:first-child {
       display: inline-block;
-      width: 24px;
+      width: 20px;
       vertical-align: top;
     }
 
-    & > input[type="checkbox"] {
-      vertical-align: middle;
-      &:first-child {
-        margin-right: 5px;
+    &[toggle-type] {
+      padding-right: 30px;
+      
+      &:after {
+        position: absolute;
+        right: 10px;
       }
     }
 
@@ -54,8 +57,6 @@
 
   & a.list-group-item,
   & a.list-group-header {
-    cursor: pointer;
-
     &:hover,
     &:hover:nth-of-type(even) {
       background: $CLR_PRIMARY_0;

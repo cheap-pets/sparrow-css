@@ -1,6 +1,5 @@
 .modal-mask,
 .area-mask {
-  position: fixed;
   z-index: 200;
   top: 0;
   bottom: 0;
@@ -8,18 +7,23 @@
   right: 0;
   display: block;
   overflow: hidden;
-  visibility: hidden;
   background-color: rgba(0, 0, 0, .1);
 }
-.modal-mask.active {
-  visibility: visible;
+
+.modal-mask {
+  position: fixed;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+  }
 }
 
 .area-mask {
   position: absolute;
   display: none;
-  visibility: visible;
-}
-.area-mask.active {
-  display: block;
+
+  &.active {
+    display: block;
+  }
 }
