@@ -5,15 +5,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../dist/sparrow-ui.css">
-  <title>列表</title>
+  <title>下拉元素</title>
   <script type="text/javascript" src="examples.js"></script>
 </head>
 
 <body>
   <div>
-    <h3></h3>
-
-    <h3></h3>
-
+    <h3>一般按钮下拉菜单</h3>
+    <div class="dropdown-group">
+      <a class="btn btn-secondary" toggle-type="expand">
+        下拉菜单
+      </a>
+      <div class="dropdown list-group">
+        <a class="list-group-item">菜单一</a>
+        <a class="list-group-item">菜单二</a>
+        <a class="list-group-item">菜单三</a>
+        <a class="list-group-item">菜单四</a>
+      </div>
+    </div>
+    <h3>分裂按钮下拉菜单</h3>
+    <div class="dropdown-group">
+      <div class="btn-group">
+        <a class="btn">分裂按钮</a>
+        <a class="btn" toggle-type="expand"></a>
+      </div>
+      <div class="dropdown list-group">
+        <a class="list-group-item">菜单一</a>
+        <a class="list-group-item">菜单二</a>
+        <a class="list-group-item">菜单三</a>
+        <a class="list-group-item">菜单四</a>
+      </div>
+    </div>
+    <h3>输入下拉选择</h3>
+    <div class="dropdown-group input-group" popup-state="on" readonly>
+      <input type="text" value="向下弹出">
+      <a toggle-type="expand"></a>
+      <div class="dropdown list-group">
+        <a class="list-group-item">菜单一</a>
+        <a class="list-group-item">菜单二</a>
+        <a class="list-group-item">菜单三</a>
+        <a class="list-group-item">菜单四</a>
+      </div>
+    </div>
+    <div class="dropdown-group input-group" popup-state="on" readonly>
+      <input type="text" value="向上弹出">
+      <a toggle-type="expand"></a>
+      <div class="dropdown list-group" dropdown-direction="top">
+        <a class="list-group-item">菜单一</a>
+        <a class="list-group-item">菜单二</a>
+        <a class="list-group-item">菜单三</a>
+        <a class="list-group-item">菜单四</a>
+      </div>
+    </div>
   </div>
 </body>

@@ -5,12 +5,13 @@
   "engines": {
     "node": ">8.9.0"
   },
-  "main": "src/index.pcss",
+  "module": "src/index.js",
   "scripts": {
     "build": "postcss src/index.pcss -o dist/sparrow-ui.css --env production",
     "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w --env development"
   },
   "files": [
+    "dist",
     "src"
   ],
   "repository": {
@@ -29,7 +30,7 @@
   "homepage": "https://github.com/cheap-pets/sparrow-css#readme",
   "devDependencies": {
     "@ant-design/colors": "^2.0.4",
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.4.9",
     "postcss": "7.0.14",
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^6.1.1",
@@ -38,10 +39,9 @@
     "postcss-import": "^12.0.1",
     "postcss-mix-color": "^0.1.6",
     "postcss-mixins": "^6.2.1",
-    "postcss-nested": "^4.1.1",
+    "postcss-nested": "^4.1.2",
     "postcss-selector-not": "^4.0.0",
-    "postcss-simple-vars": "^5.0.1",
+    "postcss-simple-vars": "^5.0.2",
     "postcss-unprefix": "^2.1.4"
-  },
-  "dependencies": {}
+  }
 }

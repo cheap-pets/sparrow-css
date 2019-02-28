@@ -75,6 +75,27 @@
   &.alternate > .list-group-item:nth-of-type(even) {
     background: $CLR_GREY_2;
   }
+
+  &.dropdown {
+    padding: 5px 0;
+
+    & > .list-group-header,
+    & > .list-group-item {
+      padding: 5px 10px;
+    }
+
+    & > a.list-group-item,
+    & > a.list-group-header {
+      &:hover,
+      &:hover:nth-of-type(even) {
+        color: #fff;
+        background: $BG_PRIMARY_HOVER;
+      }
+      &[disabled] {
+        background: transparent;
+      }
+    }
+  }
 }
 
 .column-list {
