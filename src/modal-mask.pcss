@@ -1,5 +1,4 @@
-.modal-mask,
-.area-mask {
+.modal-mask {
   z-index: 200;
   top: 0;
   bottom: 0;
@@ -14,16 +13,11 @@
   position: fixed;
   visibility: hidden;
 
-  &.active {
+  &[sparrow-popup="popup"] {
     visibility: visible;
   }
-}
 
-.area-mask {
-  position: absolute;
-  display: none;
-
-  &.active {
-    display: block;
+  &[mask-region="part"] {
+    position: absolute;
   }
 }
