@@ -2,8 +2,7 @@ document.addEventListener('click', event => {
   const target = event.target
   if (target.tagName.toLowerCase() === 'a' 
     && target.classList && target.classList.contains('list-group-item') 
-    && target.parentNode && target.parentNode.tagName !== 'dropdown'
-    && target.parentNode.tagName !== 'dropdown-group') {
+    && target.parentNode && target.parentNode.tagName !== 'dropdown') {
     const lastActive = target.parentNode.querySelector('.active')
     if (lastActive) lastActive.classList.remove('active')
     target.classList.contains('active')
@@ -11,14 +10,15 @@ document.addEventListener('click', event => {
       : target.classList.add('active')
   }
   const toggleType = target.getAttribute('toggle-type')
-  if (toggleType === 'expand') {
-    const expanded = target.getAttribute('expanded')
-    if (expanded || expanded === '') {
-      target.removeAttribute('expanded')
-    } else {
-      target.setAttribute('expanded', '')
-    }
-  } else if (toggleType === 'check') {
+  // if (toggleType === 'expand') {
+  //   const expanded = target.getAttribute('expanded')
+  //   if (expanded || expanded === '') {
+  //     target.removeAttribute('expanded')
+  //   } else {
+  //     target.setAttribute('expanded', '')
+  //   }
+  // } else 
+  if (toggleType === 'check') {
     const checked = target.getAttribute('checked')
     if (checked || checked === '') {
       target.removeAttribute('checked')
