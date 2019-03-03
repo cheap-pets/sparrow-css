@@ -2,7 +2,8 @@ document.addEventListener('click', event => {
   const target = event.target
   if (target.tagName.toLowerCase() === 'a' 
     && target.classList && target.classList.contains('list-group-item') 
-    && target.parentNode && target.parentNode.tagName !== 'dropdown') {
+    && target.parentNode && target.parentNode.tagName !== 'dropdown'
+    && target.parentNode.tagName !== 'dropdown-group') {
     const lastActive = target.parentNode.querySelector('.active')
     if (lastActive) lastActive.classList.remove('active')
     target.classList.contains('active')
