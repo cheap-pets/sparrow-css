@@ -1,0 +1,81 @@
+.dialog {
+  position: fixed;
+  z-index: 205;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  min-height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: $(POPUP_BORDER_RADIUS)px;
+  background-color: #fff;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: all .2s ease-in-out;
+
+  & > .dialog-header {
+    flex: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 1rem;
+    border-bottom: 2px solid $CLR_PRIMARY;
+
+    &[dlg-title]:before {
+      flex: auto;
+      font-weight: 600;
+      content: attr(dlg-title);
+      @mixin text-ellipsis;
+    }
+
+    & > [toggle-type="close"] {
+      color: $CLR_GREY;
+      font-size: 0.857rem;
+
+      &:hover {
+        color: $CLR_GREY_7;
+      }
+    }
+  }
+
+  &.warning > .dialog-header {
+    border-bottom-color: $CLR_DANGER;
+  }
+
+  & > .dialog-body {
+    flex: auto;
+    padding: 15px;
+    overflow: auto;
+    line-height: 20px;
+
+    [auto-height] {
+      flex: none;
+    }
+  }
+
+  & > .dialog-footer {
+    flex: none;
+    height: 54px;
+    padding: 10px 15px;
+    text-align: right;
+    background-color: $CLR_GREY_1;
+
+    & > .btn {
+      min-width: 75px;
+
+      & + .btn {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @mixin shadow2;
+}
+
+[sparrow-popup="popup"] > .dialog {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}

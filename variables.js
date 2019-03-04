@@ -12,7 +12,8 @@ const colors = {
 const variables = {
   INPUT_BORDER_RADIUS: 3,
   BUTTON_SHADOW: 1,
-  BUTTON_GRADIENT_BACKGROUND: 1
+  BUTTON_GRADIENT_BACKGROUND: 1,
+  POPUP_BORDER_RADIUS: 0
 }
 
 Object.keys(colors).forEach(key => {

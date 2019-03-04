@@ -17,6 +17,16 @@
   }
 }
 
+[toggle-type="close"] {
+  &:after {
+    content: "\e64a";
+    transition: transform .1s ease-in-out;
+  }
+  &:hover::after {
+    transform: scale(1.15);
+  }
+}
+
 [toggle-type="navigate"] {
   &:after {
     content: "\e6c2";

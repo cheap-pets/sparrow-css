@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../dist/sparrow-ui.css">
+  <title>抽屉</title>
+  <script type="text/javascript" src="popup.js"></script>
+</head>
+
+<body>
+  <div>
+    <h3>浮出抽屉</h3>
+    <a class="btn btn-primary" popup-action="open" popup-target="[drawer-from=top]">上方</a>
+    <a class="btn btn-primary" popup-action="open" popup-target="#drawer-bottom">下方</a>
+    <a class="btn btn-primary" popup-action="open" popup-target="[drawer-from=left]">左侧</a>
+    <a class="btn btn-primary" popup-action="open" popup-target="#drawer-right">右侧</a>
+  </div>
+  <div class="drawer" drawer-from="top">
+    <div class="list-group alternate">
+      <a class="list-group-item">列表项 1</a>
+      <a class="list-group-item">列表项 2</a>
+      <a class="list-group-item">列表项 3</a>
+      <a class="list-group-item">列表项 5</a>
+    </div>
+  </div>
+  <div class="modal-mask" id="drawer-bottom">
+    <div class="drawer" drawer-from="bottom">
+      <div class="list-group alternate">
+        <a class="list-group-item">列表项 1</a>
+        <a class="list-group-item">列表项 2</a>
+        <a class="list-group-item">列表项 3</a>
+        <a class="list-group-item">列表项 5</a>
+      </div>
+    </div>
+  </div>
+  <div class="drawer" drawer-from="left" style="width: 200px;">
+    <div class="list-group alternate">
+      <a class="list-group-item">列表项 1</a>
+      <a class="list-group-item">列表项 2</a>
+      <a class="list-group-item">列表项 3</a>
+      <a class="list-group-item">列表项 5</a>
+    </div>
+  </div>
+  <div class="modal-mask" id="drawer-right">
+    <div class="drawer" drawer-from="right" style="width: 200px;">
+      <div class="list-group alternate">
+        <a class="list-group-item">列表项 1</a>
+        <a class="list-group-item">列表项 2</a>
+        <a class="list-group-item">列表项 3</a>
+        <a class="list-group-item">列表项 5</a>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    initPopup()
+  </script>
+</body>

@@ -1,3 +1,9 @@
+function emitEvent (el, eventName, canBubble = false, cancelable = true) {
+  const event = document.createEvent('CustomEvent')
+  event.initCustomEvent(eventName, canBubble, cancelable)
+  return el.dispatchEvent(event)
+}
+
 // 用于弹出元素的一些元素、属性名称常量
 const POPUP_ATTR = 'sparrow-popup'
 const POPUP_ACTION_ATTR = 'popup-action'
@@ -12,6 +18,8 @@ const POPUP_CLOSE_EVENT = 'popupclose'
 const DEFAULT_OPTIONS = {
   eventType: 'click'
 }
+
+let lastPopup
 
 function getPopupAction (el) {
   return el.getAttribute(POPUP_ACTION_ATTR)
@@ -30,37 +38,27 @@ function isPopupElement (el) {
   return el.matches(POPUP_SELECTOR)
 }
 
-function emitEvent (el, eventName, canBubble = false, cancelable = false, detail, originalEvent) {
-  let e = document.createEvent('CustomEvent')
-  e.initCustomEvent(eventName, canBubble, cancelable, detail)
-  e.originalEvent = originalEvent
-  let ret = el.dispatchEvent(e)
-  if (ret === false && originalEvent) {
-    originalEvent.preventDefault()
-  }
-  return ret
-}
-
-function setPopupState (el, action, originalEvent) {
-  let popupEvent
+function setPopupState (el, action, event) {
+  const isOpened = el.getAttribute(POPUP_ATTR) === 'popup'
+  let popupState
   switch (action) {
     case 'open':
-      el.setAttribute(POPUP_ATTR, 'popup')
-      popupEvent = POPUP_OPEN_EVENT
+      if (!isOpened) popupState = 'popup'
       break
     case 'close':
-      el.setAttribute(POPUP_ATTR, '')
-      popupEvent = POPUP_CLOSE_EVENT
+      if (isOpened) popupState = ''
       break
     case 'toggle':
-      const isOpened = el.getAttribute(POPUP_ATTR) === 'popup'
-      el.setAttribute(POPUP_ATTR, isOpened ? '' : 'popup')
-      popupEvent = isOpened ? POPUP_CLOSE_EVENT : POPUP_OPEN_EVENT
+      popupState = isOpened ? '' : 'popup'
       break
   }
-  if (popupEvent) {
-    if (originalEvent) originalEvent.preventDefault()
-    emitEvent(el, popupEvent)
+  if (popupState !== undefined) {
+    const result = emitEvent(el, popupState === 'popup' ? POPUP_OPEN_EVENT : POPUP_CLOSE_EVENT)
+    if (result !== false) {
+      el.setAttribute(POPUP_ATTR, popupState)
+      if (popupState === 'popup') lastPopup = el
+      if (Object(event).originalTouchEvent) event.originalTouchEvent.preventDefault()
+    }
   }
 }
 
@@ -74,21 +72,20 @@ function whileParent (el, callbackFn) {
 
 function deactiveOthers (popupEl) {
   document.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(otherEl => {
-    const ignore = whileParent(popupEl, el => el !== otherEl) === false
+    const ignore = popupEl && (whileParent(popupEl, el => el !== otherEl) === false)
     if (!ignore) setPopupState(otherEl, 'close')
   })
 }
 
-function init (options) {
+function initPopup (options) {
   const { eventType } = {
     ...options,
     ...DEFAULT_OPTIONS
   }
 
   document.addEventListener(eventType, event => {
-    // originalEvent & originalTarget are exported by sparrow-claw
-    let { originalEvent, originalTarget, target } = event
-    target = originalTarget || target
+    // originalTouchEvent & originalTouchTarget are exported by sparrow-claw
+    const target = event.originalTouchTarget || event.target
 
     let action
     let popupEl
@@ -110,6 +107,12 @@ function init (options) {
       })
     }
     deactiveOthers(popupEl)
-    if (popupEl) setPopupState(popupEl, action, originalEvent)
+    if (popupEl) setPopupState(popupEl, action, event)
+  })
+
+  document.addEventListener('keyup', event => {
+    if (event.keyCode === 27 && lastPopup) {
+      setPopupState(lastPopup, 'close')
+    }
   })
 }
