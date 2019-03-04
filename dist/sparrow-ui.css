@@ -948,6 +948,7 @@ textarea {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
+.drawer[drawer-region=part],
 .modal-mask > .drawer {
   position: absolute;
 }

@@ -38,12 +38,16 @@
   @mixin shadow3;
 }
 
-.modal-mask > .drawer {
+
+.modal-mask > .drawer,
+.drawer[drawer-region="part"] {
   position: absolute;
 }
 
-[sparrow-popup="popup"] > .drawer,
-[sparrow-popup="popup"].drawer {
-  opacity: 1;
-  transform: translate(0, 0);
+[sparrow-popup="popup"] {
+  &.drawer,
+  & > .drawer {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
