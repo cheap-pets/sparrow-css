@@ -19,8 +19,6 @@ const DEFAULT_OPTIONS = {
   eventType: 'click'
 }
 
-let lastPopup
-
 function getPopupAction (el) {
   return el.getAttribute(POPUP_ACTION_ATTR)
 }
@@ -53,10 +51,8 @@ function setPopupState (el, action, event) {
       break
   }
   if (popupState !== undefined) {
-    const result = emitEvent(el, popupState === 'popup' ? POPUP_OPEN_EVENT : POPUP_CLOSE_EVENT)
-    if (result !== false) {
+    if (emitEvent(el, popupState === 'popup' ? POPUP_OPEN_EVENT : POPUP_CLOSE_EVENT) !== false) {
       el.setAttribute(POPUP_ATTR, popupState)
-      if (popupState === 'popup') lastPopup = el
       if (Object(event).originalTouchEvent) event.originalTouchEvent.preventDefault()
     }
   }
@@ -111,8 +107,14 @@ function initPopup (options) {
   })
 
   document.addEventListener('keyup', event => {
-    if (event.keyCode === 27 && lastPopup) {
-      setPopupState(lastPopup, 'close')
+    if (event.keyCode === 27) {
+      const popups = []
+      document.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(el => {
+        if (!el.querySelector(POPUP_OPENED_SELECTOR)) {
+          popups.push(el)
+        }
+      })
+      popups.forEach(el => setPopupState(el, 'close'))
     }
   })
 }

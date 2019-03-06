@@ -9,18 +9,18 @@
   <script type="text/javascript" src="examples.js"></script>
   <script type="text/javascript" src="popup.js"></script>
   <script type="text/javascript">
-    init()
+    initPopup()
   </script>
 </head>
 
 <body>
   <div>
     <h3>一般按钮下拉菜单</h3>
-    <div class="dropdown-group">
-      <a class="btn btn-secondary" toggle-type="expand">
+    <div class="dropdown-group" sparrow-popup>
+      <a class="btn btn-secondary" toggle-type="expand" popup-action="toggle">
         下拉菜单
       </a>
-      <div class="dropdown list-group">
+      <div class="dropdown list-group" dropdown-align="justify">
         <a class="list-group-item">菜单一</a>
         <a class="list-group-item">菜单二</a>
         <a class="list-group-item">菜单三</a>
@@ -28,12 +28,12 @@
       </div>
     </div>
     <h3>分裂按钮下拉菜单</h3>
-    <div class="dropdown-group">
+    <div class="dropdown-group" sparrow-popup>
       <div class="btn-group">
         <a class="btn">分裂按钮</a>
-        <a class="btn" toggle-type="expand"></a>
+        <a class="btn" toggle-type="expand" popup-action="toggle"></a>
       </div>
-      <div class="dropdown list-group">
+      <div class="dropdown list-group" dropdown-align="justify">
         <a class="list-group-item">菜单一</a>
         <a class="list-group-item">菜单二</a>
         <a class="list-group-item">菜单三</a>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <h3>输入下拉选择</h3>
-    <div class="dropdown-group combo-box" sparrow-popup popup-action="toggle">
+    <div class="dropdown-group input-box" sparrow-popup popup-action="toggle">
       <input type="text" value="向下弹出" readonly>
       <a toggle-type="expand"></a>
       <div class="dropdown list-group" popup-action="close">
@@ -51,7 +51,7 @@
         <a class="list-group-item">菜单四</a>
       </div>
     </div>
-    <div class="dropdown-group combo-box" sparrow-popup>
+    <div class="dropdown-group input-box" sparrow-popup>
       <input type="text" value="向上弹出">
       <a toggle-type="expand" popup-action="toggle"></a>
       <div class="dropdown list-group" dropdown-direction="top" popup-action="close">

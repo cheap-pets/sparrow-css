@@ -1,11 +1,9 @@
-@import "./typography.pcss";
-
 .bar {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   height: 40px;
-  background-color: rgba(0, 0, 0, .075);
+  background-color: $CLR_GREY_1;
   overflow: visible;
   padding: 0 10px;
 
@@ -21,28 +19,27 @@
     flex: 1 1 auto;
   }
 
-  & .btn,
+  & .btn {
+    height: 30px;
+    line-height: 28px;
+  }
   & .btn.icon {
-    padding: 0 10px;
-    line-height: 30px;
-
-    &.btn-outline {
-      padding: 0 10px;
-      line-height: 28px;
-    }
-
-    &.active,
-    &:hover,
-    &[disabled] {
-      line-height: 30px;
-      padding: 0 10px;
-    }
+    width: 30px;
   }
 
-  & input,
-  & > input,
-  & .input-group > input {
+  & > input {
     height: 30px;
+  }
+  & .input-box{
+    & > input {
+      height: 30px;
+    }
+    & > .icon,
+    & > [toggle-type] {
+      height: 28px;
+      line-height: 28px;
+      width: 28px;
+    }
   }
 
   &.tab {
