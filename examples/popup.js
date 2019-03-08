@@ -19,13 +19,14 @@ const DEFAULT_OPTIONS = {
   eventType: 'click'
 }
 
-function getPopupAction (el) {
-  return el.getAttribute(POPUP_ACTION_ATTR)
-}
+let activePopups = []
 
-function getPopupTarget (el) {
-  const selector = el.getAttribute(POPUP_TARGET_ATTR)
-  return selector ? document.querySelector(selector) : undefined
+function whileParent (el, callbackFn) {
+  // this loop will handle the initial el
+  while (el && el !== document && el !== document.body) {
+    if (callbackFn(el) === false) return false
+    el = el.parentNode
+  }
 }
 
 function isMaskElement (el) {
@@ -36,7 +37,27 @@ function isPopupElement (el) {
   return el.matches(POPUP_SELECTOR)
 }
 
-function setPopupState (el, action, event) {
+function getPopupAction (el) {
+  return el.getAttribute(POPUP_ACTION_ATTR)
+}
+
+function getPopupTarget (el) {
+  const selector = el.getAttribute(POPUP_TARGET_ATTR)
+  return selector ? document.querySelector(selector) : undefined
+}
+
+function getParentGroup (el) {
+  let popupEl = document.body
+  whileParent(el, parent => {
+    if (parent !== el && isMaskElement(parent)) {
+      popupEl = parent
+      return false
+    }
+  })
+  return popupEl
+}
+
+function setPopupState (el, action, event, skipEmitEvent) {
   const isOpened = el.getAttribute(POPUP_ATTR) === 'popup'
   let popupState
   switch (action) {
@@ -51,25 +72,26 @@ function setPopupState (el, action, event) {
       break
   }
   if (popupState !== undefined) {
-    if (emitEvent(el, popupState === 'popup' ? POPUP_OPEN_EVENT : POPUP_CLOSE_EVENT) !== false) {
+    if (skipEmitEvent || emitEvent(el, popupState === 'popup' ? POPUP_OPEN_EVENT : POPUP_CLOSE_EVENT) !== false) {
       el.setAttribute(POPUP_ATTR, popupState)
+      const idx = activePopups.indexOf(el)
+      const len = activePopups.length
+      const isLastOne = len && idx === len - 1
+      if (idx >= 0 && (popupState === '' || !isLastOne)) activePopups.splice(idx, 1)
+      if (popupState === 'popup' && !isLastOne) activePopups.push(el)
       if (Object(event).originalTouchEvent) event.originalTouchEvent.preventDefault()
     }
   }
 }
 
-function whileParent (el, callbackFn) {
-  // this loop will handle the initial el
-  while (el && el !== document && el !== document.body) {
-    if (callbackFn(el) === false) return false
-    el = el.parentNode
-  }
+function deactiveChildren (popupEl) {
+  popupEl.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(childEl => setPopupState(childEl, 'close'))
 }
 
-function deactiveOthers (popupEl) {
-  document.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(otherEl => {
-    const ignore = popupEl && (whileParent(popupEl, el => el !== otherEl) === false)
-    if (!ignore) setPopupState(otherEl, 'close')
+function deactiveSiblings (parentEl, popupEl) {
+  parentEl.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(sibling => {
+    const ignore = whileParent(popupEl, el => el !== sibling) === false
+    if (!ignore) setPopupState(sibling, 'close')
   })
 }
 
@@ -85,8 +107,8 @@ function initPopup (options) {
 
     let action
     let popupEl
-
-    if (isMaskElement(target)) {
+    const targetIsMask = isMaskElement(target)
+    if (targetIsMask) {
       popupEl = target
       action = getPopupAction(target) || 'close'
     } else {
@@ -102,19 +124,19 @@ function initPopup (options) {
         if (popupEl) return false
       })
     }
-    deactiveOthers(popupEl)
+    targetIsMask ? deactiveChildren(popupEl) : deactiveSiblings(getParentGroup(target), popupEl)
     if (popupEl) setPopupState(popupEl, action, event)
   })
 
   document.addEventListener('keyup', event => {
     if (event.keyCode === 27) {
-      const popups = []
-      document.querySelectorAll(POPUP_OPENED_SELECTOR).forEach(el => {
+      while (activePopups.length) {
+        const el = activePopups[activePopups.length - 1]
         if (!el.querySelector(POPUP_OPENED_SELECTOR)) {
-          popups.push(el)
+          setPopupState(el, 'close')
+          return
         }
-      })
-      popups.forEach(el => setPopupState(el, 'close'))
+      }
     }
   })
 }
