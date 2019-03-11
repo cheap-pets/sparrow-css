@@ -1,8 +1,8 @@
-const preset = require('@ant-design/colors').presetPalettes
+const { generate, presetPalettes: preset } = require('@ant-design/colors')
 
 const colors = {
-  PRIMARY: preset.blue, // cyan,
-  SECONDARY: preset.cyan, // magenta,
+  PRIMARY: generate('#008CD6'),
+  SECONDARY: preset.gold,
   DANGER: preset.volcano,
   SUCCESS: preset.green,
   WARNING: preset.orange,
@@ -10,9 +10,9 @@ const colors = {
 }
 
 const variables = {
-  INPUT_BORDER_RADIUS: 3,
+  INPUT_BORDER_RADIUS: 2,
   BUTTON_SHADOW: 1,
-  BUTTON_GRADIENT_BACKGROUND: 1,
+  BUTTON_GRADIENT_BACKGROUND: 0,
   POPUP_BORDER_RADIUS: 0
 }
 

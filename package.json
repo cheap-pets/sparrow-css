@@ -1,6 +1,6 @@
 {
   "name": "sparrow-css",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "description": "set of styles for web application, code by postcss",
   "engines": {
     "node": ">8.9.0"
@@ -11,8 +11,8 @@
     "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w --env development"
   },
   "files": [
-    "dist",
-    "src"
+    "src",
+    "variables.js"
   ],
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/cheap-pets/sparrow-css#readme",
   "devDependencies": {
-    "@ant-design/colors": "^2.0.4",
     "autoprefixer": "^9.4.9",
     "postcss": "7.0.14",
     "postcss-clean": "^1.1.0",
@@ -43,5 +42,8 @@
     "postcss-selector-not": "^4.0.0",
     "postcss-simple-vars": "^5.0.2",
     "postcss-unprefix": "^2.1.4"
+  },
+  "dependencies": {
+    "@ant-design/colors": "^2.0.4"
   }
 }
