@@ -7,3 +7,58 @@
 .text-ellipsis {
   @mixin text-ellipsis;
 }
+
+.text-link,
+.text-link-danger {
+  text-decoration: none;
+  color: $CLR_PRIMARY;
+  cursor: pointer;
+}
+.text-link-danger {
+  color: $CLR_DANGER;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+.text-link[disabled] {
+  text-decoration: none;
+  cursor: default;
+}
+.negative {
+  color: #f44336;
+}
+
+.text-primary {
+  color: $CLR_PRIMARY;
+}
+
+.text-secondary {
+  color: $CLR_SECONDARY;
+}
+
+.text-success {
+  color: $CLR_SUCCESS;
+}
+
+.text-warning {
+  color: $CLR_WARNING;
+}
+
+.text-danger {
+  color: $CLR_DANGER;
+}
+
+.text-white {
+  color: #fff;
+}
+.text-black {
+  color: #333;
+}
+.text-gray{
+  color: #ccc
+}
+
+[disabled],
+.text-disabled {
+  color: rgba(0, 0, 0, .5);
+}
