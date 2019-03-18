@@ -27,6 +27,16 @@
   }
 }
 
+[toggle-type="clear"] {
+  &:after {
+    content: "\e636";
+    opacity: 0.5;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
 [toggle-type="navigate"] {
   &:after {
     content: "\e6c2";

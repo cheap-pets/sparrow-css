@@ -82,7 +82,19 @@ textarea {
         padding-left: 34px;
         padding-right: 10px;
       }
+      & ~ [toggle-type=clear] {
+        right: 1px;
+      }
     }
+  }
+
+  & > [toggle-type=clear] {
+    right: 34px;
+    display: none;
+  }
+
+  &:hover > [toggle-type=clear] {
+    display: inline-block;
   }
 
   & > a:not(.btn) {
