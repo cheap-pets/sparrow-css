@@ -481,28 +481,45 @@ body {
 }
 .btn {
   z-index: 1;
-  display: inline-block;
-  height: 34px;
-  padding: 0 14px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
   outline: 0;
   font-size: 1rem;
-  line-height: 32px;
-  text-align: center;
-  background: #fff;
-  color: #008cd6;
-  border: 1px solid #4dc2f0;
+  line-height: 20px;
+  background: #e8e8e8;
+  color: #595959;
+  border: 0 solid #bfbfbf;
   border-radius: 2px;
   cursor: pointer;
+  border-width: 1px;
+  padding: 0 15px;
   box-shadow: 0 1.5px 4px rgba(0,0,0,.24),0 1.5px 6px rgba(0,0,0,.12);
 }
 .btn.btn-primary {
   color: #fff;
-  background: #008cd6;
+  border-color: #4dc2f0;
+  background: linear-gradient(to bottom,#24a7e3,#006db0);
+}
+.btn.btn-primary.btn-outline,
+.btn.btn-primary.btn-text {
+  color: #008cd6;
+}
+.btn.btn-primary[toggled] {
+  color: #fff;
+  background: linear-gradient(to bottom,#008cd6,#00508a);
+}
+.btn.btn-primary:hover {
+  color: #fff;
+  border-color: #4dc2f0;
+  background: linear-gradient(to bottom,#4dc2f0,#008cd6);
 }
 .btn.btn-secondary {
   color: #fff;
   border-color: #ffd666;
-  background: #faad14;
+  background: linear-gradient(to bottom,#ffc53d,#d48806);
 }
 .btn.btn-secondary.btn-outline,
 .btn.btn-secondary.btn-text {
@@ -510,17 +527,16 @@ body {
 }
 .btn.btn-secondary[toggled] {
   color: #fff;
-  background: #d48806;
+  background: linear-gradient(to bottom,#faad14,#ad6800);
 }
 .btn.btn-secondary:hover {
   color: #fff;
-  border-color: #ffd666;
-  background: #ffc53d;
+  background: linear-gradient(to bottom,#ffd666,#faad14);
 }
 .btn.btn-danger {
   color: #fff;
   border-color: #ff9c6e;
-  background: #fa541c;
+  background: linear-gradient(to bottom,#ff7a45,#d4380d);
 }
 .btn.btn-danger.btn-outline,
 .btn.btn-danger.btn-text {
@@ -528,41 +544,35 @@ body {
 }
 .btn.btn-danger[toggled] {
   color: #fff;
-  background: #d4380d;
+  background: linear-gradient(to bottom,#fa541c,#ad2102);
 }
 .btn.btn-danger:hover {
   color: #fff;
-  border-color: #ff9c6e;
-  background: #ff7a45;
+  background: linear-gradient(to bottom,#ff9c6e,#fa541c);
 }
-.btn.btn-grey {
-  color: #595959;
-  border-color: #bfbfbf;
-  background: #e8e8e8;
+.btn.btn-danger,
+.btn.btn-primary,
+.btn.btn-secondary {
+  border-width: 0;
+  padding: 0 16px;
 }
-.btn.btn-grey.btn-text {
-  border-color: #fff;
-}
-.btn.btn-grey.btn-outline,
-.btn.btn-grey.btn-text {
-  color: #595959;
-}
-.btn.btn-grey[toggled] {
-  color: #262626;
-  border-color: #8c8c8c;
-  background: #d9d9d9;
-}
-.btn.btn-grey:hover {
-  color: #262626;
-  border-color: #bfbfbf;
-  background: #f5f5f5;
+.btn.btn-danger:hover,
+.btn.btn-danger[toggled],
+.btn.btn-primary:hover,
+.btn.btn-primary[toggled],
+.btn.btn-secondary:hover,
+.btn.btn-secondary[toggled] {
+  border-width: 0;
+  padding: 0 16px;
 }
 .btn.btn-outline {
-  color: #008cd6;
+  color: #595959;
   background: #fff;
+  border-width: 1px;
+  padding: 0 15px;
 }
 .btn.btn-text {
-  color: #008cd6;
+  color: #595959;
   background: 0 0;
   box-shadow: none;
 }
@@ -571,14 +581,14 @@ body {
 }
 .btn[toggled] {
   z-index: 2;
-  color: #fff;
-  box-shadow: none;
-  background: #006db0;
+  color: #262626;
+  border-color: #8c8c8c;
+  background: #d9d9d9;
 }
 .btn:hover {
   z-index: 3;
-  color: #fff;
-  background: #24a7e3;
+  color: #262626;
+  background: #f5f5f5;
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
 }
 .btn[disabled],
@@ -591,7 +601,13 @@ body {
 }
 .btn.icon,
 .btn[toggle-type]:empty {
-  width: 34px;
+  width: 32px;
+  padding: 0;
+}
+.btn.icon:hover,
+.btn.icon[toggled],
+.btn[toggle-type]:empty:hover,
+.btn[toggle-type]:empty[toggled] {
   padding: 0;
 }
 .btn[toggle-type]:not(:empty)::after {
@@ -621,10 +637,12 @@ body {
 }
 .btn-group > .btn:not(:first-child) {
   margin-left: -1px;
+  border-left-width: 1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group > .btn:not(:last-child) {
+  border-right-width: 1px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -647,7 +665,7 @@ input[type=url],
 input[type=week],
 select,
 textarea {
-  height: 34px;
+  height: 32px;
   padding: 0 10px;
   width: 200px;
   color: #262626;
@@ -740,7 +758,7 @@ textarea {
 }
 .input-box > input {
   width: 100%;
-  padding-right: 34px;
+  padding-right: 35px;
 }
 .input-box > .icon:not(a):not(.btn) {
   color: rgba(0,0,0,.3);
@@ -751,15 +769,15 @@ textarea {
   top: 1px;
   bottom: 1px;
   right: 1px;
-  width: 32px;
-  height: auto;
-  line-height: 32px;
+  display: inline-block;
+  line-height: 30px;
   text-align: center;
+  width: 30px;
+  height: auto;
 }
 .input-box > .icon.btn,
 .input-box > [toggle-type].btn {
-  width: 32px;
-  line-height: 30px;
+  width: 30px;
 }
 .input-box > .icon:first-child,
 .input-box > [toggle-type]:first-child {
@@ -768,32 +786,32 @@ textarea {
 }
 .input-box > .icon:first-child + input,
 .input-box > [toggle-type]:first-child + input {
-  padding-left: 34px;
+  padding-left: 35px;
   padding-right: 10px;
 }
 .input-box[buttons="2"] > input {
-  padding-right: 66px;
+  padding-right: 65px;
 }
 .input-box[buttons="2"] > input + .icon,
 .input-box[buttons="2"] > input + [toggle-type] {
-  right: 33px;
+  right: 30px;
 }
 .input-box[buttons="2"] > .icon:first-child + .icon,
 .input-box[buttons="2"] > .icon:first-child + [toggle-type],
 .input-box[buttons="2"] > [toggle-type]:first-child + .icon,
 .input-box[buttons="2"] > [toggle-type]:first-child + [toggle-type] {
-  left: 33px;
+  left: 30px;
   right: auto;
 }
 .input-box[buttons="2"] > .icon:first-child ~ input,
 .input-box[buttons="2"] > [toggle-type]:first-child ~ input {
-  padding-left: 66px;
+  padding-left: 65px;
   padding-right: 10px;
 }
 .input-box[buttons="2"] > .icon:first-child + input,
 .input-box[buttons="2"] > [toggle-type]:first-child + input {
-  padding-left: 34px;
-  padding-right: 34px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 .input-box[buttons="2"] > .icon:first-child + input + .icon,
 .input-box[buttons="2"] > .icon:first-child + input + [toggle-type],
@@ -807,9 +825,6 @@ textarea {
 }
 .input-box > a:not(.btn):hover {
   background-color: rgba(0,0,0,.075);
-}
-.input-box > .btn {
-  line-height: 30px;
 }
 .input-box[readonly] > input {
   padding: 0 10px;

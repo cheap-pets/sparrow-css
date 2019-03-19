@@ -1,3 +1,5 @@
+$inputButtonSize: calc($INPUT_HEIGHT - 2);
+
 input::-ms-clear { display: none; }
 
 select,
@@ -16,7 +18,7 @@ input[type="email"],
 input[type="url"],
 input[type="tel"],
 input[type="color"] {
-  height: 34px;
+  height: $(INPUT_HEIGHT)px;
   padding: 0 10px;
   width: 200px;
   color: $CLR_GREY_8;
@@ -51,7 +53,7 @@ textarea {
   
   & > input {
     width: 100%;
-    padding-right: 34px;
+    padding-right: calc(5 + $inputButtonSize)px;
   }
 
   & > .icon:not(a):not(.btn) {
@@ -64,14 +66,14 @@ textarea {
     top: 1px;
     bottom: 1px;
     right: 1px;
-    width: 32px;
-    height: auto;
-    line-height: 32px;
+    display: inline-block;
+    line-height: $(inputButtonSize)px;
     text-align: center;
+    width: $(inputButtonSize)px;
+    height: auto;
 
     &.btn {
-      width: 32px;
-      line-height: 30px;
+      width: $(inputButtonSize)px;
     }
 
     &:first-child {
@@ -79,7 +81,7 @@ textarea {
       right: auto;
 
       & + input {
-        padding-left: 34px;
+        padding-left: calc(5 + $inputButtonSize)px;
         padding-right: 10px;
       }
     }
@@ -87,10 +89,10 @@ textarea {
 
   &[buttons="2"] {
     & > input {
-      padding-right: 66px;
+      padding-right: calc(2 * $inputButtonSize + 5)px;
       & + .icon,
       & + [toggle-type] {
-        right: 33px;
+        right: $(inputButtonSize)px;
       }
     }
     & > .icon,
@@ -98,16 +100,16 @@ textarea {
       &:first-child {
         & + .icon,
         & + [toggle-type] {
-          left: 33px;
+          left: $(inputButtonSize)px;
           right: auto;
         }
         & ~ input {
-          padding-left: 66px;
+          padding-left: calc(2 * $inputButtonSize + 5)px;
           padding-right: 10px;
         }
         & + input {
-          padding-left: 34px;
-          padding-right: 34px;
+          padding-left: calc(5 + $inputButtonSize)px;
+          padding-right: calc(5 + $inputButtonSize)px;
           & + .icon,
           & + [toggle-type] {
             right: 1px;
@@ -124,10 +126,6 @@ textarea {
     &:hover {
       background-color: rgba(0, 0, 0, .075);
     }
-  }
-
-  & > .btn {
-    line-height: 30px;
   }
 
   &[readonly] {

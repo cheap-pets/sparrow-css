@@ -1,4 +1,5 @@
 const postcssAutoprefixer = require('autoprefixer')
+const postcssClac = require("postcss-calc")
 const postcssClean = require('postcss-clean')
 const postcssConditionals = require('postcss-conditionals')
 const postcssFor = require('postcss-for')
@@ -22,6 +23,7 @@ const plugins = [
   postcssVars({
     variables
   }),
+  postcssClac,
   postcssNested,
   postcssFor,
   postcssConditionals,
