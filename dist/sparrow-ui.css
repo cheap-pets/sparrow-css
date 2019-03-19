@@ -771,16 +771,35 @@ textarea {
   padding-left: 34px;
   padding-right: 10px;
 }
-.input-box > .icon:first-child ~ [toggle-type=clear],
-.input-box > [toggle-type]:first-child ~ [toggle-type=clear] {
+.input-box[buttons="2"] > input {
+  padding-right: 66px;
+}
+.input-box[buttons="2"] > input + .icon,
+.input-box[buttons="2"] > input + [toggle-type] {
+  right: 33px;
+}
+.input-box[buttons="2"] > .icon:first-child + .icon,
+.input-box[buttons="2"] > .icon:first-child + [toggle-type],
+.input-box[buttons="2"] > [toggle-type]:first-child + .icon,
+.input-box[buttons="2"] > [toggle-type]:first-child + [toggle-type] {
+  left: 33px;
+  right: auto;
+}
+.input-box[buttons="2"] > .icon:first-child ~ input,
+.input-box[buttons="2"] > [toggle-type]:first-child ~ input {
+  padding-left: 66px;
+  padding-right: 10px;
+}
+.input-box[buttons="2"] > .icon:first-child + input,
+.input-box[buttons="2"] > [toggle-type]:first-child + input {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+.input-box[buttons="2"] > .icon:first-child + input + .icon,
+.input-box[buttons="2"] > .icon:first-child + input + [toggle-type],
+.input-box[buttons="2"] > [toggle-type]:first-child + input + .icon,
+.input-box[buttons="2"] > [toggle-type]:first-child + input + [toggle-type] {
   right: 1px;
-}
-.input-box > [toggle-type=clear] {
-  right: 34px;
-  display: none;
-}
-.input-box:hover > [toggle-type=clear] {
-  display: inline-block;
 }
 .input-box > a:not(.btn) {
   cursor: pointer;

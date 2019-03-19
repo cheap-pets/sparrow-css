@@ -82,19 +82,39 @@ textarea {
         padding-left: 34px;
         padding-right: 10px;
       }
-      & ~ [toggle-type=clear] {
-        right: 1px;
-      }
     }
   }
 
-  & > [toggle-type=clear] {
-    right: 34px;
-    display: none;
-  }
-
-  &:hover > [toggle-type=clear] {
-    display: inline-block;
+  &[buttons="2"] {
+    & > input {
+      padding-right: 66px;
+      & + .icon,
+      & + [toggle-type] {
+        right: 33px;
+      }
+    }
+    & > .icon,
+    & > [toggle-type] {
+      &:first-child {
+        & + .icon,
+        & + [toggle-type] {
+          left: 33px;
+          right: auto;
+        }
+        & ~ input {
+          padding-left: 66px;
+          padding-right: 10px;
+        }
+        & + input {
+          padding-left: 34px;
+          padding-right: 34px;
+          & + .icon,
+          & + [toggle-type] {
+            right: 1px;
+          }
+        }
+      }
+    }
   }
 
   & > a:not(.btn) {
