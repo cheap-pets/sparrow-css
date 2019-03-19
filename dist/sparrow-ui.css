@@ -489,7 +489,7 @@ body {
   outline: 0;
   font-size: 1rem;
   line-height: 20px;
-  background: #e8e8e8;
+  background: #f5f5f5;
   color: #595959;
   border: 0 solid #bfbfbf;
   border-radius: 2px;
@@ -501,7 +501,7 @@ body {
 .btn.btn-primary {
   color: #fff;
   border-color: #4dc2f0;
-  background: linear-gradient(to bottom,#24a7e3,#006db0);
+  background: #008cd6;
 }
 .btn.btn-primary.btn-outline,
 .btn.btn-primary.btn-text {
@@ -509,17 +509,17 @@ body {
 }
 .btn.btn-primary[toggled] {
   color: #fff;
-  background: linear-gradient(to bottom,#008cd6,#00508a);
+  background: #006db0;
 }
 .btn.btn-primary:hover {
   color: #fff;
   border-color: #4dc2f0;
-  background: linear-gradient(to bottom,#4dc2f0,#008cd6);
+  background: #24a7e3;
 }
 .btn.btn-secondary {
   color: #fff;
   border-color: #ffd666;
-  background: linear-gradient(to bottom,#ffc53d,#d48806);
+  background: #faad14;
 }
 .btn.btn-secondary.btn-outline,
 .btn.btn-secondary.btn-text {
@@ -527,16 +527,16 @@ body {
 }
 .btn.btn-secondary[toggled] {
   color: #fff;
-  background: linear-gradient(to bottom,#faad14,#ad6800);
+  background: #d48806;
 }
 .btn.btn-secondary:hover {
   color: #fff;
-  background: linear-gradient(to bottom,#ffd666,#faad14);
+  background: #ffc53d;
 }
 .btn.btn-danger {
   color: #fff;
   border-color: #ff9c6e;
-  background: linear-gradient(to bottom,#ff7a45,#d4380d);
+  background: #fa541c;
 }
 .btn.btn-danger.btn-outline,
 .btn.btn-danger.btn-text {
@@ -544,11 +544,11 @@ body {
 }
 .btn.btn-danger[toggled] {
   color: #fff;
-  background: linear-gradient(to bottom,#fa541c,#ad2102);
+  background: #d4380d;
 }
 .btn.btn-danger:hover {
   color: #fff;
-  background: linear-gradient(to bottom,#ff9c6e,#fa541c);
+  background: #ff7a45;
 }
 .btn.btn-danger,
 .btn.btn-primary,
@@ -588,7 +588,7 @@ body {
 .btn:hover {
   z-index: 3;
   color: #262626;
-  background: #f5f5f5;
+  background: #fafafa;
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
 }
 .btn[disabled],
@@ -631,18 +631,19 @@ body {
 .btn-group > .btn[toggle-type] {
   flex: none;
 }
+.btn-group > .btn[toggle-type] {
+  opacity: .85;
+}
 .btn-group > .btn:hover:not([disabled]) {
   z-index: 2;
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
 }
 .btn-group > .btn:not(:first-child) {
   margin-left: -1px;
-  border-left-width: 1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group > .btn:not(:last-child) {
-  border-right-width: 1px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
