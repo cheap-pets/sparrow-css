@@ -501,7 +501,7 @@ body {
 .btn.btn-primary {
   color: #fff;
   border-color: #4dc2f0;
-  background: #008cd6;
+  background: linear-gradient(to bottom,#24a7e3,#006db0);
 }
 .btn.btn-primary.btn-outline,
 .btn.btn-primary.btn-text {
@@ -509,17 +509,17 @@ body {
 }
 .btn.btn-primary[toggled] {
   color: #fff;
-  background: #006db0;
+  background: linear-gradient(to bottom,#008cd6,#00508a);
 }
 .btn.btn-primary:hover {
   color: #fff;
   border-color: #4dc2f0;
-  background: #24a7e3;
+  background: linear-gradient(to bottom,#4dc2f0,#008cd6);
 }
 .btn.btn-secondary {
   color: #fff;
   border-color: #ffd666;
-  background: #faad14;
+  background: linear-gradient(to bottom,#ffc53d,#d48806);
 }
 .btn.btn-secondary.btn-outline,
 .btn.btn-secondary.btn-text {
@@ -527,16 +527,16 @@ body {
 }
 .btn.btn-secondary[toggled] {
   color: #fff;
-  background: #d48806;
+  background: linear-gradient(to bottom,#faad14,#ad6800);
 }
 .btn.btn-secondary:hover {
   color: #fff;
-  background: #ffc53d;
+  background: linear-gradient(to bottom,#ffd666,#faad14);
 }
 .btn.btn-danger {
   color: #fff;
   border-color: #ff9c6e;
-  background: #fa541c;
+  background: linear-gradient(to bottom,#ff7a45,#d4380d);
 }
 .btn.btn-danger.btn-outline,
 .btn.btn-danger.btn-text {
@@ -544,24 +544,15 @@ body {
 }
 .btn.btn-danger[toggled] {
   color: #fff;
-  background: #d4380d;
+  background: linear-gradient(to bottom,#fa541c,#ad2102);
 }
 .btn.btn-danger:hover {
   color: #fff;
-  background: #ff7a45;
+  background: linear-gradient(to bottom,#ff9c6e,#fa541c);
 }
 .btn.btn-danger,
 .btn.btn-primary,
 .btn.btn-secondary {
-  border-width: 0;
-  padding: 0 16px;
-}
-.btn.btn-danger:hover,
-.btn.btn-danger[toggled],
-.btn.btn-primary:hover,
-.btn.btn-primary[toggled],
-.btn.btn-secondary:hover,
-.btn.btn-secondary[toggled] {
   border-width: 0;
   padding: 0 16px;
 }
@@ -589,6 +580,9 @@ body {
   background: #fafafa;
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
 }
+.btn.btn-danger[disabled],
+.btn.btn-primary[disabled],
+.btn.btn-secondary[disabled],
 .btn[disabled],
 .btn[disabled]:hover {
   cursor: not-allowed;
