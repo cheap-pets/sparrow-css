@@ -35,9 +35,9 @@
     color: #fff;
     border-color: $CLR_PRIMARY_3;
     @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $BG_PRIMARY_GRADIENT;
+      background: $bg_primary_gradient;
     } @else {
-      background: $BG_PRIMARY;
+      background: $bg_primary;
     }
 
     &.btn-outline,
@@ -48,9 +48,9 @@
     &[toggled] {
       color: #fff;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_PRIMARY_GRADIENT_TOGGLED;
+        background: $bg_primary_gradient_toggled;
       } @else {
-        background: $BG_PRIMARY_TOGGLED;
+        background: $bg_primary_toggled;
       }
     }
   
@@ -58,9 +58,9 @@
       color: #fff;
       border-color: $CLR_PRIMARY_3;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_PRIMARY_GRADIENT_HOVER;
+        background: $bg_primary_gradient_hover;
       } @else {
-        background: $BG_PRIMARY_HOVER;
+        background: $bg_primary_hover;
       }
     }
   }
@@ -69,9 +69,9 @@
     color: #fff;
     border-color: $CLR_SECONDARY_3;
     @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $BG_SECONDARY_GRADIENT;
+      background: $bg_secondary_gradient;
     } @else {
-      background: $BG_SECONDARY;
+      background: $bg_secondary;
     }
 
     &.btn-outline,
@@ -82,18 +82,18 @@
     &[toggled] {
       color: #fff;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_SECONDARY_GRADIEN_TOGGLED;
+        background: $bg_secondary_GRADIEN_toggled;
       } @else {
-        background: $BG_SECONDARY_TOGGLED;
+        background: $bg_secondary_toggled;
       }
     }
   
     &:hover {
       color: #fff;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_SECONDARY_GRADIENT_HOVER;
+        background: $bg_secondary_gradient_hover;
       } @else {
-        background: $BG_SECONDARY_HOVER;
+        background: $bg_secondary_hover;
       }
     }
   }
@@ -102,9 +102,9 @@
     color: #fff;
     border-color: $CLR_DANGER_3;
     @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $BG_DANGER_GRADIENT;
+      background: $bg_danger_gradient;
     } @else {
-      background: $BG_DANGER;
+      background: $bg_danger;
     }
 
     &.btn-outline,
@@ -115,18 +115,18 @@
     &[toggled] {
       color: #fff;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_DANGER_GRADIENT_TOGGLED;
+        background: $bg_danger_gradient_toggled;
       } @else {
-        background: $BG_DANGER_TOGGLED;
+        background: $bg_danger_toggled;
       }
     }
   
     &:hover {
       color: #fff;
       @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $BG_DANGER_GRADIENT_HOVER;
+        background: $bg_danger_gradient_hover;
       } @else {
-        background: $BG_DANGER_HOVER;
+        background: $bg_danger_hover;
       }
     }
   }
@@ -158,14 +158,12 @@
   }
 
   &[toggled] {
-    z-index: 2;
     color: $CLR_GREY_8;
     border-color: $CLR_GREY_6;
     background: $CLR_GREY_4;
   }
 
   &:hover {
-    z-index: 3;
     color: $CLR_GREY_8;
     background: $CLR_GREY_1;
     @if $BUTTON_SHADOW == 1 {
@@ -222,6 +220,10 @@
 
     &[toggle-type] {
       opacity: 0.85;
+    }
+
+    &[toggled] {
+      z-index : 2;
     }
 
     &:hover:not([disabled]) {

@@ -2,6 +2,7 @@ const postcssAutoprefixer = require('autoprefixer')
 const postcssCalc = require("postcss-calc")
 const postcssClean = require('postcss-clean')
 const postcssConditionals = require('postcss-conditionals')
+const postcssEach = require('postcss-each')
 const postcssFor = require('postcss-for')
 const postcssImport = require('postcss-import')
 const postcssMixins = require('postcss-mixins')
@@ -20,6 +21,7 @@ const plugins = [
   postcssUnprefix,
   postcssSelectorNot,
   postcssMixins,
+  postcssEach,
   postcssVars({
     variables
   }),

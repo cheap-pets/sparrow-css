@@ -580,13 +580,11 @@ body {
   border-color: transparent;
 }
 .btn[toggled] {
-  z-index: 2;
   color: #262626;
   border-color: #8c8c8c;
   background: #d9d9d9;
 }
 .btn:hover {
-  z-index: 3;
   color: #262626;
   background: #fafafa;
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
@@ -633,6 +631,9 @@ body {
 }
 .btn-group > .btn[toggle-type] {
   opacity: .85;
+}
+.btn-group > .btn[toggled] {
+  z-index: 2;
 }
 .btn-group > .btn:hover:not([disabled]) {
   z-index: 2;
