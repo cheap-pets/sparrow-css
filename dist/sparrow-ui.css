@@ -618,13 +618,12 @@ body {
 .btn-group > .btn {
   flex: 1 1 auto;
   box-shadow: none;
+  border-width: 1px;
+  padding: 0 15px;
 }
 .btn-group > .btn.icon,
 .btn-group > .btn[toggle-type] {
   flex: none;
-}
-.btn-group > .btn[toggle-type] {
-  opacity: .85;
 }
 .btn-group > .btn[toggled] {
   z-index: 2;
