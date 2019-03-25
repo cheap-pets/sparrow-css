@@ -154,7 +154,7 @@
 
   &[toggled] {
     color: $CLR_GREY_8;
-    border-color: $CLR_GREY_6;
+    /* border-color: $CLR_GREY_6; */
     background: $CLR_GREY_4;
   }
 
@@ -190,7 +190,20 @@
   }
 
   &[toggle-type]:not(:empty)::after {
-    margin-left: 5px;
+    margin-left: 4px;
+  }
+
+  & > [toggle-type],
+  & > .icon {
+    margin: 0 4px;
+
+    & + .icon,
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
