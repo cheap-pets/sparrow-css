@@ -14,7 +14,9 @@ const variables = {
   INPUT_BORDER_RADIUS: 2,
   BUTTON_SHADOW: 1,
   BUTTON_GRADIENT_BACKGROUND: 1,
-  POPUP_BORDER_RADIUS: 0
+  POPUP_BORDER_RADIUS: 0,
+  FORM_LABEL_WIDTH: 65,
+  FORM_LABEL_ALIGN: 'right'
 }
 
 Object.keys(colors).forEach(key => {
