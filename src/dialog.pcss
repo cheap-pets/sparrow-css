@@ -1,8 +1,6 @@
 .dialog {
-  position: fixed;
+  position: relative;
   z-index: 205;
-  top: 50%;
-  left: 50%;
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -12,7 +10,7 @@
   border-radius: $(POPUP_BORDER_RADIUS)px;
   background-color: #fff;
   opacity: 0;
-  transform: translate(-50%, -100%);
+  transform: translate(0, 300px);
   transition: all .2s ease-in-out;
 
   & > .dialog-header {
@@ -77,5 +75,5 @@
 
 [sparrow-popup="popup"] > .dialog {
   opacity: 1;
-  transform: translate(-50%, -50%);
+  transform: none;
 }

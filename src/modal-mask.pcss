@@ -1,4 +1,5 @@
 .modal-mask {
+  position: fixed;
   z-index: 200;
   top: 0;
   bottom: 0;
@@ -7,17 +8,21 @@
   display: block;
   overflow: hidden;
   background-color: rgba(0, 0, 0, .1);
-}
-
-.modal-mask {
-  position: fixed;
   visibility: hidden;
-
+  
   &[sparrow-popup="popup"] {
     visibility: visible;
   }
-
   &[mask-region="part"] {
     position: absolute;
   }
+
+  &[justify-content="center"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
+
