@@ -3,7 +3,6 @@
   flex-wrap: nowrap;
   align-items: center;
   height: 40px;
-  background-color: $CLR_GREY_1;
   overflow: visible;
   padding: 0 10px;
 
@@ -40,6 +39,14 @@
       line-height: 28px;
       width: 28px;
     }
+  }
+
+  &.toolbar {
+    background-color: $CLR_GREY_1;
+  }
+
+  &[justify-content="center"] {
+    justify-content: center;
   }
 
   &.tab {

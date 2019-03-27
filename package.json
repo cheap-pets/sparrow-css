@@ -1,6 +1,6 @@
 {
   "name": "sparrow-css",
-  "version": "0.2.12",
+  "version": "0.2.17",
   "description": "set of styles for web application, code by postcss",
   "engines": {
     "node": ">8.9.0"
@@ -8,7 +8,7 @@
   "module": "src/index.js",
   "scripts": {
     "build": "postcss src/index.pcss -o dist/sparrow-ui.css --env production",
-    "watch": "postcss src/index.pcss -o dist/sparrow-ui.css -w --env development"
+    "builddev": "postcss src/index.pcss -o dist/sparrow-ui.css -w --env development"
   },
   "files": [
     "src",

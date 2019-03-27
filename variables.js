@@ -10,13 +10,13 @@ const colors = {
 }
 
 const variables = {
+  UNIT_SIZE: 8,
   INPUT_HEIGHT: 32,
   INPUT_BORDER_RADIUS: 2,
   BUTTON_SHADOW: 1,
   BUTTON_GRADIENT_BACKGROUND: 1,
   POPUP_BORDER_RADIUS: 0,
-  FORM_LABEL_WIDTH: 65,
-  FORM_LABEL_ALIGN: 'right'
+  FORM_LABEL_WIDTH: 65
 }
 
 Object.keys(colors).forEach(key => {

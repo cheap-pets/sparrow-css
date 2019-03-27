@@ -43,6 +43,7 @@ input[type="color"] {
 
 textarea {
   padding: 10px;
+  height: 80px;
   resize: none;
 }
 
@@ -180,9 +181,7 @@ textarea {
   flex-wrap: nowrap;
   align-items: center;
   min-height: 40px;
-  background-color: $CLR_GREY_1;
   overflow: visible;
-  padding: 0 10px;
 
   &.inline {
     display: inline-flex;
@@ -196,12 +195,12 @@ textarea {
     position: relative;
     flex: none;
     display: inline-block;
+    line-height: 32px;
     font-size: 0.92rem;
     white-space: nowrap;
     padding-right: 12px;
     color: $CLR_GREY_7;
     width: $(FORM_LABEL_WIDTH)px;
-    text-align: $FORM_LABEL_ALIGN;
 
     & + * {
       flex: auto;
@@ -229,6 +228,31 @@ textarea {
       border-color: $CLR_DANGER;
       &:focus {
         box-shadow: inset 0 0 1px 1px $CLR_DANGER_3;
+      }
+    }
+  }
+
+  &[toggle-type]:after {
+    flex: none;
+    align-items: center;
+    padding-left: 10px;
+    line-height: 32px;
+    color: $CLR_GREY_5;
+  }
+}
+
+.form {
+  &[label-align="right"] label {
+    text-align: right;
+  }
+  &[value-align="right"] label + * {
+    text-align: right;
+  }
+  &[grid-line] {
+    & > .form-field,
+    & > .form-inline {
+      &:not(:first-child) {
+        border-top: 1px solid rgba(0, 0, 0, .05);
       }
     }
   }
