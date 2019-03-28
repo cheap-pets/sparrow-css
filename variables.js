@@ -11,6 +11,7 @@ const colors = {
 
 const variables = {
   UNIT_SIZE: 8,
+  UNIT_LINE_HEIGHT: 40,
   INPUT_HEIGHT: 32,
   INPUT_BORDER_RADIUS: 2,
   BUTTON_SHADOW: 1,

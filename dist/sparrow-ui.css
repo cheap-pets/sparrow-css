@@ -97,7 +97,7 @@ body {
   box-shadow: 0 15px 24px rgba(0,0,0,.22),0 19px 76px rgba(0,0,0,.3);
 }
 .outline {
-  border: 1px solid #d9d9d9;
+  border: 1px solid rgba(0,0,0,.05);
 }
 .outline.dashed {
   border-style: dashed;
@@ -105,8 +105,18 @@ body {
 .outline.dotted {
   border-style: dotted;
 }
+[border-top] {
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+[border-bottom] {
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
 .header-line {
   border-bottom: 2px solid #008cd6;
+}
+.divider {
+  padding: 4px;
+  background-color: rgba(0,0,0,.05);
 }
 @font-face {
   font-family: sparrow-icon;
@@ -885,9 +895,7 @@ textarea {
   flex-wrap: nowrap;
   align-items: center;
   min-height: 40px;
-  background-color: #fafafa;
   overflow: visible;
-  padding: 0 10px;
 }
 .form-field.inline {
   display: inline-flex;
@@ -935,13 +943,19 @@ textarea {
 .form-field[toggle-type]:after {
   flex: none;
   align-items: center;
-  padding: 0 10px;
+  padding-left: 10px;
   line-height: 32px;
-  text-align: center;
   color: #bfbfbf;
 }
 .form[label-align=right] label {
   text-align: right;
+}
+.form[value-align=right] label + * {
+  text-align: right;
+}
+.form[grid-line] > .form-field:not(:first-child),
+.form[grid-line] > .form-inline:not(:first-child) {
+  border-top: 1px solid rgba(0,0,0,.05);
 }
 .list-group {
   list-style: none;
@@ -1303,7 +1317,6 @@ textarea {
   background-color: #fafafa;
 }
 .bar[justify-content=center] {
-  display: flex;
   justify-content: center;
 }
 .bar.tab {
@@ -1372,4 +1385,57 @@ textarea {
   border-radius: 4px 4px 0 0;
   margin-right: 5px;
   box-shadow: none;
+}
+.tab-group {
+  height: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.tab-group > .tab-group-item {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  width: 10px;
+  justify-content: center;
+  cursor: default;
+  padding-top: 4px;
+  border-bottom: 4px solid transparent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tab-group > .tab-group-item[toggled] {
+  color: #008cd6;
+  border-color: #008cd6;
+}
+.tab-group > .tab-group-item:hover {
+  color: #24a7e3;
+}
+.tab-group > .tab-group-item[disabled] {
+  color: #bfbfbf;
+  border-color: transparent;
+}
+.tab-group.inline {
+  display: inline-flex;
+}
+.tab-group.inline > .tab-group-item {
+  flex: none;
+  width: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.bar > .tab-group {
+  height: 100%;
+}
+.expand-panel {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: rgba(0,0,0,.025);
+  transition: all .2s ease-in-out;
+}
+.expand-panel[expanded] {
+  max-height: 2000px;
+  overflow: visible;
+  visibility: visible;
 }
