@@ -1224,6 +1224,7 @@ textarea {
   box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
 }
 .dialog > .dialog-header {
+  position: relative;
   flex: none;
   height: 40px;
   display: flex;
@@ -1251,6 +1252,7 @@ textarea {
   border-bottom-color: #fa541c;
 }
 .dialog > .dialog-body {
+  position: relative;
   flex: auto;
   padding: 15px;
   overflow: auto;
@@ -1260,6 +1262,7 @@ textarea {
   flex: none;
 }
 .dialog > .dialog-footer {
+  position: relative;
   flex: none;
   height: 54px;
   padding: 10px 15px;
@@ -1392,6 +1395,7 @@ textarea {
   flex-wrap: nowrap;
 }
 .tab-group > .tab-group-item {
+  position: relative;
   display: flex;
   flex: auto;
   align-items: center;
@@ -1406,6 +1410,7 @@ textarea {
 }
 .tab-group > .tab-group-item[toggled] {
   color: #008cd6;
+  font-weight: 600;
   border-color: #008cd6;
 }
 .tab-group > .tab-group-item:hover {
@@ -1423,6 +1428,15 @@ textarea {
   width: auto;
   padding-left: 16px;
   padding-right: 16px;
+}
+.tab-group[grid-line] > .tab-group-item:not(:first-child):before {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 24px;
+  background-color: rgba(0,0,0,.1);
+  content: '';
 }
 .bar > .tab-group {
   height: 100%;
