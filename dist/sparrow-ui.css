@@ -73,13 +73,13 @@ body {
   color: rgba(0,0,0,.5);
 }
 [text-align=left] {
-  text-align: left;
+  text-align: left!important;
 }
 [text-align=right] {
-  text-align: right;
+  text-align: right!important;
 }
 [text-align=center] {
-  text-align: center;
+  text-align: center!important;
 }
 .box-shadow-1 {
   box-shadow: 0 1.5px 4px rgba(0,0,0,.24),0 1.5px 6px rgba(0,0,0,.12);
@@ -673,290 +673,6 @@ body {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-input::-ms-clear {
-  display: none;
-}
-input[type=color],
-input[type=date],
-input[type=datetime-local],
-input[type=datetime],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-input[type=week],
-select,
-textarea {
-  height: 32px;
-  padding: 0 10px;
-  width: 200px;
-  color: #262626;
-  background-color: #fafafa;
-  border: 1px solid #bfbfbf;
-  border-radius: 2px;
-  outline: 0;
-  font-size: 1rem;
-}
-input[type=color]:focus,
-input[type=color]:hover,
-input[type=date]:focus,
-input[type=date]:hover,
-input[type=datetime-local]:focus,
-input[type=datetime-local]:hover,
-input[type=datetime]:focus,
-input[type=datetime]:hover,
-input[type=email]:focus,
-input[type=email]:hover,
-input[type=month]:focus,
-input[type=month]:hover,
-input[type=number]:focus,
-input[type=number]:hover,
-input[type=password]:focus,
-input[type=password]:hover,
-input[type=search]:focus,
-input[type=search]:hover,
-input[type=tel]:focus,
-input[type=tel]:hover,
-input[type=text]:focus,
-input[type=text]:hover,
-input[type=time]:focus,
-input[type=time]:hover,
-input[type=url]:focus,
-input[type=url]:hover,
-input[type=week]:focus,
-input[type=week]:hover,
-select:focus,
-select:hover,
-textarea:focus,
-textarea:hover {
-  background-color: #fff;
-}
-input[type=color]:focus,
-input[type=date]:focus,
-input[type=datetime-local]:focus,
-input[type=datetime]:focus,
-input[type=email]:focus,
-input[type=month]:focus,
-input[type=number]:focus,
-input[type=password]:focus,
-input[type=search]:focus,
-input[type=tel]:focus,
-input[type=text]:focus,
-input[type=time]:focus,
-input[type=url]:focus,
-input[type=week]:focus,
-select:focus,
-textarea:focus {
-  border-color: #008cd6;
-  box-shadow: inset 0 0 1px 1px #4dc2f0;
-}
-input[type=color][readonly]:focus,
-input[type=date][readonly]:focus,
-input[type=datetime-local][readonly]:focus,
-input[type=datetime][readonly]:focus,
-input[type=email][readonly]:focus,
-input[type=month][readonly]:focus,
-input[type=number][readonly]:focus,
-input[type=password][readonly]:focus,
-input[type=search][readonly]:focus,
-input[type=tel][readonly]:focus,
-input[type=text][readonly]:focus,
-input[type=time][readonly]:focus,
-input[type=url][readonly]:focus,
-input[type=week][readonly]:focus,
-select[readonly]:focus,
-textarea[readonly]:focus {
-  border-color: #bfbfbf;
-  box-shadow: inset 0 0 1px 1px #e8e8e8;
-}
-textarea {
-  padding: 10px;
-  height: 80px;
-  resize: none;
-}
-.input-box {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-}
-.input-box > input {
-  width: 100%;
-  padding-right: 35px;
-}
-.input-box > .icon:not(a):not(.btn),
-.input-box > [toggle-type]:not(a):not(.btn) {
-  color: rgba(0,0,0,.3);
-}
-.input-box > .icon,
-.input-box > [toggle-type] {
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-  display: inline-block;
-  line-height: 30px;
-  text-align: center;
-  width: 30px;
-  height: auto;
-}
-.input-box > .icon.btn,
-.input-box > [toggle-type].btn {
-  width: 30px;
-}
-.input-box > .icon:first-child,
-.input-box > [toggle-type]:first-child {
-  left: 1px;
-  right: auto;
-}
-.input-box > .icon:first-child + input,
-.input-box > [toggle-type]:first-child + input {
-  padding-left: 35px;
-  padding-right: 10px;
-}
-.input-box[buttons="2"] > input {
-  padding-right: 65px;
-}
-.input-box[buttons="2"] > input + .icon,
-.input-box[buttons="2"] > input + [toggle-type] {
-  right: 30px;
-}
-.input-box[buttons="2"] > .icon:first-child + .icon,
-.input-box[buttons="2"] > .icon:first-child + [toggle-type],
-.input-box[buttons="2"] > [toggle-type]:first-child + .icon,
-.input-box[buttons="2"] > [toggle-type]:first-child + [toggle-type] {
-  left: 30px;
-  right: auto;
-}
-.input-box[buttons="2"] > .icon:first-child ~ input,
-.input-box[buttons="2"] > [toggle-type]:first-child ~ input {
-  padding-left: 65px;
-  padding-right: 10px;
-}
-.input-box[buttons="2"] > .icon:first-child + input,
-.input-box[buttons="2"] > [toggle-type]:first-child + input {
-  padding-left: 35px;
-  padding-right: 35px;
-}
-.input-box[buttons="2"] > .icon:first-child + input + .icon,
-.input-box[buttons="2"] > .icon:first-child + input + [toggle-type],
-.input-box[buttons="2"] > [toggle-type]:first-child + input + .icon,
-.input-box[buttons="2"] > [toggle-type]:first-child + input + [toggle-type] {
-  right: 1px;
-}
-.input-box > a:not(.btn) {
-  cursor: pointer;
-  color: rgba(0,0,0,.5);
-}
-.input-box > a:not(.btn):hover {
-  background-color: rgba(0,0,0,.075);
-}
-.input-box[readonly] > input {
-  padding: 0 10px;
-}
-.input-box[readonly] > a,
-.input-box[readonly] > button {
-  display: none;
-}
-.form-group {
-  padding: 10px;
-}
-.form-group label {
-  position: relative;
-  display: inline-block;
-  height: 34px;
-  font-size: .92rem;
-  line-height: 34px;
-  white-space: nowrap;
-  padding-right: 8px;
-  color: #595959;
-}
-.form-group.important label:after {
-  position: absolute;
-  right: 0;
-  display: inline-block;
-  width: 8px;
-  color: #fa541c;
-  content: "*";
-}
-.form-group.invalid label {
-  color: #fa541c;
-}
-.form-group.invalid input,
-.form-group.invalid textarea {
-  box-shadow: inset 0 0 1px 1px #fa541c;
-}
-.form-field {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  min-height: 40px;
-  overflow: visible;
-}
-.form-field.inline {
-  display: inline-flex;
-}
-.form-field[vertical-align=top] {
-  align-items: flex-start;
-}
-.form-field > label {
-  position: relative;
-  flex: none;
-  display: inline-block;
-  line-height: 32px;
-  font-size: .92rem;
-  white-space: nowrap;
-  padding-right: 12px;
-  color: #595959;
-  width: 65px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.form-field > label + * {
-  flex: auto;
-}
-.form-field[important] > label:after {
-  position: absolute;
-  right: 0;
-  display: inline-block;
-  text-align: center;
-  width: 12px;
-  color: #fa541c;
-  content: "*";
-}
-.form-field[invalid] > label {
-  color: #fa541c;
-}
-.form-field[invalid] input,
-.form-field[invalid] textarea {
-  border-color: #fa541c;
-}
-.form-field[invalid] input:focus,
-.form-field[invalid] textarea:focus {
-  box-shadow: inset 0 0 1px 1px #ff9c6e;
-}
-.form-field[toggle-type]:after {
-  flex: none;
-  align-items: center;
-  padding-left: 10px;
-  line-height: 32px;
-  color: #bfbfbf;
-}
-.form[label-align=right] label {
-  text-align: right;
-}
-.form[value-align=right] label + * {
-  text-align: right;
-}
-.form[grid-line] > .form-field:not(:first-child),
-.form[grid-line] > .form-inline:not(:first-child) {
-  border-top: 1px solid rgba(0,0,0,.05);
-}
 .list-group {
   list-style: none;
   font-size: 1rem;
@@ -1440,6 +1156,312 @@ textarea {
 }
 .bar > .tab-group {
   height: 100%;
+}
+input::-ms-clear {
+  display: none;
+}
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  height: 32px;
+  padding: 0 10px;
+  width: 200px;
+  color: #262626;
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  outline: 0;
+  font-size: 1rem;
+}
+input[type=color][no-border],
+input[type=date][no-border],
+input[type=datetime-local][no-border],
+input[type=datetime][no-border],
+input[type=email][no-border],
+input[type=month][no-border],
+input[type=number][no-border],
+input[type=password][no-border],
+input[type=search][no-border],
+input[type=tel][no-border],
+input[type=text][no-border],
+input[type=time][no-border],
+input[type=url][no-border],
+input[type=week][no-border],
+select[no-border],
+textarea[no-border] {
+  border: 0;
+}
+input[type=color]:focus,
+input[type=color]:hover,
+input[type=date]:focus,
+input[type=date]:hover,
+input[type=datetime-local]:focus,
+input[type=datetime-local]:hover,
+input[type=datetime]:focus,
+input[type=datetime]:hover,
+input[type=email]:focus,
+input[type=email]:hover,
+input[type=month]:focus,
+input[type=month]:hover,
+input[type=number]:focus,
+input[type=number]:hover,
+input[type=password]:focus,
+input[type=password]:hover,
+input[type=search]:focus,
+input[type=search]:hover,
+input[type=tel]:focus,
+input[type=tel]:hover,
+input[type=text]:focus,
+input[type=text]:hover,
+input[type=time]:focus,
+input[type=time]:hover,
+input[type=url]:focus,
+input[type=url]:hover,
+input[type=week]:focus,
+input[type=week]:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover {
+  background-color: #fff;
+}
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus {
+  text-align: left!important;
+  border-color: #008cd6;
+  box-shadow: inset 0 0 1px 1px #4dc2f0;
+}
+input[type=color][readonly]:focus,
+input[type=date][readonly]:focus,
+input[type=datetime-local][readonly]:focus,
+input[type=datetime][readonly]:focus,
+input[type=email][readonly]:focus,
+input[type=month][readonly]:focus,
+input[type=number][readonly]:focus,
+input[type=password][readonly]:focus,
+input[type=search][readonly]:focus,
+input[type=tel][readonly]:focus,
+input[type=text][readonly]:focus,
+input[type=time][readonly]:focus,
+input[type=url][readonly]:focus,
+input[type=week][readonly]:focus,
+select[readonly]:focus,
+textarea[readonly]:focus {
+  border-color: #bfbfbf;
+  box-shadow: inset 0 0 1px 1px #e8e8e8;
+}
+textarea {
+  padding: 10px;
+  height: 80px;
+  resize: none;
+}
+.input-box {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+.input-box > input {
+  width: 100%;
+  padding-right: 35px;
+}
+.input-box > .icon:not(a):not(.btn),
+.input-box > [toggle-type]:not(a):not(.btn) {
+  color: rgba(0,0,0,.3);
+}
+.input-box > .icon,
+.input-box > [toggle-type] {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  display: inline-block;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+  height: auto;
+}
+.input-box > .icon.btn,
+.input-box > [toggle-type].btn {
+  width: 30px;
+}
+.input-box > .icon:first-child,
+.input-box > [toggle-type]:first-child {
+  left: 1px;
+  right: auto;
+}
+.input-box > .icon:first-child + input,
+.input-box > [toggle-type]:first-child + input {
+  padding-left: 35px;
+  padding-right: 10px;
+}
+.input-box[buttons="2"] > input {
+  padding-right: 65px;
+}
+.input-box[buttons="2"] > input + .icon,
+.input-box[buttons="2"] > input + [toggle-type] {
+  right: 30px;
+}
+.input-box[buttons="2"] > .icon:first-child + .icon,
+.input-box[buttons="2"] > .icon:first-child + [toggle-type],
+.input-box[buttons="2"] > [toggle-type]:first-child + .icon,
+.input-box[buttons="2"] > [toggle-type]:first-child + [toggle-type] {
+  left: 30px;
+  right: auto;
+}
+.input-box[buttons="2"] > .icon:first-child ~ input,
+.input-box[buttons="2"] > [toggle-type]:first-child ~ input {
+  padding-left: 65px;
+  padding-right: 10px;
+}
+.input-box[buttons="2"] > .icon:first-child + input,
+.input-box[buttons="2"] > [toggle-type]:first-child + input {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.input-box[buttons="2"] > .icon:first-child + input + .icon,
+.input-box[buttons="2"] > .icon:first-child + input + [toggle-type],
+.input-box[buttons="2"] > [toggle-type]:first-child + input + .icon,
+.input-box[buttons="2"] > [toggle-type]:first-child + input + [toggle-type] {
+  right: 1px;
+}
+.input-box > a:not(.btn) {
+  cursor: pointer;
+  color: rgba(0,0,0,.5);
+}
+.input-box > a:not(.btn):hover {
+  background-color: rgba(0,0,0,.075);
+}
+.input-box[readonly] > input {
+  padding: 0 10px;
+}
+.input-box[readonly] > a,
+.input-box[readonly] > button {
+  display: none;
+}
+.form-group {
+  padding: 10px;
+}
+.form-group label {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  font-size: .92rem;
+  line-height: 34px;
+  white-space: nowrap;
+  padding-right: 8px;
+  color: #595959;
+}
+.form-group.important label:after {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  width: 8px;
+  color: #fa541c;
+  content: "*";
+}
+.form-group.invalid label {
+  color: #fa541c;
+}
+.form-group.invalid input,
+.form-group.invalid textarea {
+  box-shadow: inset 0 0 1px 1px #fa541c;
+}
+.form-field {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-height: 40px;
+  overflow: visible;
+}
+.form-field.inline {
+  display: inline-flex;
+}
+.form-field[vertical-align=top] {
+  align-items: flex-start;
+}
+.form-field > label {
+  position: relative;
+  flex: none;
+  display: inline-block;
+  line-height: 32px;
+  font-size: .92rem;
+  white-space: nowrap;
+  padding-right: 12px;
+  color: #595959;
+  width: 65px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.form-field > label + * {
+  flex: auto;
+}
+.form-field[important] > label:after {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  text-align: center;
+  width: 12px;
+  color: #fa541c;
+  content: "*";
+}
+.form-field[invalid] > label {
+  color: #fa541c;
+}
+.form-field[invalid] input,
+.form-field[invalid] textarea {
+  border-color: #fa541c;
+}
+.form-field[invalid] input:focus,
+.form-field[invalid] textarea:focus {
+  box-shadow: inset 0 0 1px 1px #ff9c6e;
+}
+.form-field[toggle-type]:after {
+  flex: none;
+  align-items: center;
+  padding-left: 10px;
+  line-height: 32px;
+  color: #bfbfbf;
+}
+.form {
+  padding: 0 10px;
+}
+.form[label-align=right] label {
+  text-align: right;
+}
+.form[value-align=right] label + * {
+  text-align: right;
+}
+.form[grid-line] > .form-field:not(:first-child),
+.form[grid-line] > .form-inline:not(:first-child) {
+  border-top: 1px solid rgba(0,0,0,.05);
 }
 .expand-panel {
   max-height: 0;

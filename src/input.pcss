@@ -22,16 +22,20 @@ input[type="color"] {
   padding: 0 10px;
   width: 200px;
   color: $CLR_GREY_8;
-  background-color: $CLR_GREY_1;
+  background-color: $CLR_GREY_0;
   border: 1px solid $CLR_GREY;
   border-radius: $(INPUT_BORDER_RADIUS)px;
   outline: none;
   font-size: 1rem;
+  &[no-border] {
+    border: 0;
+  }
   &:hover,
   &:focus {
     background-color: #fff;
   }
   &:focus {
+    text-align: left !important;
     border-color: $CLR_PRIMARY;
     box-shadow: inset 0 0 1px 1px $CLR_PRIMARY_3;
   }
@@ -242,6 +246,8 @@ textarea {
 }
 
 .form {
+  padding: 0 10px;
+
   &[label-align="right"] label {
     text-align: right;
   }
