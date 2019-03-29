@@ -215,6 +215,10 @@ label {
     @mixin text-ellipsis;
   }
 
+  &:not(.inline) > label + * {
+    width: 80px;
+  }
+
   &[important] > label:after {
     position: absolute;
     right: 0;
