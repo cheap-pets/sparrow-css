@@ -32,6 +32,14 @@
     @mixin text-ellipsis;
   }
 
+  & > .btn {
+    height: auto;
+
+    &.icon {
+      width: 40px;
+    }
+  }
+
   
   &.inline {
     display: inline-flex;
@@ -45,7 +53,7 @@
   }
 
   &[grid-line] {
-    & > .tab-group-item:not(:first-child):before {
+    & > .tab-group-item:not(:last-child):before {
       display: block;
       position: absolute;
       left: 0;

@@ -16,3 +16,4 @@ import './bar.pcss'
 import "./tab.pcss"
 import './input.pcss'
 import './expand-panel.pcss'
+import './flex.pcss'
