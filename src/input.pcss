@@ -47,7 +47,7 @@ input[type="color"] {
 
 textarea {
   padding: 10px;
-  height: 80px;
+  min-height: 80px;
   resize: none;
 }
 
@@ -261,11 +261,8 @@ label {
     text-align: right;
   }
   &[grid-line] {
-    & > .form-field,
-    & > .form-inline {
-      &:not(:first-child) {
-        border-top: 1px solid rgba(0, 0, 0, .05);
-      }
+    & > :not(:first-child) {
+      border-top: 1px solid rgba(0, 0, 0, .05);
     }
   }
 }
