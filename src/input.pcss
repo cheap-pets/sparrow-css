@@ -151,6 +151,10 @@ label {
   color: $CLR_GREY_6;
 }
 
+[toggle-type] > label {
+  cursor: pointer;
+}
+
 .form-group {
   padding: 10px;
 
@@ -192,10 +196,6 @@ label {
 
   &.inline {
     display: inline-flex;
-  }
-
-  &[vertical-align="top"] {
-    align-items: flex-start;
   }
 
   & > label {
