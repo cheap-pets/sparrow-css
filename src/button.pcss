@@ -31,6 +31,10 @@
     @mixin shadow1;
   }
 
+  &[button-shape="oval"] {
+    border-radius: calc($INPUT_HEIGHT / 2)px;
+  }
+
   &.btn-primary {
     color: #fff;
     border-color: $CLR_PRIMARY_3;
@@ -98,6 +102,39 @@
     }
   }
 
+  &.btn-success {
+    color: #fff;
+    border-color: $CLR_SUCCESS_3;
+    @if $BUTTON_GRADIENT_BACKGROUND {
+      background: $bg_success_gradient;
+    } @else {
+      background: $bg_success;
+    }
+
+    &.btn-outline,
+    &.btn-text {
+      color: $CLR_SUCCESS;
+    }
+
+    &[toggled] {
+      color: #fff;
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $bg_success_GRADIEN_toggled;
+      } @else {
+        background: $bg_success_toggled;
+      }
+    }
+  
+    &:hover {
+      color: #fff;
+      @if $BUTTON_GRADIENT_BACKGROUND {
+        background: $bg_success_gradient_hover;
+      } @else {
+        background: $bg_success_hover;
+      }
+    }
+  }
+
   &.btn-danger {
     color: #fff;
     border-color: $CLR_DANGER_3;
@@ -133,6 +170,7 @@
 
   &.btn-primary,
   &.btn-secondary,
+  &.btn-success,
   &.btn-danger {
     @mixin no_border;
   }
@@ -170,6 +208,7 @@
   &[disabled]:hover,
   &.btn-primary[disabled],
   &.btn-secondary[disabled],
+  &.btn-success[disabled],
   &.btn-danger[disabled] {
     cursor: not-allowed;
     color: $CLR_GREY;

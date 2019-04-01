@@ -16,10 +16,10 @@
   & > .dialog-header {
     position: relative;
     flex: none;
-    height: 40px;
+    height: $(UNIT_LINE_HEIGHT)px;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 $(UNIT_SIZE)px;
     font-size: 1rem;
     border-bottom: 2px solid $CLR_PRIMARY;
 
@@ -47,7 +47,7 @@
   & > .dialog-body {
     position: relative;
     flex: auto;
-    padding: 15px;
+    padding: calc($UNIT_SIZE * 2)px;
     overflow: auto;
     line-height: 20px;
 
@@ -59,16 +59,18 @@
   & > .dialog-footer {
     position: relative;
     flex: none;
-    height: 54px;
-    padding: 10px 15px;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc($UNIT_SIZE * 6)px;
+    padding: 0 calc($UNIT_SIZE * 2)px;
     background-color: $CLR_GREY_1;
 
     & > .btn {
       min-width: 75px;
 
       & + .btn {
-        margin-left: 10px;
+        margin-left: $(UNIT_SIZE)px;
       }
     }
   }
