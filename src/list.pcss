@@ -61,7 +61,7 @@
   & a.list-group-header {
     &:hover,
     &:hover:nth-of-type(even) {
-      background: $CLR_PRIMARY_0;
+      background: rgba(0, 0, 0, .025);
     }
     &.active,
     &.active:nth-of-type(even) {
@@ -97,6 +97,19 @@
         color: $CLR_GREY;
         background: transparent;
       }
+    }
+  }
+
+  &[grid-line] {
+    & > :not(:first-child)::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: $(UNIT_SIZE)px;
+      right: $(UNIT_SIZE)px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, .1);
+      content: '';
     }
   }
 }
