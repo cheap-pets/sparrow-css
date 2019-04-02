@@ -9,19 +9,15 @@
   & .list-group-item {
     position: relative;
     display: block;
-    padding: 10px;
-    line-height: 20px;
+    padding: $(UNIT_SIZE)px;
+    line-height: 24px;
 
     &.header-line {
-      padding-bottom: 8px;
+      padding-bottom: calc($UNIT_SIZE - 2)px;
     }
 
     &.indent {
       padding-left: 30px;
-    }
-
-    & .subtitle {
-      font-size: 0.857em;
     }
 
     &[disabled] {
@@ -79,11 +75,11 @@
   }
 
   &.dropdown {
-    padding: 5px 0;
+    padding: calc($UNIT_SIZE /2)px 0;
 
     & > .list-group-header,
     & > .list-group-item {
-      padding: 5px 10px;
+      padding: calc($UNIT_SIZE /2)px $(UNIT_SIZE)px;
     }
 
     & > a.list-group-item,
