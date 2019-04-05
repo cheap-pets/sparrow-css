@@ -1,0 +1,44 @@
+.calendar {
+  background: #fff;
+  font-size: 1rem;
+
+  & .calendar-header {
+    font-size: 1.428rem;
+    color: $CLR_PRIMARY;
+    font-weight: 600;
+    & > .btn {
+      font-size: 1rem;
+    }
+  }
+
+  & .calendar-week-header {
+    position: relative;
+    font-size: 0.857rem;
+    font-weight: 600;
+    color: $CLR_GREY_7;
+    background: rgba(0, 0, 0, .05);
+    text-align: center;
+    & > * {
+      width: 1px;
+    }
+  }
+
+  & .calendar-grid {
+    & > .calendar-grid-row {
+      position: relative;
+      min-height: 32px;
+    }
+    & .calendar-date-cell {
+      position: relative;
+      line-height: 20px;
+      border-radius: 10px;
+      width: 1px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background: $CLR_PRIMARY_2;
+      }
+    }
+  }
+}
