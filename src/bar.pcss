@@ -4,7 +4,7 @@
   align-items: center;
   height: $(UNIT_LINE_HEIGHT)px;
   overflow: visible;
-  padding: 0 10px;
+  padding: 0 calc($UNIT_SIZE / 2)px;
 
   & > * {
     flex: 0 0 auto;
@@ -18,7 +18,7 @@
     flex: 1 1 auto;
   }
 
-  & .btn {
+  /* & .btn {
     height: 30px;
     line-height: 28px;
   }
@@ -39,7 +39,7 @@
       line-height: 28px;
       width: 28px;
     }
-  }
+  } */
 
   &.toolbar {
     background-color: $CLR_GREY_1;
