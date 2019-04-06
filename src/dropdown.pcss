@@ -40,6 +40,16 @@
     @mixin shadow2;
   }
 
+  &[sparrow-popup="popup"] > .dropdown {
+    max-height: 400px;
+    overflow: auto;
+    visibility: visible;
+
+    &.list-group {
+      max-height: 300px;
+    }
+  }
+
   &[sparrow-popup="popup"] {
     & [toggle-type="expand"]:after {
       transform: rotate(-180deg);
