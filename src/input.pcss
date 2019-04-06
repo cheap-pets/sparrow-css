@@ -27,9 +27,6 @@ input[type="color"] {
   border-radius: $(INPUT_BORDER_RADIUS)px;
   outline: none;
   font-size: 1rem;
-  &[no-border] {
-    border: 0;
-  }
   &:hover,
   &:focus {
     background-color: #fff;
@@ -151,6 +148,11 @@ textarea {
   }
 }
 
+input[no-border],
+.input-box[no-border] > input {
+  border: 0;
+}
+
 label {
   color: $CLR_GREY_6;
 }
@@ -251,6 +253,8 @@ label {
     align-items: center;
     padding-left: 10px;
     line-height: 32px;
+    width: 32px;
+    text-align: center;
     color: $CLR_GREY_5;
   }
 }
@@ -261,8 +265,11 @@ label {
   &[label-align="right"] label {
     text-align: right;
   }
-  &[value-align="right"] label + * {
-    text-align: right;
+  &[value-align="right"] {
+    input,
+    .field-value {
+      text-align: right;
+    }
   }
   &[grid-line] {
     & > :not(:first-child) {
