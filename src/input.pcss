@@ -209,7 +209,7 @@ label {
     flex: none;
     display: inline-block;
     line-height: 32px;
-    font-size: 0.92rem;
+    font-size: 0.857rem;
     padding-right: 12px;
     width: $(FORM_LABEL_WIDTH)px;
     @mixin text-ellipsis;
@@ -219,6 +219,7 @@ label {
   & > .input-box,
   & > .field-value {
     flex: auto;
+    width: 10px;
   }
 
   & > .field-value {
@@ -236,12 +237,9 @@ label {
     padding-left: 10px;
     line-height: 32px;
     width: 80px;
+    font-size: 0.857rem;
     color: $CLR_GREY_5;
     @mixin text-ellipsis;
-  }
-
-  &:not(.inline) > label + * {
-    width: 80px;
   }
 
   &[important] > label:after {
@@ -270,7 +268,6 @@ label {
   &[toggle-type]:after {
     flex: none;
     align-items: center;
-    padding-left: 10px;
     line-height: 32px;
     width: 32px;
     text-align: center;
@@ -288,7 +285,7 @@ label {
 }
 
 .form {
-  padding: 0 10px;
+  padding: 0 $(UNIT_SIZE)px;
 
   &[label-align="right"] label {
     text-align: right;
