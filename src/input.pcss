@@ -148,8 +148,8 @@ textarea {
   }
 }
 
-input[no-border],
-.input-box[no-border] > input {
+input[border-none],
+.input-box[border-none] > input {
   border: 0;
 }
 
@@ -210,14 +210,33 @@ label {
     display: inline-block;
     line-height: 32px;
     font-size: 0.92rem;
-    white-space: nowrap;
     padding-right: 12px;
     width: $(FORM_LABEL_WIDTH)px;
+    @mixin text-ellipsis;
+  }
 
-    & + * {
-      flex: auto;
+  & > input,
+  & > .input-box,
+  & > .field-value {
+    flex: auto;
+  }
+
+  & > .field-value {
+    &:not(input) {
+      padding: 0 10px;
+      line-height: 32px;
     }
+    &:not([multi-lines]) {
+      @mixin text-ellipsis;
+    }
+  }
 
+  & > .field-postfix {
+    flex: none;
+    padding-left: 10px;
+    line-height: 32px;
+    width: 80px;
+    color: $CLR_GREY_5;
     @mixin text-ellipsis;
   }
 
@@ -256,6 +275,15 @@ label {
     width: 32px;
     text-align: center;
     color: $CLR_GREY_5;
+  }
+
+  &:not([readonly]) {
+    & > input[border-none],
+    & > .input-box[border-none] > input {
+      &:not(:focus) {
+        background: rgba(0, 0, 0, .03);
+      }
+    }
   }
 }
 
