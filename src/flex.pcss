@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   min-height: 40px;
+  line-height: 24px;
 
   &[flex-direction="column"] {
     flex-direction: column;
@@ -16,8 +17,9 @@
   align-items: stretch;
 }
 
-[flex-wrap="wrap"] {
+[flex-wrap] {
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 [justify-content="center"] {
