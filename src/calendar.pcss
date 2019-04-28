@@ -58,7 +58,18 @@
         content: '';
         background: rgba(0, 0, 0, .05);
       }
-      &[not-this-range] {
+      &[marked]:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 8px solid $CLR_DANGER;
+        border-right: 8px solid transparent;
+        content: '';
+      }
+      &[not-this-month],
+      &[not-this-decade] {
         color: $CLR_GREY_5;
       }
       &:hover {
