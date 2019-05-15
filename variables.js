@@ -10,6 +10,7 @@ const colors = {
 }
 
 const variables = {
+  IS_TOUCH_DEVICE: 0,
   UNIT_SIZE: 8,
   UNIT_LINE_HEIGHT: 40,
   INPUT_HEIGHT: 32,

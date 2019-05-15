@@ -1,0 +1,31 @@
+.shape-search {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.1em solid grey;
+    border-radius: 0.5em;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 0.3em;
+    height: 0.08em;
+    border-width: 0;
+    background: grey;
+    transform: rotate(45deg);
+    content: "";
+  }
+}
