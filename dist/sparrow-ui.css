@@ -805,9 +805,6 @@ body {
   font-weight: 600;
   background: #fafafa;
 }
-.list-group-header.header-line {
-  background: 0 0;
-}
 a.list-group-header:not([disabled]):active,
 a.list-group-header:not([disabled]):hover,
 a.list-group-item:not([disabled]):active,
