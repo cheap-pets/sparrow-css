@@ -146,6 +146,17 @@ textarea {
       display: none;
     }
   }
+
+  &.dropdown-group > .dropdown,
+  & > .dropdown {
+    @if $IS_TOUCH_DEVICE {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: auto;
+      bottom: 0;
+    }
+  }
 }
 
 input[border-none],
