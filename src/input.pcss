@@ -40,6 +40,9 @@ input[type="color"] {
     border-color: $CLR_GREY;
     box-shadow: inset 0 0 1px 1px $CLR_GREY_3;
   }
+  &[disabled] {
+    background-color: $CLR_GREY_2;
+  }
 }
 
 input[input-shape="oval"] {
@@ -144,17 +147,6 @@ textarea {
     & > a,
     & > button {
       display: none;
-    }
-  }
-
-  &.dropdown-group > .dropdown,
-  & > .dropdown {
-    @if $IS_TOUCH_DEVICE {
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: auto;
-      bottom: 0;
     }
   }
 }

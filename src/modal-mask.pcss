@@ -1,4 +1,5 @@
-.modal-mask {
+.modal-mask,
+.sub-mask {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -25,4 +26,6 @@
   }
 }
 
-
+[sparrow-popup="popup"] > .sub-mask {
+  visibility: visible;
+}
