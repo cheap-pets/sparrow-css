@@ -1,7 +1,7 @@
 .calendar {
   background: #fff;
   font-size: 0.857rem;
-  min-height: 240px;
+  height: 240px;
   min-width: 300px;
 
   & .calendar-title {
@@ -19,7 +19,8 @@
 
   & .calendar-week-header {
     position: relative;
-    min-height: 32px;
+    height: 32px;
+    min-height: auto;
     font-weight: 600;
     color: $CLR_GREY_7;
     text-align: center;
@@ -31,7 +32,7 @@
   & .calendar-grid {
     & > .calendar-grid-row {
       position: relative;
-      min-height: 24px;
+      min-height: auto;
       & + .calendar-grid-row:before {
         position: absolute;
         top: 0;
@@ -44,7 +45,7 @@
     }
     & .calendar-grid-cell {
       position: relative;
-      min-height: 24px;
+      min-height: auto;
       width: 1px;
       text-align: center;
       color: $CLR_PRIMARY;

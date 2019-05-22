@@ -1,6 +1,6 @@
 {
   "name": "sparrow-css",
-  "version": "0.2.48",
+  "version": "0.2.49",
   "description": "set of styles for web application, code by postcss",
   "engines": {
     "node": ">8.9.0"
