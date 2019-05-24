@@ -217,15 +217,9 @@
     box-shadow: none;
   }
 
-  &.icon,
-  &[toggle-type]:empty {
+  &:empty {
     width: $(INPUT_HEIGHT)px;
     padding: 0;
-
-    &:hover,
-    &[toggled] {
-      padding: 0;
-    }
   }
 
   &[toggle-type]:not(:empty)::after {
