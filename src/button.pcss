@@ -1,7 +1,6 @@
 @import "./shadow.pcss";
 
 .su-button {
-  z-index: 1;
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -221,16 +220,20 @@
       color: rgba(255, 255, 255, .75);
     }
   }
-  &:not([disabled]):not([button-style="link"]) {
-    &:not([button-style="text"]) {
-      @if $BUTTON_SHADOW {
-        @mixin shadow1;
-      }
+  &:not([disabled]) {
+    @if $BUTTON_SHADOW {
+      @mixin shadow1;
+    }
+    &[button-style="text"] {
+      box-shadow: none;
     }
     &:hover {
       @if $BUTTON_SHADOW {
         @mixin shadow2;
       }
+    }
+    &[button-style="link"] {
+      box-shadow: none;
     }
   }
 
@@ -265,10 +268,7 @@
   }
 }
 
-
-/*
-
-.btn-group {
+.su-button-group {
   display: inline-flex;
   flex-wrap: nowrap;
   align-items: stretch;
@@ -281,7 +281,7 @@
     display: flex;
   }
   
-  & > .btn {
+  & > .su-button {
     flex: 1 1 auto;
     box-shadow: none;
 
@@ -291,14 +291,11 @@
     }
 
     &[toggled] {
-      z-index : 2;
+      z-index : 1;
     }
 
     &:hover:not([disabled]) {
-      z-index : 2;
-      @if $BUTTON_SHADOW == 1 {
-        @mixin shadow2;
-      }
+      z-index : 1;
     }
 
     &:not(:first-child) {
@@ -310,6 +307,5 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    @mixin border;
   }
-} */
+}
