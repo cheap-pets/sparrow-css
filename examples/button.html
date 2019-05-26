@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="../dist/sparrow-ui.css">
   <title>Buttons</title>
   <style>
-    #status .btn {
-      width: 120px;
+    #status .su-button {
+      width: 90px;
     }
   </style>
   <script type="text/javascript" src="examples.js"></script>
@@ -17,37 +17,50 @@
 <body>
   <div id="status">
     <h3>样式与状态</h3>
-    <h5>默认样式</h5>
+    <h5>普通按钮</h5>
     <div>
-      <a class="btn btn-grey">DEFAULT</a>
-      <a class="btn btn-grey btn-text">TEXT</a>
-      <a class="btn btn-grey btn-outline">OUTLINE</a>
-      <a class="btn btn-grey" toggled>TOGGLED</a>
-      <a class="btn btn-grey" disabled>DISABLED</a>
+      <a class="su-button" button-type="normal">NORMAL</a>
+      <a class="su-button" button-type="normal" button-style="text">TEXT</a>
+      <a class="su-button" button-type="normal" button-style="link">LINK</a>
+      <a class="su-button" button-type="normal" button-style="outline">OUTLINE</a>
+      <a class="su-button" button-type="normal" active>ACTIVE</a>
+      <a class="su-button" button-type="normal" disabled>DISABLED</a>
     </div>
-    <h5>主要颜色按钮</h5>
+    <h5>主要按钮</h5>
     <div>
-      <a class="btn btn-primary">PRIMARY</a>
-      <a class="btn btn-primary btn-text">TEXT</a>
-      <a class="btn btn-primary btn-outline">OUTLINE</a>
-      <a class="btn btn-primary" toggled>TOGGLED</a>
-      <a class="btn btn-primary btn-text" disabled>DISABLED</a>
+      <a class="su-button" button-type="primary">PRIMARY</a>
+      <a class="su-button" button-type="primary" button-style="text">TEXT</a>
+      <a class="su-button" button-type="primary" button-style="link">LINK</a>
+      <a class="su-button" button-type="primary" button-style="outline">OUTLINE</a>
+      <a class="su-button" button-type="primary" active>ACTIVE</a>
+      <a class="su-button" button-type="primary" disabled>DISABLED</a>
     </div>
-    <h5>辅助颜色按钮</h5>
+    <h5>次要按钮</h5>
     <div>
-      <a class="btn btn-secondary">SECONDARY</a>
-      <a class="btn btn-secondary btn-text">TEXT</a>
-      <a class="btn btn-secondary btn-outline">OUTLINE</a>
-      <a class="btn btn-secondary" toggled>TOGGLED</a>
-      <a class="btn btn-secondary" disabled>DISABLED</a>
+      <a class="su-button" button-type="secondary">SECONDARY</a>
+      <a class="su-button" button-type="secondary" button-style="text">TEXT</a>
+      <a class="su-button" button-type="secondary" button-style="link">LINK</a>
+      <a class="su-button" button-type="secondary" button-style="outline">OUTLINE</a>
+      <a class="su-button" button-type="secondary" active>ACTIVE</a>
+      <a class="su-button" button-type="secondary" disabled>DISABLED</a>
     </div>
-    <h5>危险颜色样式</h5>
+    <h5>提交按钮</h5>
     <div>
-      <a class="btn btn-danger">DANGER</a>
-      <a class="btn btn-danger btn-text">TEXT</a>
-      <a class="btn btn-danger btn-outline">OUTLINE</a>
-      <a class="btn btn-danger" toggled>TOGGLED</a>
-      <a class="btn btn-danger" disabled>DISABLED</a>
+      <a class="su-button" button-type="submit">SUBMIT</a>
+      <a class="su-button" button-type="submit" button-style="text">TEXT</a>
+      <a class="su-button" button-type="submit" button-style="link">LINK</a>
+      <a class="su-button" button-type="submit" button-style="outline">OUTLINE</a>
+      <a class="su-button" button-type="submit" active>ACTIVE</a>
+      <a class="su-button" button-type="submit" disabled>DISABLED</a>
+    </div>
+    <h5>危险按钮</h5>
+    <div>
+      <a class="su-button" button-type="danger">DANGER</a>
+      <a class="su-button" button-type="danger" button-style="text">TEXT</a>
+      <a class="su-button" button-type="danger" button-style="link">LINK</a>
+      <a class="su-button" button-type="danger" button-style="outline">OUTLINE</a>
+      <a class="su-button" button-type="danger" active>ACTIVE</a>
+      <a class="su-button" button-type="danger" disabled>DISABLED</a>
     </div>
   </div>
   <div>

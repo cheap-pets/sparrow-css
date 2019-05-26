@@ -1,30 +1,64 @@
-const { generate, presetPalettes: preset } = require('@ant-design/colors')
+const { blue, grey, green, orange, volcano } = require('@ant-design/colors').presetPalettes
 
-const colors = {
-  PRIMARY: generate('#008CD6'),
-  SECONDARY: preset.gold,
-  DANGER: preset.volcano,
-  SUCCESS: preset.green,
-  WARNING: preset.orange,
-  GREY: [ '#ffffff', '#fafafa', '#f5f5f5', '#e8e8e8', '#d9d9d9', '#bfbfbf', '#8c8c8c', '#595959', '#262626', '#000000' ]
-}
+// const colors = {
+//   PRIMARY: preset.blue,
+//   SECONDARY: preset.grey,
+//   DANGER: preset.volcano,
+//   SUCCESS: preset.green,
+//   WARNING: preset.orange,
+//   GREY: preset.grey
+// }
 
 const variables = {
-  IS_TOUCH_DEVICE: 0,
   UNIT_SIZE: 8,
-  UNIT_LINE_HEIGHT: 40,
-  INPUT_HEIGHT: 32,
-  INPUT_BORDER_RADIUS: 2,
+
+  COLOR_PRIMARY: blue[5],
+  COLOR_PRIMARY_HOVER: blue[4],
+  COLOR_PRIMARY_ACTIVE: blue[6],
+  COLOR_PRIMARY_DISABLED: blue[2],
+
+  COLOR_SECONDARY: grey[5],
+  COLOR_SECONDARY_HOVER: grey[4],
+  COLOR_SECONDARY_ACTIVE: grey[6],
+  COLOR_SECONDARY_DISABLED: grey[2],
+
+  COLOR_SUCCESS: green[5],
+  COLOR_SUCCESS_HOVER: green[4],
+  COLOR_SUCCESS_ACTIVE: green[6],
+  COLOR_SUCCESS_DISABLED: green[2],
+
+  COLOR_DANGER: volcano[5],
+  COLOR_DANGER_HOVER: volcano[4],
+  COLOR_DANGER_ACTIVE: volcano[6],
+  COLOR_DANGER_DISABLED: volcano[2],
+
+  COLOR_GREY: grey[5],
+  COLOR_GREY_HOVER: grey[4],
+  COLOR_GREY_ACTIVE: grey[6],
+  COLOR_GREY_DISABLED: grey[2],
+
+  COLOR_WARNING: orange[5],
+
+  BAR_HEIGHT: 40,
+
   BUTTON_SHADOW: 1,
-  BUTTON_GRADIENT_BACKGROUND: 1,
-  POPUP_BORDER_RADIUS: 0,
-  FORM_LABEL_WIDTH: 65
+
+  DIALOG_BORDER_RADIUS: 0,
+
+  DROPDOWN_BORDER_RADIUS: 0,
+
+  FORM_LABEL_WIDTH: 65,
+
+  INPUT_BORDER_RADIUS: 2,
+  INPUT_HEIGHT: 32,
+
+  LIST_ITEM_HEIGHT: 40
 }
 
-Object.keys(colors).forEach(key => {
-  const current = colors[key]
-  variables[`CLR_${key}`] = current[5]
-  current.forEach((v, i) => variables[`CLR_${key}_${i}`] = v)
-})
+// Object.keys(colors).forEach(key => {
+//   const current = colors[key]
+//   variables[`CLR_${key}`] = current[5]
+//   current.forEach((v, i) => variables[`CLR_${key}_${i}`] = v)
+// })
 
 module.exports = variables

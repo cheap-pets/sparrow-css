@@ -1,220 +1,212 @@
-@import "./background.pcss";
+@import "./shadow.pcss";
 
-@define-mixin border {
-  border-width: 1px;
-  padding: 0 15px;
-}
-
-@define-mixin no_border {
-  border-width: 0;
-  padding: 0 16px;
-}
-
-.btn {
+.su-button {
   z-index: 1;
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   height: $(INPUT_HEIGHT)px;
+  padding: 0 15px;
   outline: none;
   font-size: 1rem;
   line-height: 20px;
-  background: $CLR_GREY_2;
-  color: $CLR_GREY_7;
-  border: 0 solid $CLR_GREY_5;
+  color: $COLOR_GREY;
+  border: 1px solid $COLOR_GREY;
   border-radius: $(INPUT_BORDER_RADIUS)px;
   cursor: pointer;
-  @mixin border;
 
-  @if $BUTTON_SHADOW {
-    @mixin shadow1;
+  &[button-type="primary"] {
+    color: #fff;
+    background: $COLOR_PRIMARY;
+    border-color: $COLOR_PRIMARY;
+
+    &[button-style="link"] {
+      color: $COLOR_PRIMARY;
+      &:hover {
+        color: $COLOR_PRIMARY_HOVER;
+      }
+    }
+
+    &[button-style="text"],
+    &[button-style="outline"] {
+      color: $COLOR_PRIMARY;
+    }
+
+    &[active] {
+      background: $COLOR_PRIMARY_ACTIVE;
+    }
+
+    &:hover {
+      background: $COLOR_PRIMARY_HOVER;
+      border-color: $COLOR_PRIMARY_HOVER;
+      color: #fff;
+    }
+
+    &[disabled] {
+      &[button-style="link"] {
+        color: $COLOR_PRIMARY_DISABLED;
+      }
+      &:not([button-style="link"]) {
+        background: $COLOR_PRIMARY_DISABLED;
+        border-color: $COLOR_PRIMARY_DISABLED;
+      }
+    }
   }
 
-  &[button-shape="oval"] {
+  &[button-type="secondary"] {
+    color: #fff;
+    background: $COLOR_SECONDARY;
+    border-color: $COLOR_SECONDARY;
+
+    &[button-style="link"] {
+      color: $COLOR_SECONDARY;
+      &:hover {
+        color: $COLOR_SECONDARY_HOVER;
+      }
+    }
+
+    &[button-style="text"],
+    &[button-style="outline"] {
+      color: $COLOR_SECONDARY;
+    }
+
+    &[active] {
+      background: $COLOR_SECONDARY_ACTIVE;
+    }
+
+    &:hover {
+      background: $COLOR_SECONDARY_HOVER;
+      border-color: $COLOR_SECONDARY_HOVER;
+      color: #fff;
+    }
+
+    &[disabled] {
+      &[button-style="link"] {
+        color: $COLOR_SECONDARY_DISABLED;
+      }
+      &:not([button-style="link"]) {
+        background: $COLOR_SECONDARY_DISABLED;
+        border-color: $COLOR_SECONDARY_DISABLED;
+      }
+    }
+  }
+
+  &[button-type="submit"] {
+    color: #fff;
+    background: $COLOR_SUCCESS;
+    border-color: $COLOR_SUCCESS;
+
+    &[button-style="link"] {
+      color: $COLOR_SUCCESS;
+      &:hover {
+        color: $COLOR_SUCCESS_HOVER;
+      }
+    }
+
+    &[button-style="text"],
+    &[button-style="outline"] {
+      color: $COLOR_SUCCESS;
+    }
+
+    &[active] {
+      background: $COLOR_SUCCESS_ACTIVE;
+    }
+
+    &:hover {
+      background: $COLOR_SUCCESS_HOVER;
+      border-color: $COLOR_SUCCESS_HOVER;
+      color: #fff;
+    }
+
+    &[disabled] {
+      &[button-style="link"] {
+        color: $COLOR_SUCCESS_DISABLED;
+      }
+      &:not([button-style="link"]) {
+        background: $COLOR_SUCCESS_DISABLED;
+        border-color: $COLOR_SUCCESS_DISABLED;
+      }
+    }
+  }
+
+  &[button-type="danger"] {
+    color: #fff;
+    background: $COLOR_DANGER;
+    border-color: $COLOR_DANGER;
+
+    &[button-style="link"] {
+      color: $COLOR_DANGER;
+      &:hover {
+        color: $COLOR_DANGER_HOVER;
+      }
+    }
+
+    &[button-style="text"],
+    &[button-style="outline"] {
+      color: $COLOR_DANGER;
+    }
+
+    &[active] {
+      background: $COLOR_DANGER_ACTIVE;
+    }
+
+    &:hover {
+      background: $COLOR_DANGER_HOVER;
+      border-color: $COLOR_DANGER_HOVER;
+      color: #fff;
+    }
+
+    &[disabled] {
+      &[button-style="link"] {
+        color: $COLOR_DANGER_DISABLED;
+      }
+      &:not([button-style="link"]) {
+        background: $COLOR_DANGER_DISABLED;
+        border-color: $COLOR_DANGER_DISABLED;
+      }
+    }
+  }
+
+  &[button-style="link"],
+  &[button-style="link"]:hover,
+  &[button-style="text"] {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  &[button-style="outline"] {
+    background: #fff;
+  }
+  &[button-style="link"]:not([disabled]):hover {
+    text-decoration: underline;
+  }
+  
+  &[disabled] {
+    cursor: default;
+    &:not([button-style="link"]) {
+      color: rgba(255, 255, 255, .75);
+    }
+  }
+  &:not([disabled]):not([button-style="link"]) {
+    &:not([button-style="text"]) {
+      @if $BUTTON_SHADOW {
+        @mixin shadow1;
+      }
+    }
+    &:hover {
+      @if $BUTTON_SHADOW {
+        @mixin shadow2;
+      }
+    }
+  }
+
+  &[button-shape="round"] {
     border-radius: calc($INPUT_HEIGHT / 2)px;
   }
 
-  &.btn-primary {
-    color: #fff;
-    border-color: $CLR_PRIMARY_3;
-    @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $bg_primary_gradient;
-    } @else {
-      background: $bg_primary;
-    }
-
-    &.btn-outline,
-    &.btn-text {
-      color: $CLR_PRIMARY;
-    }
-
-    &[toggled] {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_primary_gradient_toggled;
-      } @else {
-        background: $bg_primary_toggled;
-      }
-    }
-  
-    &:hover {
-      color: #fff;
-      border-color: $CLR_PRIMARY_3;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_primary_gradient_hover;
-      } @else {
-        background: $bg_primary_hover;
-      }
-    }
-  }
-  
-  &.btn-secondary {
-    color: #fff;
-    border-color: $CLR_SECONDARY_3;
-    @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $bg_secondary_gradient;
-    } @else {
-      background: $bg_secondary;
-    }
-
-    &.btn-outline,
-    &.btn-text {
-      color: $CLR_SECONDARY;
-    }
-
-    &[toggled] {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_secondary_GRADIEN_toggled;
-      } @else {
-        background: $bg_secondary_toggled;
-      }
-    }
-  
-    &:hover {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_secondary_gradient_hover;
-      } @else {
-        background: $bg_secondary_hover;
-      }
-    }
-  }
-
-  &.btn-success {
-    color: #fff;
-    border-color: $CLR_SUCCESS_3;
-    @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $bg_success_gradient;
-    } @else {
-      background: $bg_success;
-    }
-
-    &.btn-outline,
-    &.btn-text {
-      color: $CLR_SUCCESS;
-    }
-
-    &[toggled] {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_success_GRADIEN_toggled;
-      } @else {
-        background: $bg_success_toggled;
-      }
-    }
-  
-    &:hover {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_success_gradient_hover;
-      } @else {
-        background: $bg_success_hover;
-      }
-    }
-  }
-
-  &.btn-danger {
-    color: #fff;
-    border-color: $CLR_DANGER_3;
-    @if $BUTTON_GRADIENT_BACKGROUND {
-      background: $bg_danger_gradient;
-    } @else {
-      background: $bg_danger;
-    }
-
-    &.btn-outline,
-    &.btn-text {
-      color: $CLR_DANGER;
-    }
-
-    &[toggled] {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_danger_gradient_toggled;
-      } @else {
-        background: $bg_danger_toggled;
-      }
-    }
-  
-    &:hover {
-      color: #fff;
-      @if $BUTTON_GRADIENT_BACKGROUND {
-        background: $bg_danger_gradient_hover;
-      } @else {
-        background: $bg_danger_hover;
-      }
-    }
-  }
-
-  &.btn-primary,
-  &.btn-secondary,
-  &.btn-success,
-  &.btn-danger {
-    @mixin no_border;
-  }
-
-  &.btn-outline {
-    color: $CLR_GREY_7;
+  &:not([button-type]) {
     background: #fff;
-    @mixin border;
-  }
-
-  &.btn-text {
-    color: $CLR_GREY_7;
-    background: transparent;
-    box-shadow: none;
-    &:not(:hover, [disabled], [toggled]) {
-      border-color: transparent;
-    }
-  }
-
-  &[toggled] {
-    color: $CLR_GREY_8;
-    /* border-color: $CLR_GREY_6; */
-    background: $CLR_GREY_4;
-  }
-
-  &:hover {
-    color: $CLR_GREY_8;
-    background: $CLR_GREY_1;
-    @if $BUTTON_SHADOW == 1 {
-      @mixin shadow2;
-    }
-  }
-
-  &[disabled],
-  &[disabled]:hover,
-  &.btn-primary[disabled],
-  &.btn-secondary[disabled],
-  &.btn-success[disabled],
-  &.btn-danger[disabled] {
-    cursor: not-allowed;
-    color: $CLR_GREY;
-    border-color: $CLR_GREY;
-    background: $CLR_GREY_2;
-    box-shadow: none;
   }
 
   &:empty {
@@ -239,6 +231,9 @@
     }
   }
 }
+
+
+/*
 
 .btn-group {
   display: inline-flex;
@@ -284,4 +279,4 @@
     }
     @mixin border;
   }
-}
+} */
