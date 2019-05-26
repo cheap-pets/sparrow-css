@@ -14,7 +14,37 @@
   color: $COLOR_GREY;
   border: 1px solid $COLOR_GREY;
   border-radius: $(INPUT_BORDER_RADIUS)px;
+  background: #fff;
   cursor: pointer;
+
+  &:not([button-type]),
+  &[button-type="normal"] {
+    &[button-style="link"] {
+      &:hover {
+        color: $COLOR_GREY_HOVER;
+      }
+    }
+
+    &[active] {
+      background: $COLOR_GREY_ACTIVE;
+    }
+
+    &:hover {
+      background: $COLOR_GREY_HOVER;
+      border-color: $COLOR_GREY_HOVER;
+      color: #fff;
+    }
+
+    &[disabled] {
+      &[button-style="link"] {
+        color: $COLOR_GREY_DISABLED;
+      }
+      &:not([button-style="link"]) {
+        background: $COLOR_GREY_DISABLED;
+        border-color: $COLOR_GREY_DISABLED;
+      }
+    }
+  }
 
   &[button-type="primary"] {
     color: #fff;
@@ -170,6 +200,7 @@
 
   &[button-style="link"],
   &[button-style="link"]:hover,
+  &[button-style="link"][active],
   &[button-style="text"] {
     background: transparent;
     border-color: transparent;
@@ -181,7 +212,9 @@
   &[button-style="link"]:not([disabled]):hover {
     text-decoration: underline;
   }
-  
+  &[active] {
+    color: #fff;
+  }
   &[disabled] {
     cursor: default;
     &:not([button-style="link"]) {

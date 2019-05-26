@@ -32,10 +32,10 @@ const variables = {
   COLOR_DANGER_ACTIVE: volcano[6],
   COLOR_DANGER_DISABLED: volcano[2],
 
-  COLOR_GREY: grey[5],
-  COLOR_GREY_HOVER: grey[4],
-  COLOR_GREY_ACTIVE: grey[6],
-  COLOR_GREY_DISABLED: grey[2],
+  COLOR_GREY: grey[4],
+  COLOR_GREY_HOVER: grey[3],
+  COLOR_GREY_ACTIVE: grey[5],
+  COLOR_GREY_DISABLED: grey[0],
 
   COLOR_WARNING: orange[5],
 

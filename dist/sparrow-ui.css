@@ -24,10 +24,34 @@
   outline: 0;
   font-size: 1rem;
   line-height: 20px;
-  color: #666;
-  border: 1px solid #666;
+  color: #737373;
+  border: 1px solid #737373;
   border-radius: 2px;
+  background: #fff;
   cursor: pointer;
+}
+.su-button:not([button-type])[button-style=link]:hover,
+.su-button[button-type=normal][button-style=link]:hover {
+  color: grey;
+}
+.su-button:not([button-type])[active],
+.su-button[button-type=normal][active] {
+  background: #666;
+}
+.su-button:not([button-type]):hover,
+.su-button[button-type=normal]:hover {
+  background: grey;
+  border-color: grey;
+  color: #fff;
+}
+.su-button:not([button-type])[disabled][button-style=link],
+.su-button[button-type=normal][disabled][button-style=link] {
+  color: #a6a6a6;
+}
+.su-button:not([button-type])[disabled]:not([button-style=link]),
+.su-button[button-type=normal][disabled]:not([button-style=link]) {
+  background: #a6a6a6;
+  border-color: #a6a6a6;
 }
 .su-button[button-type=primary] {
   color: #fff;
@@ -151,6 +175,7 @@
 }
 .su-button[button-style=link],
 .su-button[button-style=link]:hover,
+.su-button[button-style=link][active],
 .su-button[button-style=text] {
   background: 0 0;
   border-color: transparent;
@@ -161,6 +186,9 @@
 }
 .su-button[button-style=link]:not([disabled]):hover {
   text-decoration: underline;
+}
+.su-button[active] {
+  color: #fff;
 }
 .su-button[disabled] {
   cursor: default;
