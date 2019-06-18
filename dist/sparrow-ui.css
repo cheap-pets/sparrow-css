@@ -1,18 +1,3 @@
-.box-shadow-1 {
-  box-shadow: 0 1.5px 4px rgba(0,0,0,.24),0 1.5px 6px rgba(0,0,0,.12);
-}
-.box-shadow-2 {
-  box-shadow: 0 3px 12px rgba(0,0,0,.23),0 3px 12px rgba(0,0,0,.16);
-}
-.box-shadow-3 {
-  box-shadow: 0 6px 12px rgba(0,0,0,.23),0 10px 40px rgba(0,0,0,.19);
-}
-.box-shadow-4 {
-  box-shadow: 0 10px 20px rgba(0,0,0,.22),0 14px 56px rgba(0,0,0,.25);
-}
-.box-shadow-5 {
-  box-shadow: 0 15px 24px rgba(0,0,0,.22),0 19px 76px rgba(0,0,0,.3);
-}
 .su-button {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -69,6 +54,7 @@
 }
 .su-button[button-type=primary][active] {
   background: #096dd9;
+  border-color: #096dd9;
 }
 .su-button[button-type=primary]:hover {
   background: #40a9ff;
@@ -99,6 +85,7 @@
 }
 .su-button[button-type=secondary][active] {
   background: #404040;
+  border-color: #404040;
 }
 .su-button[button-type=secondary]:hover {
   background: #737373;
@@ -129,6 +116,7 @@
 }
 .su-button[button-type=submit][active] {
   background: #389e0d;
+  border-color: #389e0d;
 }
 .su-button[button-type=submit]:hover {
   background: #73d13d;
@@ -159,6 +147,7 @@
 }
 .su-button[button-type=danger][active] {
   background: #d4380d;
+  border-color: #d4380d;
 }
 .su-button[button-type=danger]:hover {
   background: #ff7a45;
