@@ -1,15 +1,12 @@
 @import "./mixins/shadow.pcss";
 
 .su-button {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  height: $(INPUT_HEIGHT)px;
-  padding: 0 15px;
+  display: inline-block;
+  text-align: center;
+  padding: calc($INPUT_HEIGHT / 2 - 9)px 15px;
   outline: none;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 16px;
   color: $COLOR_GREY;
   border: 1px solid $COLOR_GREY;
   border-radius: $(INPUT_BORDER_RADIUS)px;
@@ -251,7 +248,8 @@
 
   &:empty {
     width: $(INPUT_HEIGHT)px;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &[toggle-type]:not(:empty)::after {

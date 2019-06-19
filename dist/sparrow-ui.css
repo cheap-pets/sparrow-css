@@ -1,13 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+html {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+body {
+  font-size: 100%;
+}
 .su-button {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  padding: 0 15px;
+  display: inline-block;
+  text-align: center;
+  padding: 7px 15px;
   outline: 0;
   font-size: 1rem;
-  line-height: 20px;
+  line-height: 16px;
   color: #737373;
   border: 1px solid #737373;
   border-radius: 2px;
@@ -204,7 +213,8 @@
 }
 .su-button:empty {
   width: 32px;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .su-button[toggle-type]:not(:empty)::after {
   margin-left: 4px;

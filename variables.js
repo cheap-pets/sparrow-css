@@ -43,6 +43,8 @@ const variables = {
 
   BUTTON_SHADOW: 1,
 
+  DEFAULT_TEXT_COLOR: '#333',
+
   DIALOG_BORDER_RADIUS: 0,
 
   DROPDOWN_BORDER_RADIUS: 0,
