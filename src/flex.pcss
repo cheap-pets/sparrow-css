@@ -1,19 +1,20 @@
-.flex-box {
-  display: flex;
+.su-tab-box,
+.su-flex-box {
+  display: flex !important;
   align-items: center;
-  min-height: 40px;
-  line-height: 24px;
+}
 
-  &[flex-direction="column"] {
-    flex-direction: column;
-  }
+[flex-inline] {
+  display: inline-flex !important;
+}
 
-  &.inline {
-    display: inline-flex;
-  }
+.su-tab-box > * {
+  width: 1px;
+  flex: 1 1 auto;
 }
 
 [flex-direction="column"] {
+  flex-direction: column;
   align-items: stretch;
 }
 
@@ -39,14 +40,14 @@
 }
 
 [flex-auto] {
-  flex: auto !important;
+  flex: 1 1 auto !important;
 }
 
 [flex-none] {
-  flex: none !important;
+  flex: 0 0 none !important;
 }
 
-.flex-divider {
+.su-flex-divider {
   flex: none;
   height: $(UNIT_SIZE)px;
   width: $(UNIT_SIZE)px;

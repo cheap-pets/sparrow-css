@@ -1,14 +1,16 @@
 @import "./mixins/shadow.pcss";
 
 .su-button {
+  position: relative;
   display: inline-block;
   text-align: center;
+  height: $(INPUT_HEIGHT)px;
   padding: calc($INPUT_HEIGHT / 2 - 9)px 15px;
   outline: none;
   font-size: 1rem;
   line-height: 16px;
-  color: $COLOR_GREY;
-  border: 1px solid $COLOR_GREY;
+  color: $BUTTON_COLOR_NORMAL;
+  border: 1px solid $BUTTON_COLOR_NORMAL;
   border-radius: $(INPUT_BORDER_RADIUS)px;
   background: #fff;
   cursor: pointer;
@@ -17,183 +19,183 @@
   &[button-type="normal"] {
     &[button-style="link"] {
       &:hover {
-        color: $COLOR_GREY_HOVER;
+        color: $BUTTON_COLOR_NORMAL_HOVER;
       }
     }
 
     &[active] {
-      background: $COLOR_GREY_ACTIVE;
+      background: $BUTTON_COLOR_NORMAL_ACTIVE;
     }
 
     &:hover {
-      background: $COLOR_GREY_HOVER;
-      border-color: $COLOR_GREY_HOVER;
+      background: $BUTTON_COLOR_NORMAL_HOVER;
+      border-color: $BUTTON_COLOR_NORMAL_HOVER;
       color: #fff;
     }
 
     &[disabled] {
       &[button-style="link"] {
-        color: $COLOR_GREY_DISABLED;
+        color: $BUTTON_COLOR_NORMAL_DISABLED;
       }
       &:not([button-style="link"]) {
-        background: $COLOR_GREY_DISABLED;
-        border-color: $COLOR_GREY_DISABLED;
+        background: $BUTTON_COLOR_NORMAL_DISABLED;
+        border-color: $BUTTON_COLOR_NORMAL_DISABLED;
       }
     }
   }
 
   &[button-type="primary"] {
     color: #fff;
-    background: $COLOR_PRIMARY;
-    border-color: $COLOR_PRIMARY;
+    background: $BUTTON_COLOR_PRIMARY;
+    border-color: $BUTTON_COLOR_PRIMARY;
 
     &[button-style="link"] {
-      color: $COLOR_PRIMARY;
+      color: $BUTTON_COLOR_PRIMARY;
       &:hover {
-        color: $COLOR_PRIMARY_HOVER;
+        color: $BUTTON_COLOR_PRIMARY_HOVER;
       }
     }
 
     &[button-style="text"],
     &[button-style="outline"] {
-      color: $COLOR_PRIMARY;
+      color: $BUTTON_COLOR_PRIMARY;
     }
 
     &[active] {
-      background: $COLOR_PRIMARY_ACTIVE;
-      border-color: $COLOR_PRIMARY_ACTIVE;
+      background: $BUTTON_COLOR_PRIMARY_ACTIVE;
+      border-color: $BUTTON_COLOR_PRIMARY_ACTIVE;
     }
 
     &:hover {
-      background: $COLOR_PRIMARY_HOVER;
-      border-color: $COLOR_PRIMARY_HOVER;
+      background: $BUTTON_COLOR_PRIMARY_HOVER;
+      border-color: $BUTTON_COLOR_PRIMARY_HOVER;
       color: #fff;
     }
 
     &[disabled] {
       &[button-style="link"] {
-        color: $COLOR_PRIMARY_DISABLED;
+        color: $BUTTON_COLOR_PRIMARY_DISABLED;
       }
       &:not([button-style="link"]) {
-        background: $COLOR_PRIMARY_DISABLED;
-        border-color: $COLOR_PRIMARY_DISABLED;
+        background: $BUTTON_COLOR_PRIMARY_DISABLED;
+        border-color: $BUTTON_COLOR_PRIMARY_DISABLED;
       }
     }
   }
 
   &[button-type="secondary"] {
     color: #fff;
-    background: $COLOR_SECONDARY;
-    border-color: $COLOR_SECONDARY;
+    background: $BUTTON_COLOR_SECONDARY;
+    border-color: $BUTTON_COLOR_SECONDARY;
 
     &[button-style="link"] {
-      color: $COLOR_SECONDARY;
+      color: $BUTTON_COLOR_SECONDARY;
       &:hover {
-        color: $COLOR_SECONDARY_HOVER;
+        color: $BUTTON_COLOR_SECONDARY_HOVER;
       }
     }
 
     &[button-style="text"],
     &[button-style="outline"] {
-      color: $COLOR_SECONDARY;
+      color: $BUTTON_COLOR_SECONDARY;
     }
 
     &[active] {
-      background: $COLOR_SECONDARY_ACTIVE;
-      border-color: $COLOR_SECONDARY_ACTIVE;
+      background: $BUTTON_COLOR_SECONDARY_ACTIVE;
+      border-color: $BUTTON_COLOR_SECONDARY_ACTIVE;
     }
 
     &:hover {
-      background: $COLOR_SECONDARY_HOVER;
-      border-color: $COLOR_SECONDARY_HOVER;
+      background: $BUTTON_COLOR_SECONDARY_HOVER;
+      border-color: $BUTTON_COLOR_SECONDARY_HOVER;
       color: #fff;
     }
 
     &[disabled] {
       &[button-style="link"] {
-        color: $COLOR_SECONDARY_DISABLED;
+        color: $BUTTON_COLOR_SECONDARY_DISABLED;
       }
       &:not([button-style="link"]) {
-        background: $COLOR_SECONDARY_DISABLED;
-        border-color: $COLOR_SECONDARY_DISABLED;
+        background: $BUTTON_COLOR_SECONDARY_DISABLED;
+        border-color: $BUTTON_COLOR_SECONDARY_DISABLED;
       }
     }
   }
 
   &[button-type="submit"] {
     color: #fff;
-    background: $COLOR_SUCCESS;
-    border-color: $COLOR_SUCCESS;
+    background: $BUTTON_COLOR_SUBMIT;
+    border-color: $BUTTON_COLOR_SUBMIT;
 
     &[button-style="link"] {
-      color: $COLOR_SUCCESS;
+      color: $BUTTON_COLOR_SUBMIT;
       &:hover {
-        color: $COLOR_SUCCESS_HOVER;
+        color: $BUTTON_COLOR_SUBMIT_HOVER;
       }
     }
 
     &[button-style="text"],
     &[button-style="outline"] {
-      color: $COLOR_SUCCESS;
+      color: $BUTTON_COLOR_SUBMIT;
     }
 
     &[active] {
-      background: $COLOR_SUCCESS_ACTIVE;
-      border-color: $COLOR_SUCCESS_ACTIVE;
+      background: $BUTTON_COLOR_SUBMIT_ACTIVE;
+      border-color: $BUTTON_COLOR_SUBMIT_ACTIVE;
     }
 
     &:hover {
-      background: $COLOR_SUCCESS_HOVER;
-      border-color: $COLOR_SUCCESS_HOVER;
+      background: $BUTTON_COLOR_SUBMIT_HOVER;
+      border-color: $BUTTON_COLOR_SUBMIT_HOVER;
       color: #fff;
     }
 
     &[disabled] {
       &[button-style="link"] {
-        color: $COLOR_SUCCESS_DISABLED;
+        color: $BUTTON_COLOR_SUBMIT_DISABLED;
       }
       &:not([button-style="link"]) {
-        background: $COLOR_SUCCESS_DISABLED;
-        border-color: $COLOR_SUCCESS_DISABLED;
+        background: $BUTTON_COLOR_SUBMIT_DISABLED;
+        border-color: $BUTTON_COLOR_SUBMIT_DISABLED;
       }
     }
   }
 
   &[button-type="danger"] {
     color: #fff;
-    background: $COLOR_DANGER;
-    border-color: $COLOR_DANGER;
+    background: $BUTTON_COLOR_DANGER;
+    border-color: $BUTTON_COLOR_DANGER;
 
     &[button-style="link"] {
-      color: $COLOR_DANGER;
+      color: $BUTTON_COLOR_DANGER;
       &:hover {
-        color: $COLOR_DANGER_HOVER;
+        color: $BUTTON_COLOR_DANGER_HOVER;
       }
     }
 
     &[button-style="text"],
     &[button-style="outline"] {
-      color: $COLOR_DANGER;
+      color: $BUTTON_COLOR_DANGER;
     }
 
     &[active] {
-      background: $COLOR_DANGER_ACTIVE;
-      border-color: $COLOR_DANGER_ACTIVE;
+      background: $BUTTON_COLOR_DANGER_ACTIVE;
+      border-color: $BUTTON_COLOR_DANGER_ACTIVE;
     }
 
     &:hover {
-      background: $COLOR_DANGER_HOVER;
-      border-color: $COLOR_DANGER_HOVER;
+      background: $BUTTON_COLOR_DANGER_HOVER;
+      border-color: $BUTTON_COLOR_DANGER_HOVER;
       color: #fff;
     }
 
     &[disabled] {
       &[button-style="link"] {
-        color: $COLOR_DANGER_DISABLED;
+        color: $BUTTON_COLOR_DANGER_DISABLED;
       }
       &:not([button-style="link"]) {
-        background: $COLOR_DANGER_DISABLED;
-        border-color: $COLOR_DANGER_DISABLED;
+        background: $BUTTON_COLOR_DANGER_DISABLED;
+        border-color: $BUTTON_COLOR_DANGER_DISABLED;
       }
     }
   }
@@ -218,7 +220,7 @@
   &[disabled] {
     cursor: default;
     &:not([button-style="link"]) {
-      color: rgba(255, 255, 255, .75);
+      color: $TEXT_COLOR_LIGHT;
     }
   }
   &:not([disabled]) {
@@ -238,13 +240,11 @@
     }
   }
 
-  &[button-shape="round"] {
-    border-radius: calc($INPUT_HEIGHT / 2)px;
-  }
-
+  /*
   &:not([button-type]) {
     background: #fff;
   }
+  */
 
   &:empty {
     width: $(INPUT_HEIGHT)px;
@@ -252,62 +252,46 @@
     padding-right: 0;
   }
 
-  &[toggle-type]:not(:empty)::after {
+  & > * + span,
+  & > span + * {
     margin-left: 4px;
-  }
-
-  & > [toggle-type],
-  & > .icon {
-    margin: 0 4px;
-
-    & + .icon,
-    &:first-child {
-      margin-left: 0;
-    }
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }
 
 .su-button-group {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: stretch;
+  display: inline-block;
+  position: relative;
   border-radius: $(INPUT_BORDER_RADIUS)px;
+
   @if $BUTTON_SHADOW == 1 {
     @mixin shadow1;
   }
-
-  &.block {
-    display: flex;
-  }
   
   & > .su-button {
-    flex: 1 1 auto;
+    float: left;
     box-shadow: none;
-
-    &.icon,
-    &[toggle-type] {
-      flex: none;
-    }
-
-    &[toggled] {
-      z-index : 1;
-    }
+    z-index : 0;
 
     &:hover:not([disabled]) {
       z-index : 1;
     }
 
     &:not(:first-child) {
-      margin-left: -1px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      &[button-type]:not([button-type="normal"]):not([button-style]):not(:hover):not([active]) {
+        border-left-color: rgba(255, 255, 255, .5);
+      }
     }
     &:not(:last-child) {
+      margin-right: -1px;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
   }
+}
+
+[button-shape="round"],
+[button-shape="round"] > .su-button {
+  border-radius: calc($INPUT_HEIGHT / 2)px;
 }
