@@ -35,7 +35,9 @@ const variables = {
   SHADOW_COLOR_SECONDARY: grey[4],
   SHADOW_COLOR_SUCCESS: green[2],
   SHADOW_COLOR_DANGER: volcano[2],
-  
+
+  BUTTON_SHADOW: 1,
+
   BUTTON_COLOR_NORMAL: grey[7],
   BUTTON_COLOR_NORMAL_HOVER: grey[6],
   BUTTON_COLOR_NORMAL_ACTIVE: grey[8],
@@ -60,8 +62,6 @@ const variables = {
   BUTTON_COLOR_DANGER_HOVER: volcano[4],
   BUTTON_COLOR_DANGER_ACTIVE: volcano[6],
   BUTTON_COLOR_DANGER_DISABLED: volcano[2],
-
-  BUTTON_SHADOW: 1,
     
   INPUT_BORDER_COLOR: grey[7],
   INPUT_COLOR_READONLY: yellow[0],
@@ -75,19 +75,20 @@ const variables = {
   BORDER_COLOR_DEFAULT: grey[7],
 
   TEXT_COLOR_DEFAULT: grey[9],
-  TEXT_COLOR_DARK_GREY: grey[8],
   TEXT_COLOR_GREY: grey[7],
-  TEXT_COLOR_LIGHT_GREY: grey[6],
+  TEXT_COLOR_GREY_DARK: grey[8],
+  TEXT_COLOR_GREY_LIGHT: grey[6],
 
-  TEXT_COLOR_LIGHT: 'rgba(255, 255, 255, .75)',
   TEXT_COLOR_DARK: 'rgba(0, 0, 0, .75)',
+  TEXT_COLOR_HALF_DARK: 'rgba(0, 0, 0, .375)',
+  TEXT_COLOR_LIGHT: 'rgba(255, 255, 255, .75)',
+  TEXT_COLOR_HALF_LIGHT: 'rgba(255, 255, 255, .375)',
 
   DIALOG_BORDER_RADIUS: 0,
 
   DROPDOWN_BORDER_RADIUS: 0,
 
   FORM_LABEL_WIDTH: 65,
-
 
   LIST_ITEM_HEIGHT: 40
 }

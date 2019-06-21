@@ -1,13 +1,11 @@
 @import "./mixins/text.pcss";
 
 $inputButtonSize: calc($INPUT_HEIGHT - 2);
-
-input::-ms-clear { display: none; }
+$inputIconPaddingSize: calc(5 + $inputButtonSize)px;
 
 .su-input {
-  height: $(INPUT_HEIGHT)px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 7px 15px;
+  line-height: 16px;
   width: 200px;
   color: $TEXT_COLOR_DEFAULT;
   background-color: #fff;
@@ -15,10 +13,6 @@ input::-ms-clear { display: none; }
   border-radius: $(INPUT_BORDER_RADIUS)px;
   outline: none;
   font-size: 1rem;
-  &:hover,
-  &:focus {
-    background-color: #fff;
-  }
   &:focus {
     text-align: left !important;
     border-color: $COLOR_PRIMARY;
@@ -26,25 +20,20 @@ input::-ms-clear { display: none; }
   }
   &[readonly] {
     background-color: $INPUT_COLOR_READONLY;
-    &:focus {
-      border-color: $BORDER_COLOR_DEFAULT;
-      box-shadow: inset 0 0 1px 1px $SHADOW_COLOR_NORMAL;
-    }
   }
   &[disabled] {
-    color: $TEXT_COLOR_LIGHT_GREY;
+    color: $TEXT_COLOR_GREY_LIGHT;
     background-color: $INPUT_COLOR_DISABLED;
     box-shadow: none;
   }
-
-  &textarea {
-    min-height: 80px;
-    resize: none;
-  }
-
   &::-ms-clear {
     display: none;
   }
+}
+
+textarea.su-input {
+  min-height: 80px;
+  resize: none;
 }
 
 [input-shape="round"] {
@@ -56,43 +45,35 @@ input::-ms-clear { display: none; }
   display: inline-block;
   width: 200px;
   
-  & > input {
+  & > .su-input {
     width: 100%;
     padding-right: calc(5 + $inputButtonSize)px;
   }
 
-  & > .icon,
-  & > [toggle-type] {
-    &:not(a):not(.btn) {
-      color: rgba(0, 0, 0, .3);
-    }
-  }
-
-  & > .icon,
-  & > [toggle-type] {
+  & > .su-input-icon {
     position: absolute;
     top: 1px;
     bottom: 1px;
     right: 1px;
     display: inline-block;
+    width: $(inputButtonSize)px;
     line-height: $(inputButtonSize)px;
     text-align: center;
-    width: $(inputButtonSize)px;
-    height: auto;
-
-    &.btn {
-      width: $(inputButtonSize)px;
-    }
+    color: $TEXT_COLOR_HALF_DARK;
 
     &:first-child {
       left: 1px;
       right: auto;
 
       & + input {
-        padding-left: calc(5 + $inputButtonSize)px;
-        padding-right: 10px;
+        padding-left: $inputIconPaddingSize;
       }
     }
+  }
+
+  & > a.su-input-icon:hover {
+    color: $COLOR_PRIMARY;
+    cursor: pointer;
   }
 
   &[buttons="2"] {
@@ -127,21 +108,11 @@ input::-ms-clear { display: none; }
     }
   }
 
-  & > a:not(.btn) {
-    cursor: pointer;
-    color: rgba(0, 0, 0, .5);
-
-    &:hover {
-      background-color: rgba(0, 0, 0, .075);
-    }
-  }
-
   &[readonly] {
-    & > input {
-      padding: 0 10px;
+    & > .su-input {
+      padding: 7px 15px;
     }
-    & > a,
-    & > button {
+    & > .su-input-icon {
       display: none;
     }
   }
@@ -205,7 +176,7 @@ label {
     line-height: 32px;
     width: 80px;
     font-size: 0.857rem;
-    color: $TEXT_COLOR_LIGHT_GREY;
+    color: $TEXT_COLOR_GREY_LIGHT;
     @mixin text-ellipsis;
   }
 
@@ -238,7 +209,7 @@ label {
     line-height: 32px;
     width: 32px;
     text-align: center;
-    color: $TEXT_COLOR_LIGHT_GREY;
+    color: $TEXT_COLOR_GREY_LIGHT;
   }
 
   &:not([readonly]) {
