@@ -1,10 +1,10 @@
 @import "./mixins/text.pcss";
 
-$inputButtonSize: calc($INPUT_HEIGHT - 2);
-$inputIconPaddingSize: calc(5 + $inputButtonSize)px;
+$inputClientHeight: calc($INPUT_HEIGHT - 2);
+$inputPaddingX: calc(($INPUT_HEIGHT - 2 - 16) / 2)px;
 
 .su-input {
-  padding: 7px 15px;
+  padding: $inputPaddingX 15px;
   line-height: 16px;
   width: 200px;
   color: $TEXT_COLOR_DEFAULT;
@@ -47,22 +47,22 @@ textarea.su-input {
   
   & > .su-input {
     width: 100%;
-    padding-right: calc(5 + $inputButtonSize)px;
+    padding-right: calc(5 + $inputClientHeight)px;
   }
 
   & > .su-input-icon {
     position: absolute;
     top: 1px;
     bottom: 1px;
-    right: 1px;
+    right: 8px;
     display: inline-block;
-    width: $(inputButtonSize)px;
-    line-height: $(inputButtonSize)px;
+    width: 16px;
+    line-height: $(inputClientHeight)px;
     text-align: center;
     color: $TEXT_COLOR_HALF_DARK;
 
     &:first-child {
-      left: 1px;
+      left: 8px;
       right: auto;
 
       & + input {

@@ -676,15 +676,15 @@ textarea.su-input {
   position: absolute;
   top: 1px;
   bottom: 1px;
-  right: 1px;
+  right: 8px;
   display: inline-block;
-  width: 30px;
+  width: 16px;
   line-height: 30px;
   text-align: center;
   color: rgba(0,0,0,.375);
 }
 .su-input-box > .su-input-icon:first-child {
-  left: 1px;
+  left: 8px;
   right: auto;
 }
 .su-input-box > .su-input-icon:first-child + input {
