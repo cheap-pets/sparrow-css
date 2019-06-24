@@ -23,6 +23,7 @@ const grey = [
 
 const variables = {
   UNIT_SIZE: 8,
+  UNIT_BLOCK_HEIGHT: 40,
 
   COLOR_PRIMARY: blue[5],
   COLOR_SECONDARY: grey[7],
@@ -79,10 +80,12 @@ const variables = {
   TEXT_COLOR_GREY_DARK: grey[8],
   TEXT_COLOR_GREY_LIGHT: grey[6],
 
-  TEXT_COLOR_DARK: 'rgba(0, 0, 0, .75)',
-  TEXT_COLOR_HALF_DARK: 'rgba(0, 0, 0, .375)',
-  TEXT_COLOR_LIGHT: 'rgba(255, 255, 255, .75)',
-  TEXT_COLOR_HALF_LIGHT: 'rgba(255, 255, 255, .375)',
+  TEXT_COLOR_DARK: 'rgba(0, 0, 0, .7)',
+  TEXT_COLOR_HALF_DARK: 'rgba(0, 0, 0, .35)',
+  TEXT_COLOR_QUARTER_DARK: 'rgba(0, 0, 0, .175)',
+  TEXT_COLOR_LIGHT: 'rgba(255, 255, 255, .7)',
+  TEXT_COLOR_HALF_LIGHT: 'rgba(255, 255, 255, .35)',
+  TEXT_COLOR_QUARTER_LIGHT: 'rgba(255, 255, 25, .175)',
 
   DIALOG_BORDER_RADIUS: 0,
 

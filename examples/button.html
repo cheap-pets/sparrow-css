@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./icon-font.css">
   <link rel="stylesheet" href="../dist/sparrow-ui.css">
   <title>Buttons</title>
   <style>
@@ -18,8 +19,10 @@
 </head>
 
 <body>
+  <h2>按钮与链接</h2>
+  <hr>
   <div>
-    <h3>样式与状态</h3>
+    <h3>按钮：样式与状态</h3>
     <h5>普通按钮 button-type="normal"</h5>
     <div>
       <a class="su-button w-120" button-type="normal">NORMAL</a>
@@ -76,7 +79,7 @@
     </div>
   </div>
   <div>
-    <h3>按钮形状</h3>
+    <h3>按钮：形状</h3>
     <h5>圆边按钮</h5>
     <button class="su-button w-120" button-type="primary" button-shape="round">PRIMARY</button>
     <button class="su-button w-120" button-type="secondary" button-shape="round">SECONDARY</button>
@@ -86,7 +89,7 @@
   </div>
   
   <div>
-    <h3>按钮内容</h3>
+    <h3>按钮：内容</h3>
     <button class="su-button" button-type="primary">仅文字</button>
     <button class="su-button icon icon-star" button-type="secondary" title="仅图标"></button>
     <button class="su-button" title="仅图标">
@@ -136,6 +139,36 @@
       <a class="su-button" button-type="primary" button-style="text">按钮一</a>
       <a class="su-button" button-type="primary" button-style="text">按钮二</a>
       <a class="su-button" button-type="primary" button-style="text">按钮三</a>
+    </div>
+  </div>
+  <div>
+    <h3>链接</h3>
+    <h5>普通样式</h5>
+    <div>
+      <a class="su-link">链接</a>
+      <a class="su-link" link-type="primary">主要链接</a>
+      <a class="su-link" link-type="secondary">次要链接</a>
+      <a class="su-link" link-type="submit">提交链接</a>
+      <a class="su-link" link-type="danger">危险链接</a>
+      <a class="su-link" disabled>禁用状态</a>
+    </div>
+    <h5>始终下划线</h5>
+    <div>
+      <a class="su-link" link-underline="always">链接</a>
+      <a class="su-link" link-type="primary" link-underline="always">主要链接</a>
+      <a class="su-link" link-type="secondary" link-underline="always">次要链接</a>
+      <a class="su-link" link-type="submit" link-underline="always">提交链接</a>
+      <a class="su-link" link-type="danger" link-underline="always">危险链接</a>
+      <a class="su-link" link-underline="always" disabled>禁用状态</a>
+    </div>
+    <h5>没有下划线</h5>
+    <div>
+      <a class="su-link" link-underline="none">链接</a>
+      <a class="su-link" link-type="primary" link-underline="none">主要链接</a>
+      <a class="su-link" link-type="secondary" link-underline="none">次要链接</a>
+      <a class="su-link" link-type="submit" link-underline="none">提交链接</a>
+      <a class="su-link" link-type="danger" link-underline="none">危险链接</a>
+      <a class="su-link" link-underline="always" disabled>禁用状态</a>
     </div>
   </div>
 </body>

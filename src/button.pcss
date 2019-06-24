@@ -1,19 +1,22 @@
 @import "./mixins/shadow.pcss";
 
-$buttonPaddingX: calc(($INPUT_HEIGHT - 2 - 16) / 2)px;
+$buttonLineHeight: 16;
+$buttonPaddingY: calc(($INPUT_HEIGHT - 16 - 2) / 2);
 
 .su-button {
   position: relative;
   display: inline-block;
+  height: $(INPUT_HEIGHT)px;
   text-align: center;
-  padding: $buttonPaddingX 15px;
+  padding: $(buttonPaddingY)px 15px;
   outline: none;
   font-size: 1rem;
-  line-height: 16px;
+  line-height: $(buttonLineHeight)px;
   color: $BUTTON_COLOR_NORMAL;
   border: 1px solid $BUTTON_COLOR_NORMAL;
   border-radius: $(INPUT_BORDER_RADIUS)px;
   background: #fff;
+  text-decoration: none;
   cursor: pointer;
 
   &:not([button-type]),
