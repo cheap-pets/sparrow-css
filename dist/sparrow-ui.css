@@ -367,7 +367,7 @@ html {
 .su-input {
   width: 200px;
   padding: 7px 15px;
-  border: 1px solid #666;
+  border: 1px solid #b2b2b2;
   border-radius: 2px;
   outline: 0;
   background-color: #fff;
@@ -388,7 +388,7 @@ html {
 }
 .su-input[disabled] {
   background-color: #e6e6e6;
-  border-color: #666;
+  border-color: #b2b2b2;
   color: #8c8c8c;
   box-shadow: none;
 }
@@ -469,123 +469,49 @@ textarea.su-input {
 .su-input-box[readonly] > .su-input-icon {
   display: none;
 }
-.su-form-item {
-  line-height: 40px;
-}
-.su-form-item > label {
-  display: inline-block;
-  font-size: .857rem;
-  padding-right: 12px;
-  width: 65px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-label {
-  color: #666;
-}
-[toggle-type] > label {
-  cursor: pointer;
-}
-.form-field {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-align-items: center;
-  align-items: center;
-  min-height: 40px;
-  overflow: visible;
-}
-.form-field.inline {
+.su-form-inline {
   display: -webkit-inline-flex;
   display: inline-flex;
 }
-.form-field > label {
+.su-form-field {
+  display: block;
+  margin-bottom: 16px;
+}
+.su-form-field:last-child {
+  margin-bottom: 0;
+}
+.su-form-field > label {
   position: relative;
-  -webkit-flex: none;
-  flex: none;
   display: inline-block;
+  float: left;
   line-height: 32px;
-  font-size: .857rem;
-  padding-right: 12px;
-  width: 65px;
+  font-size: 1rem;
+  margin-right: 12px;
+  color: #666;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.form-field > .field-value,
-.form-field > .input-box,
-.form-field > input {
-  -webkit-flex: auto;
-  flex: auto;
-  width: 10px;
+.su-form-field[is-required] > label {
+  padding-left: 8px;
 }
-.form-field > .field-value:not(input) {
-  padding: 0 10px;
-  line-height: 32px;
-}
-.form-field > .field-value:not([multi-lines]) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.form-field > .field-postfix {
-  -webkit-flex: none;
-  flex: none;
-  padding-left: 10px;
-  line-height: 32px;
-  width: 80px;
-  font-size: .857rem;
-  color: #8c8c8c;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.form-field[important] > label:after {
+.su-form-field[is-required] > label:before {
   position: absolute;
-  right: 0;
+  left: 0;
   display: inline-block;
-  text-align: center;
-  width: 12px;
+  width: 8px;
   color: #fa541c;
   content: "*";
 }
-.form-field[invalid] > label {
+.su-form-field[is-invalid] > label {
   color: #fa541c;
 }
-.form-field[invalid] input,
-.form-field[invalid] textarea {
+.su-form-field[is-invalid] .su-input {
   border-color: #fa541c;
 }
-.form-field[invalid] input:focus,
-.form-field[invalid] textarea:focus {
+.su-form-field[is-invalid] .su-input:focus {
   box-shadow: inset 0 0 1px 1px #ffbb96;
 }
-.form-field[toggle-type]:after {
-  -webkit-flex: none;
-  flex: none;
-  -webkit-align-items: center;
-  align-items: center;
-  line-height: 32px;
-  width: 32px;
-  text-align: center;
-  color: #8c8c8c;
-}
-.form-field:not([readonly]) > .input-box[border-none] > input:not(:focus),
-.form-field:not([readonly]) > input[border-none]:not(:focus) {
-  background: rgba(0,0,0,.03);
-}
-.form {
-  padding: 0 8px;
-}
-.form[label-align=right] label {
-  text-align: right;
-}
-.form[value-align=right] .field-value,
-.form[value-align=right] input {
-  text-align: right;
-}
-.form[grid-line] > :not(:first-child) {
-  border-top: 1px solid rgba(0,0,0,.05);
+[align-required-label] > .su-form-field > label {
+  padding-left: 8px;
 }

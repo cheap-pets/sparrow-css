@@ -73,7 +73,7 @@ const variables = {
 
   BAR_HEIGHT: 40,
 
-  BORDER_COLOR_DEFAULT: grey[7],
+  BORDER_COLOR_DEFAULT: grey[5],
 
   TEXT_COLOR_DEFAULT: grey[9],
   TEXT_COLOR_GREY: grey[7],
@@ -90,8 +90,6 @@ const variables = {
   DIALOG_BORDER_RADIUS: 0,
 
   DROPDOWN_BORDER_RADIUS: 0,
-
-  FORM_LABEL_WIDTH: 65,
 
   LIST_ITEM_HEIGHT: 40
 }

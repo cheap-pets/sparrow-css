@@ -14,43 +14,42 @@
   <h2>表单</h2>
   <hr>
   <div>
-    <h3>表单项</h3>
-    <h5>输入表单</h5>
-    <div class="form-field">
-      <label>名称</label>
-      <input class="su-input" type="text" placeholder="普通输入框">
+    <h3>表单样式</h3>
+    <h5>常规状态</h5>
+    <div class="su-form-field">
+      <label>文本框</label>
+      <input class="su-input" type="text">
     </div>
-    <div class="form-field" important>
-      <label>字段名称</label>
-      <div class="input-box" buttons="2">
-        <input class="su-input" type="text" placeholder="输入框组">
-        <a toggle-type="clear"></a>
-        <a toggle-type="expand"></a>
+    <div class="su-form-field">
+      <label>文本域</label>
+      <textarea class="su-input"></textarea>
+    </div>
+    <h5>必填状态与无效状态</h5>
+    <div class="su-form" align-required-label>
+      <div class="su-form-field" is-required>
+        <label>必填项</label>
+        <input class="su-input" type="text" value="不可以为空">
+      </div>
+      <div class="su-form-field" is-invalid>
+        <label>无效项</label>
+        <input class="su-input" type="text"></textarea>
+      </div>
+      <div class="su-form-field" is-required is-invalid>
+        <label>无效项</label>
+        <textarea class="su-input"></textarea>
       </div>
     </div>
-    <div class="form-field" invalid>
-      <label>字段名称</label>
-      <input class="su-input" type="text" placeholder="普通输入框">
-    </div>
-    <div class="form-field" text-align="justify">
-      <label>字段名称</label>
-      <div class="input-box">
-        <input class="su-input" type="text" placeholder="输入框组">
-        <span toggle-type="navigate"></span>
+
+    <h3>表单布局</h3>
+    <h5>宽度充满</h5>
+    <div class="su-form">
+      <div class="su-form-field">
+        <label>文本框</label>
+        <input class="su-input" type="text">
       </div>
-    </div>
-    <div class="form-field" text-align="justify" toggle-type="navigate">
-      <label>字段名称</label>
-      <input class="su-input" type="text" placeholder="输入框">
-    </div>
-    <div class="form-field" text-align="justify" toggle-type="navigate" vertical-align="top">
-      <label>字段名称</label>
-      <textarea class="su-input" placeholder="输入框"></textarea>
-    </div>
-    <div class="form-field" text-align="justify" toggle-type="navigate">
-      <label>字段名称长</label>
-      <div text-align="right">
-        文字内容
+      <div class="su-form-field">
+        <label>文本域</label>
+        <textarea class="su-input"></textarea>
       </div>
     </div>
   </div>

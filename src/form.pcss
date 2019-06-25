@@ -1,140 +1,53 @@
 .su-form {
-
 }
 
 .su-form-inline {
-
+  display: inline-flex;
 }
 
-.su-form-item {
-  line-height: $(UNIT_BLOCK_HEIGHT)px;
-  & > label {
-    display: inline-block;
-    font-size: 0.857rem;
-    padding-right: 12px;
-    width: $(FORM_LABEL_WIDTH)px;
-    @mixin text-ellipsis;
+.su-form-field {
+  display: block;
+  margin-bottom: calc($UNIT_SIZE * 2)px;
+  &:last-child {
+    margin-bottom: 0;
   }
-  & > .su-input,
-  & > .su-input-box {
-  }
-}
-
-
-label {
-  color: $TEXT_COLOR_GREY;
-}
-
-[toggle-type] > label {
-  cursor: pointer;
-}
-
-.form-field {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  min-height: 40px;
-  overflow: visible;
-
-  &.inline {
-    display: inline-flex;
-  }
-
   & > label {
     position: relative;
-    flex: none;
     display: inline-block;
-    line-height: 32px;
-    font-size: 0.857rem;
-    padding-right: 12px;
-    width: $(FORM_LABEL_WIDTH)px;
+    float: left;
+    line-height: $(INPUT_HEIGHT)px;
+    font-size: 1rem;
+    margin-right: calc($UNIT_SIZE * 1.5)px;
+    color: $TEXT_COLOR_GREY;
     @mixin text-ellipsis;
   }
-
-  & > input,
-  & > .input-box,
-  & > .field-value {
-    flex: auto;
-    width: 10px;
-  }
-
-  & > .field-value {
-    &:not(input) {
-      padding: 0 10px;
-      line-height: 32px;
-    }
-    &:not([multi-lines]) {
-      @mixin text-ellipsis;
+  &[is-required] > label {
+    padding-left: $(UNIT_SIZE)px;
+    &:before {
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      width: $(UNIT_SIZE)px;
+      color: #fa541c;
+      content: "*";
     }
   }
-
-  & > .field-postfix {
-    flex: none;
-    padding-left: 10px;
-    line-height: 32px;
-    width: 80px;
-    font-size: 0.857rem;
-    color: $TEXT_COLOR_GREY_LIGHT;
-    @mixin text-ellipsis;
-  }
-
-  &[important] > label:after {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-    text-align: center;
-    width: 12px;
-    color: $COLOR_DANGER;
-    content: "*";
-  }
-
-  &[invalid] {
+  &[is-invalid] {
     & > label {
       color: $COLOR_DANGER;
     }
-    & input,
-    & textarea {
+    & .su-input {
       border-color: $COLOR_DANGER;
       &:focus {
         box-shadow: inset 0 0 1px 1px $SHADOW_COLOR_DANGER;
       }
     }
   }
-
-  &[toggle-type]:after {
-    flex: none;
-    align-items: center;
-    line-height: 32px;
-    width: 32px;
-    text-align: center;
-    color: $TEXT_COLOR_GREY_LIGHT;
-  }
-
-  &:not([readonly]) {
-    & > input[border-none],
-    & > .input-box[border-none] > input {
-      &:not(:focus) {
-        background: rgba(0, 0, 0, .03);
-      }
-    }
+  & > .su-input,
+  & > .su-input-box {
   }
 }
 
-.form {
-  padding: 0 $(UNIT_SIZE)px;
-
-  &[label-align="right"] label {
-    text-align: right;
-  }
-  &[value-align="right"] {
-    input,
-    .field-value {
-      text-align: right;
-    }
-  }
-  &[grid-line] {
-    & > :not(:first-child) {
-      border-top: 1px solid rgba(0, 0, 0, .05);
-    }
-  }
+[align-required-label] > .su-form-field > label {
+  padding-left: 8px;
 }
