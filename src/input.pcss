@@ -50,8 +50,14 @@ textarea.su-input {
   position: relative;
   display: inline-block;
   width: 200px;
-  &:hover > .su-input:not([disabled]) {
+
+  &:hover > .su-input {
     border-color: $COLOR_PRIMARY;
+  }
+  
+  &[disabled] > .su-input,
+  & > .su-input[disabled] {
+    border-color: $BORDER_COLOR_DEFAULT;
   }
   
   & > .su-input {

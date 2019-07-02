@@ -8,48 +8,172 @@
   <link rel="stylesheet" href="../dist/sparrow-ui.css">
   <title>输入框与表单</title>
   <script type="text/javascript" src="examples.js"></script>
+  <style>
+    .su-form {
+      width: 600px;
+    }
+  </style>
 </head>
 
 <body>
   <h2>表单</h2>
   <hr>
   <div>
-    <h3>表单样式</h3>
+    <h3>表单项样式</h3>
     <h5>常规状态</h5>
     <div class="su-form-field">
       <label>文本框</label>
       <input class="su-input" type="text">
     </div>
     <div class="su-form-field">
+      <label>文本框</label>
+      <div class="su-input-box">
+        <input class="su-input" type="text" placeholder="复合输入框">
+        <a class="su-input-icon icon icon-org"></a>
+      </div>
+    </div>
+    <div class="su-form-field">
       <label>文本域</label>
       <textarea class="su-input"></textarea>
     </div>
     <h5>必填状态与无效状态</h5>
-    <div class="su-form" align-required-label>
-      <div class="su-form-field" is-required>
-        <label>必填项</label>
-        <input class="su-input" type="text" value="不可以为空">
+    <div class="su-form-field" is-required>
+      <label>必填项</label>
+      <input class="su-input" type="text" placeholder="不可以为空">
+    </div>
+    <div class="su-form-field" is-invalid>
+      <label>无效项</label>
+      <div class="su-input-box">
+        <input class="su-input" type="text" placeholder="复合输入框">
+        <a class="su-input-icon icon icon-org"></a>
       </div>
-      <div class="su-form-field" is-invalid>
-        <label>无效项</label>
-        <input class="su-input" type="text"></textarea>
-      </div>
-      <div class="su-form-field" is-required is-invalid>
-        <label>无效项</label>
-        <textarea class="su-input"></textarea>
-      </div>
+    </div>
+    <div class="su-form-field" is-required is-invalid>
+      <label>无效项</label>
+      <textarea class="su-input" placeholder="不可以为空"></textarea>
     </div>
 
     <h3>表单布局</h3>
-    <h5>宽度充满</h5>
-    <div class="su-form">
+    <h5>标签居右</h5>
+    <div class="su-form" label-align="right">
+      <div class="su-form-field" is-required>
+        <label>必填项</label>
+        <input class="su-input" type="text" placeholder="不可以为空">
+      </div>
       <div class="su-form-field">
-        <label>文本框</label>
+        <label>普通项</label>
         <input class="su-input" type="text">
       </div>
       <div class="su-form-field">
-        <label>文本域</label>
-        <textarea class="su-input"></textarea>
+        <label>复合输入</label>
+        <div class="su-input-box">
+          <input class="su-input" type="text" placeholder="复合输入框">
+          <a class="su-input-icon icon icon-org"></a>
+        </div>
+      </div>
+    </div>
+    <h5>标签居上</h5>
+    <div class="su-form" label-align="top">
+      <div class="su-form-field" is-required>
+        <label>必填项</label>
+        <input class="su-input" type="text" placeholder="不可以为空">
+      </div>
+      <div class="su-form-field">
+        <label>普通项</label>
+        <input class="su-input" type="text"></textarea>
+      </div>
+      <div class="su-form-field">
+        <label>复合输入</label>
+        <div class="su-input-box">
+          <input class="su-input" type="text" placeholder="复合输入框">
+          <a class="su-input-icon icon icon-org"></a>
+        </div>
+      </div>
+    </div>
+    <h5>必填项星号占位（用作标签文字对齐，required-placeholder="always"）</h5>
+    <div class="su-form" label-align="top" required-placeholder="always">
+      <div class="su-form-field" is-required>
+        <label>必填项</label>
+        <input class="su-input" type="text" placeholder="不可以为空">
+      </div>
+      <div class="su-form-field">
+        <label>普通项</label>
+        <input class="su-input" type="text"></textarea>
+      </div>
+    </div>
+    <h5>行内排列（标签在左）</h5>
+    <div class="su-form" required-placeholder="auto">
+      <div class="su-form-inline">
+        <div class="su-form-field">
+          <label>文本一</label>
+          <input class="su-input" type="text">
+        </div>
+        <div class="su-form-field">
+          <label>文本二</label>
+          <div class="su-input-box">
+            <input class="su-input" type="text" placeholder="复合输入框">
+            <a class="su-input-icon icon icon-org"></a>
+          </div>
+        </div>
+      </div>
+      <div class="su-form-inline">
+        <div class="su-form-field">
+          <label>文本三</label>
+          <div class="su-input-box">
+            <input class="su-input" type="text" placeholder="复合输入框">
+            <a class="su-input-icon icon icon-org"></a>
+          </div>
+        </div>
+        <div class="su-form-field">
+          <label>文本四</label>
+          <input class="su-input" type="text">
+        </div>
+      </div>
+      <div class="su-form-field">
+        <label>文本五</label>
+        <input class="su-input" type="text">
+        <label>-</label>
+        <input class="su-input" type="text">
+      </div>
+    </div>
+    <h5>行内排列（标签在上）</h5>
+    <div class="su-form" label-align="top">
+      <div class="su-form-inline">
+        <div class="su-form-field">
+          <label>文本一</label>
+          <input class="su-input" type="text">
+        </div>
+        <div class="su-form-field">
+          <label>文本二</label>
+          <div class="su-input-box">
+            <input class="su-input" type="text" placeholder="复合输入框">
+            <a class="su-input-icon icon icon-org"></a>
+          </div>
+        </div>
+      </div>
+      <div class="su-form-inline">
+        <div class="su-form-field">
+          <label>文本三</label>
+          <div class="su-input-box">
+            <input class="su-input" type="text" placeholder="复合输入框">
+            <a class="su-input-icon icon icon-org"></a>
+          </div>
+        </div>
+        <div class="su-form-field">
+          <label>文本四</label>
+          <input class="su-input" type="text">
+        </div>
+      </div>
+      <div class="su-form-field">
+        <label>文本五</label>
+        <div class="su-form-inline">
+          <input class="su-input" type="text">
+          <label>-</label>
+          <div class="su-input-box">
+            <input class="su-input" type="text" placeholder="复合输入框">
+            <a class="su-input-icon icon icon-org"></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
